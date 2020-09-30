@@ -1,0 +1,63 @@
+div.main {
+  font-size: 60px;
+}
+
+h1 {
+  font-family: "Courier New";
+  color: #000090;
+  font-weight: normal;
+}
+h2 {
+  font-family: "Courier New";
+  color: #000090;
+  /* font-weight: normal; */
+}
+p {
+  font-family: "Courier New";
+  font-weight: normal;
+}
+
+
+body {
+  background-color: #ffe2db;
+}
+
+@keyframes rotate_side {
+  0% {
+    -moz-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+    -webkit-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+    -o-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+    -ms-transform: translate3d(0px, 0px, 0px) rotate(0deg);
+    transform: translate3d(0px, 0px, 0px) rotate(0deg);
+
+    transform-origin: left center;
+  }
+  100% {
+    -moz-transform: translate3d(200px, 200px, 10px) rotate(-90deg);
+    -webkit-transform: translate3d(200px, 200px, 10px) rotate(-90deg);
+    -o-transform: translate3d(200px, 200px, 10px) rotate(-90deg);
+    -ms-transform: translate3d(200px, 200px, 10px) rotate(-90deg);
+    transform: translate3d(200px, 200px, 10px) rotate(-90deg);
+
+    transform-origin: left center;
+  }
+}
+
+@keyframes rotate_horz {
+  0% {
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    transform-origin: left center;
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform-origin: left center;
+  }
+}

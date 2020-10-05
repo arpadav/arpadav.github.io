@@ -2,6 +2,10 @@ div.main {
   font-size: 60px;
 }
 
+div.tab {
+  visibility: hidden;
+}
+
 h1 {
   font-family: "Courier New";
   color: #000090;

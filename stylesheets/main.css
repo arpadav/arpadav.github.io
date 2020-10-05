@@ -37,6 +37,7 @@ div.main {
 
 div.tab {
   visibility: hidden;
+  /* z-index: -1; */
 }
 
 @keyframes fade_in {

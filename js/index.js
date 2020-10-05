@@ -1,60 +1,64 @@
-// agjustables
-var anim_len = 0.8;
-
+// static & technicals
+// --------------------------------------------
 // bools
 var rotated = 0;
 var click_enable = 1;
 
+// transforms, do not edit
 var transforms = ['-moz-transform', '-webkit-transform', '-o-transform', '-ms-transform', 'transform'];
 
-var name_anim_begin_rot = ["0deg"];
-var name_anim_end_rot = ["-90deg"];
-var name_anim_begin_pos = ["0px", "0px"];
-var name_anim_end_pos = ["200px", "650px"];
-var name_rot_crux = ["left center"];
+// resize timeout
+var resize_timeout;
 
-// var name_scale = 2;
-var name_scale_in = [1.15];
+// current and new font-sizes for main name
+var fs_cur;
+var fs_new;
+// --------------------------------------------
+
+// agjustables
+// --------------------------------------------
+// animation length
+var anim_len = 0.8;
+
+// scale before/after click
+var name_scale_in = [1];
 var name_scale_out = [1];
 
-console.log(document.getElementsByClassName('tab'));
+// rotation specifications
+var name_anim_begin_rot = ["0deg"];
+var name_anim_end_rot = ["-90deg"];
+var name_anim_begin_pos = ["0%", "0%"];
+var name_anim_end_pos = ["-100%", "0%"];
+var name_pivot = ["center"];
+// --------------------------------------------
 
 init();
 
-var name_div = document.getElementById('name');
-name_div.addEventListener("click", function() {
-  if (click_enable) {
-    click_enable = 0;
-    if (rotated) {
-      name_div.style.animation = `rotate_horz ${anim_len}s forwards`;
-      name_div.style.webkitAnimation  = `rotate_horz ${anim_len}s forwards`;
-      rotated = 0;
-    } else {
-      name_div.style.animation = `rotate_side ${anim_len}s forwards`;
-      name_div.style.webkitAnimation  = `rotate_side ${anim_len}s forwards`;
-      rotated = 1;
-    }
-    set_tab_visibility(rotated);
-    setTimeout(function(){ click_enable = 1; }, anim_len * 1000);
-  }
-});
-
 function init() {
-  // console.log(document.getElementsByClassName('tabs'));
-  init_css_animation();
+  // resize on load
+  resize_divs();
 
-  console.log("screen width: " + screen.width);
-  console.log("screen height: " + screen.height);
-
+  // name clicking listener
   let name_div = document.getElementById('name');
-  // name_div.style.fontSize = 60;
-  // console.log(name_div.style.fontSize);
-  console.log("name width: " + (name_div.clientWidth)  + "px");
-  console.log("name height: " + (name_div.clientHeight) + "px");
+  name_div.style.cursor = "pointer";
+  name_div.addEventListener("click", name_click);
+
+  // add listener for resizing the window
+  window.addEventListener("resize", function(){
+    clearTimeout(resize_timeout);
+    resize_timeout = setTimeout(resize_divs, 100);
+  });
+
+  // testing ---------------------------------------------
+  // var rect = name_div.getBoundingClientRect();
+  // console.log(rect);
+  // name_anim_begin_pos[1] = `${rect.top - name_div.style.height.match(/(.+?)(?=px)/g)}px`;
+  // console.log(name_anim_begin_pos);
+  // testing ---------------------------------------------
 }
 
-function init_css_animation() {
-  let keyframes = find_keyframes_rule("rotate_side");
+// initialize css animations with transforms and rules
+function update_css_anim() {
 
   // console.log(create_css_transform_rule(0,
   //   "translate", true, name_anim_begin_pos,
@@ -62,18 +66,20 @@ function init_css_animation() {
   //   "transform-origin", false, name_rot_crux,
   //   "scale", true, name_scale_out));
 
+  let keyframes = find_keyframes_rule("rotate_side");
+
   keyframes.deleteRule("0%");
   keyframes.appendRule(create_css_transform_rule(0,
     "translate", true, name_anim_begin_pos,
     "rotate", true, name_anim_begin_rot,
-    "transform-origin", false, name_rot_crux,
+    "transform-origin", false, name_pivot,
     "scale", true, name_scale_out));
 
   keyframes.deleteRule("100%");
   keyframes.appendRule(create_css_transform_rule(100,
     "translate", true, name_anim_end_pos,
     "rotate", true, name_anim_end_rot,
-    "transform-origin", false, name_rot_crux,
+    "transform-origin", false, name_pivot,
     "scale", true, name_scale_in));
 
 
@@ -83,23 +89,79 @@ function init_css_animation() {
   keyframes.appendRule(create_css_transform_rule(0,
     "translate", true, name_anim_end_pos,
     "rotate", true, name_anim_end_rot,
-    "transform-origin", false, name_rot_crux,
+    "transform-origin", false, name_pivot,
     "scale", true, name_scale_in));
 
   keyframes.deleteRule("100%");
   keyframes.appendRule(create_css_transform_rule(100,
     "translate", true, name_anim_begin_pos,
     "rotate", true, name_anim_begin_rot,
-    "transform-origin", false, name_rot_crux,
+    "transform-origin", false, name_pivot,
     "scale", true, name_scale_out));
 }
 
+// resize elements (divs) based on load and window resize
+function resize_divs() {
+  let main_div = document.getElementsByClassName('main');
+  fs_cur = Number(main_div[0].style.fontSize.match(/(.+?)(?=px)/g));
+  fs_new = Math.round(window.innerWidth / 32);
+  resize_name();
+}
+
+// recursive resizing of name
+function resize_name() {
+  let container_div = document.getElementById('home');
+  let main_div = document.getElementsByClassName('main');
+  let timeout = 5;
+
+  if (fs_new != fs_cur) {
+    if (fs_new > fs_cur) main_div[0].style.fontSize = `${++fs_cur}px`;
+    else main_div[0].style.fontSize = `${--fs_cur}px`;
+    container_div.style.width = `${14 * fs_cur}px`;
+    setTimeout(resize_name, timeout);
+  } else {
+    // change scale of transform, depending on window height
+    name_scale_in[0] = window.innerHeight / Number(container_div.style.width.match(/(.+?)(?=px)/g));
+    // update the css animation specs
+    update_css_anim();
+  }
+}
+
+// rotate name on click, disable clicking for animation length
+// change visibility of other elements depending on status
+function name_click() {
+  let name_div = document.getElementById('name');
+  let tabs = document.getElementsByClassName('tab');
+  if (click_enable) {
+    click_enable = 0;
+    if (rotated) {
+      name_div.style.animation = `rotate_horz ${anim_len}s forwards`;
+      name_div.style.webkitAnimation  = `rotate_horz ${anim_len}s forwards`;
+      for (i = 0; i < tabs.length; i++) {
+        tabs[i].style.animation = `fade_out ease ${anim_len}s forwards`;
+        tabs[i].style.webkitAnimation  = `fade_out ease ${anim_len}s forwards`;
+      }
+      rotated = 0;
+    } else {
+      set_tab_visibility(true);
+      name_div.style.animation = `rotate_side ${anim_len}s forwards`;
+      name_div.style.webkitAnimation  = `rotate_side ${anim_len}s forwards`;
+      for (i = 0; i < tabs.length; i++) {
+        tabs[i].style.animation = `fade_in ease ${anim_len}s forwards`;
+        tabs[i].style.webkitAnimation  = `fade_in ease ${anim_len}s forwards`;
+      }
+      rotated = 1;
+    }
+    // set_tab_visibility(rotated);
+    setTimeout(function(){ click_enable = 1; }, anim_len * 1000);
+  }
+}
+
+// toggles visibility of 'tabs'
 function set_tab_visibility(visible) {
   let tabs = document.getElementsByClassName("tab");
-  let len = tabs.length;
-
-  if (visible) for (i = 0; i < len; i++) tabs[i].style.visibility = "visible";
-  else for (i = 0; i < len; i++) tabs[i].style.visibility = "hidden";
+  if (visible) for (i = 0; i < tabs.length; i++) tabs[i].style.visibility = "visible";
+  else for (i = 0; i < tabs.length; i++) tabs[i].style.visibility = "hidden";
 }
 
 // find any CSS property from text
@@ -124,7 +186,7 @@ function get_css_property(type, prop, str) {
 // returns a string (rule) to be added to the CSS rules
 // input format: (0-100 percent, string func1, bool trans_dep1, array params1, string func2, ...
 function create_css_transform_rule () {
-  // save args
+  // save arguments
   let this_args = arguments;
 
   // get percent, begin 'rule' string to return
@@ -174,6 +236,20 @@ function create_css_transform_rule () {
 }
 
 // uses CSS DOM to look through CSS rules
+// used in finding CSS styles
+function find_selectortext_rule(rule) {
+  let ss = document.styleSheets;
+  for (var i = 0; i < ss.length; ++i) {
+    for (var j = 0; j < ss[i].cssRules.length; ++j) {
+      if (ss[i].cssRules[j].selectorText == rule) {
+        return ss[i].cssRules[j];
+      }
+    }
+  }
+  return null;
+}
+
+// uses CSS DOM to look through CSS rules
 // used in initialization of keyframe animations
 function find_keyframes_rule(rule) {
   let ss = document.styleSheets;
@@ -187,16 +263,7 @@ function find_keyframes_rule(rule) {
   return null;
 }
 
-// uses CSS DOM to look through CSS rules
-// used in finding CSS styles
-function find_selectortext_rule(rule) {
-  let ss = document.styleSheets;
-  for (var i = 0; i < ss.length; ++i) {
-    for (var j = 0; j < ss[i].cssRules.length; ++j) {
-      if (ss[i].cssRules[j].selectorText == rule) {
-        return ss[i].cssRules[j];
-      }
-    }
-  }
-  return null;
+// sleep function: from https://www.sitepoint.com/delay-sleep-pause-wait/
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

@@ -1,13 +1,6 @@
-h1 {
+h1, h2, p {
   font-family: "Times New Roman";
   color: #000090;
-}
-h2 {
-  font-family: "Times New Roman";
-  color: #000090;
-}
-p {
-  font-family: "Times New Romain";
 }
 
 body {

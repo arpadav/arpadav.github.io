@@ -5,16 +5,20 @@ html, body {
   margin: 0;
 }
 
-h1 {
-  text-align: center;
+h1, h2 {
   font-family: "Courier New";
   color: #000090;
   font-weight: normal;
 }
-h2 {
-  font-family: "Courier New";
-  color: #000090;
+
+h1 {
+  text-align: center;
 }
+
+h1:hover, h2:hover {
+  color: #755cab;
+}
+
 p {
   font-family: "Courier New";
 }
@@ -37,17 +41,21 @@ div.main {
 
 div.tab {
   visibility: hidden;
-  /* z-index: -1; */
 }
 
 @keyframes fade_in {
   0% {opacity: 0;}
+  25% {opacity: 0;}
   100% {opacity: 1;}
 }
 @keyframes fade_out {
   0% {opacity: 1;}
+  25% {opacity: 0;}
   100% {opacity: 0;}
 }
 
-@keyframes rotate_side {}
-@keyframes rotate_horz {}
+@keyframes name_rotate_side {}
+@keyframes name_rotate_horz {}
+
+@keyframes tabs_rotate_side {}
+@keyframes tabs_rotate_horz {}

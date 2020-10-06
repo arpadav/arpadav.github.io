@@ -23,13 +23,22 @@ var anim_len = 0.8;
 // scale before/after click
 var name_scale_in = [1];
 var name_scale_out = [1];
+var tabs_scale_in = [1];
+var tabs_scale_out = [1];
 
-// rotation specifications
+// name rotation specifications
 var name_anim_begin_rot = ["0deg"];
 var name_anim_end_rot = ["-90deg"];
 var name_anim_begin_pos = ["0%", "0%"];
-var name_anim_end_pos = ["-100%", "0%"];
+var name_anim_end_pos = ["-105%", "0%"];
 var name_pivot = ["center"];
+
+// tabs rotation specifications
+var tabs_anim_begin_rot = ["90deg"];
+var tabs_anim_end_rot = ["0deg"];
+var tabs_anim_begin_pos = ["50%", "0%"];
+var tabs_anim_end_pos = ["10%", "0%"];
+var tabs_pivot = ["left center"];
 // --------------------------------------------
 
 init();
@@ -42,6 +51,13 @@ function init() {
   let name_div = document.getElementById('name');
   name_div.style.cursor = "pointer";
   name_div.addEventListener("click", name_click);
+
+  // tabs head clicking listener
+  let tabs_title = document.getElementsByClassName('head');
+  for (i = 0; i < tabs_title.length; i++) {
+    tabs_title[i].style.cursor = "pointer";
+  }
+
 
   // add listener for resizing the window
   window.addEventListener("resize", function(){
@@ -66,38 +82,65 @@ function update_css_anim() {
   //   "transform-origin", false, name_rot_crux,
   //   "scale", true, name_scale_out));
 
-  let keyframes = find_keyframes_rule("rotate_side");
-
+  // NAME INITIAL ROTATION
+  let keyframes = find_keyframes_rule("name_rotate_side");
   keyframes.deleteRule("0%");
+  keyframes.deleteRule("100%");
   keyframes.appendRule(create_css_transform_rule(0,
     "translate", true, name_anim_begin_pos,
     "rotate", true, name_anim_begin_rot,
     "transform-origin", false, name_pivot,
     "scale", true, name_scale_out));
-
-  keyframes.deleteRule("100%");
   keyframes.appendRule(create_css_transform_rule(100,
     "translate", true, name_anim_end_pos,
     "rotate", true, name_anim_end_rot,
     "transform-origin", false, name_pivot,
     "scale", true, name_scale_in));
 
-
-  keyframes = find_keyframes_rule("rotate_horz");
-
+  // NAME SECOND ROTATION
+  keyframes = find_keyframes_rule("name_rotate_horz");
   keyframes.deleteRule("0%");
+  keyframes.deleteRule("100%");
   keyframes.appendRule(create_css_transform_rule(0,
     "translate", true, name_anim_end_pos,
     "rotate", true, name_anim_end_rot,
     "transform-origin", false, name_pivot,
     "scale", true, name_scale_in));
-
-  keyframes.deleteRule("100%");
   keyframes.appendRule(create_css_transform_rule(100,
     "translate", true, name_anim_begin_pos,
     "rotate", true, name_anim_begin_rot,
     "transform-origin", false, name_pivot,
     "scale", true, name_scale_out));
+
+    // TABS INITIAL ROTATION
+    keyframes = find_keyframes_rule("tabs_rotate_side");
+    keyframes.deleteRule("0%");
+    keyframes.deleteRule("100%");
+    keyframes.appendRule(create_css_transform_rule(0,
+      "translate", true, tabs_anim_begin_pos,
+      "rotate", true, tabs_anim_begin_rot,
+      "transform-origin", false, tabs_pivot,
+      "scale", true, tabs_scale_out));
+    keyframes.appendRule(create_css_transform_rule(100,
+      "translate", true, tabs_anim_end_pos,
+      "rotate", true, tabs_anim_end_rot,
+      "transform-origin", false, tabs_pivot,
+      "scale", true, tabs_scale_in));
+
+    // TABS SECOND ROTATION
+    keyframes = find_keyframes_rule("tabs_rotate_horz");
+    keyframes.deleteRule("0%");
+    keyframes.deleteRule("100%");
+    keyframes.appendRule(create_css_transform_rule(0,
+      "translate", true, tabs_anim_end_pos,
+      "rotate", true, tabs_anim_end_rot,
+      "transform-origin", false, tabs_pivot,
+      "scale", true, tabs_scale_in));
+    keyframes.appendRule(create_css_transform_rule(100,
+      "translate", true, tabs_anim_begin_pos,
+      "rotate", true, tabs_anim_begin_rot,
+      "transform-origin", false, tabs_pivot,
+      "scale", true, tabs_scale_out));
 }
 
 // resize elements (divs) based on load and window resize
@@ -135,20 +178,20 @@ function name_click() {
   if (click_enable) {
     click_enable = 0;
     if (rotated) {
-      name_div.style.animation = `rotate_horz ${anim_len}s forwards`;
-      name_div.style.webkitAnimation  = `rotate_horz ${anim_len}s forwards`;
+      name_div.style.animation = `name_rotate_horz ${anim_len}s forwards`;
+      name_div.style.webkitAnimation  = `name_rotate_horz ${anim_len}s forwards`;
       for (i = 0; i < tabs.length; i++) {
-        tabs[i].style.animation = `fade_out ease ${anim_len}s forwards`;
-        tabs[i].style.webkitAnimation  = `fade_out ease ${anim_len}s forwards`;
+        tabs[i].style.animation = `tabs_rotate_horz ${anim_len}s forwards fade_out ease ${anim_len}s forwards`;
+        tabs[i].style.webkitAnimation  = `tabs_rotate_horz ${anim_len}s forwards, fade_out ease ${anim_len}s forwards`;
       }
       rotated = 0;
     } else {
       set_tab_visibility(true);
-      name_div.style.animation = `rotate_side ${anim_len}s forwards`;
-      name_div.style.webkitAnimation  = `rotate_side ${anim_len}s forwards`;
+      name_div.style.animation = `name_rotate_side ${anim_len}s forwards`;
+      name_div.style.webkitAnimation  = `name_rotate_side ${anim_len}s forwards`;
       for (i = 0; i < tabs.length; i++) {
-        tabs[i].style.animation = `fade_in ease ${anim_len}s forwards`;
-        tabs[i].style.webkitAnimation  = `fade_in ease ${anim_len}s forwards`;
+        tabs[i].style.animation = `tabs_rotate_side ${anim_len}s forwards, fade_in ease ${anim_len}s forwards`;
+        tabs[i].style.webkitAnimation  = `tabs_rotate_side ${anim_len}s forwards, fade_in ease ${anim_len}s forwards`;
       }
       rotated = 1;
     }

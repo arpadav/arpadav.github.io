@@ -36,7 +36,7 @@ var name_pivot = ["center"];
 // tabs rotation specifications
 var tabs_anim_begin_rot = ["90deg"];
 var tabs_anim_end_rot = ["0deg"];
-var tabs_anim_begin_pos = ["50%", "0%"];
+var tabs_anim_begin_pos = ["85%", "0%"];
 var tabs_anim_end_pos = ["10%", "0%"];
 var tabs_pivot = ["left center"];
 // --------------------------------------------

@@ -27,6 +27,10 @@ body {
   background-color: #ffe2db;
 }
 
+a {
+  text-decoration: none;
+}
+
 div.main {
   margin: 0 auto;
   position: absolute;
@@ -41,6 +45,13 @@ div.main {
 
 div.tab {
   visibility: hidden;
+  pointer-events: auto;
+}
+
+.body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 @keyframes fade_in {
@@ -54,8 +65,8 @@ div.tab {
   100% {opacity: 0;}
 }
 
-@keyframes name_rotate_side {}
+@keyframes name_rotate_vert {}
 @keyframes name_rotate_horz {}
 
-@keyframes tabs_rotate_side {}
+@keyframes tabs_rotate_vert {}
 @keyframes tabs_rotate_horz {}

@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "display": "Home",
+      "dir": "./"
+    },
+    {
+      "display": "About",
+      "dir": "./#about"
+    },
+    {
+      "display": "Contact",
+      "dir": "./#contact"
+    },
+    {
+      "display": "Projects",
+      "dir": "./projects/"
+    },
+    {
+      "display": "Notes",
+      "dir": "./notes/"
+    }
+  ]
+}

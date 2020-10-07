@@ -1,0 +1,39 @@
+h1, h2, p, a {
+  font-family: "Times New Roman";
+  color: #000090;
+}
+
+a {
+  font-size: 115%;
+}
+
+a:hover:not(.active) {
+  color: #755cab;
+  text-decoration: underline;
+}
+
+.active {
+  background-color: #e5cbc5;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+body {
+  background-color: #ffe2db;
+}

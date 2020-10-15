@@ -67,6 +67,12 @@ function init() {
     resize_timeout = setTimeout(resize_divs, 100);
   });
 
+  // key event triggers name_click
+  // keys: enter, space, numbers, letters
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
+  }
+
   // testing ---------------------------------------------
   // testing ---------------------------------------------
 }
@@ -82,9 +88,15 @@ function set_tab_visibility(visible) {
 }
 
 // single collapsing body, used in anchors
-function singe_collapse(div_index) {
-  let bodies = document.getElementsByClassName('body');
-  bodies[div_index].style.maxHeight = bodies[div_index].scrollHeight + "px";
+function single_collapse(id) {
+  let headers = document.getElementById(id);
+  for (i = 0; i < headers.children.length; i++) {
+    if (headers.children[i].className == 'body') {
+      headers.children[i].style.maxHeight = headers.children[i].scrollHeight + "px";
+    }
+  }
+  // let bodies = document.getElementsByClassName('body');
+  // bodies[div_index].style.maxHeight = bodies[div_index].scrollHeight + "px";
 }
 
 // collapse bodies upon clicking title or name
@@ -155,7 +167,7 @@ function recursive_resize_font (elements) {
           elements.children[c].style.fontSize = `${0.425 * fs_new * name_scale_in[0]}px`;
           break;
         case 'P':
-          elements.children[c].style.fontSize = `${0.25 * fs_new * name_scale_in[0]}px`;
+          elements.children[c].style.fontSize = `${0.275 * fs_new * name_scale_in[0]}px`;
           break;
       }
     }
@@ -168,14 +180,7 @@ function recursive_resize_font (elements) {
 // do a lil animation thang when anchors are called from other pages
 function call_anchors() {
   let anchor = window.location.hash.match(/(?<=#)(.*$)/g)[0];
-  switch (anchor) {
-    case "about":
-      singe_collapse(0);
-      break;
-    case "contact":
-      singe_collapse(2);
-      break;
-  }
+  single_collapse(anchor);
 }
 
 // rotate name on click, disable clicking for animation length
@@ -186,7 +191,7 @@ function name_click() {
   if (click_enable) {
     click_enable = false;
     if (rotated) {
-      if (!first_load) window.location.hash = ''; //window.location.href.match(/(.*?)(?=#)/g)[0];
+      if (!first_load) window.location.hash = '';
       name_div.style.animation = `name_rotate_horz ${anim_len}s forwards`;
       name_div.style.webkitAnimation  = `name_rotate_horz ${anim_len}s forwards`;
       for (i = 0; i < tabs.length; i++) {
@@ -283,7 +288,6 @@ function update_css_anim() {
       "transform-origin", false, tabs_pivot,
       "scale", true, tabs_scale_out));
 }
-
 
 // =======================================================================
 // =                           FULL TECHNICAL                            =

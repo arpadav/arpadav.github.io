@@ -1,13 +1,13 @@
 let name_div = document.getElementById('name');
 name_div.style.cursor = "pointer";
 name_div.addEventListener("click", debug_change_name);
-debug_change_name("test2")
+debug_change_name("mobile28")
 
 // debug
 function debug_change_name(new_name) {
   let name_div = document.getElementById('name');
   if (typeof new_name == "string") name_div.children[0].innerHTML = new_name;
-  else name_div.children[0].innerHTML = name_div.children[0].innerHTML + "1";
+  else name_div.children[0].innerHTML = name_div.children[0].innerHTML + "x";
 }
 
 // static & technicals
@@ -65,20 +65,21 @@ function init() {
   // let name_div = document.getElementById('name');
   // name_div.style.cursor = "pointer";
   // name_div.addEventListener("click", name_click);
-  //
-  // // tabs head clicking listener
-  // let tabs_title = document.getElementsByClassName('head');
-  // for (i = 0; i < tabs_title.length; i++) {
-  //   tabs_title[i].style.cursor = "pointer";
-  //   tabs_title[i].addEventListener("click", toggle_collapse);
-  // }
+
+  // tabs head clicking listener
+  let tabs_title = document.getElementsByClassName('head');
+  for (i = 0; i < tabs_title.length; i++) {
+    tabs_title[i].style.cursor = "pointer";
+    // tabs_title[i].addEventListener("click", toggle_collapse);
+    tabs_title[i].addEventListener("click", debug_change_name);
+  }
 
   // add listener for resizing the window
   window.addEventListener("resize", function(){
     clearTimeout(resize_timeout);
     resize_timeout = setTimeout(resize_divs, 100);
   });
-  
+
   // key event triggers name_click
   // keys: enter, space, numbers, letters
   document.body.onkeyup = function(e) {

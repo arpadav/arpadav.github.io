@@ -1,7 +1,7 @@
 let name_div = document.getElementById('name');
 name_div.style.cursor = "pointer";
 name_div.addEventListener("click", debug_change_name);
-debug_change_name("mobile29")
+debug_change_name("mobile30")
 
 // debug
 function debug_change_name(new_name) {
@@ -71,7 +71,6 @@ function init() {
   for (i = 0; i < tabs_title.length; i++) {
     tabs_title[i].style.cursor = "pointer";
     tabs_title[i].addEventListener("click", toggle_collapse);
-    // tabs_title[i].addEventListener("click", debug_change_name);
   }
 
   // add listener for resizing the window
@@ -158,8 +157,8 @@ function resize_name() {
     // update other font sizes
     let headers = document.getElementsByClassName('head');
     let bodies = document.getElementsByClassName('body');
-    // for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
-    // for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
+    for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
+    for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
     if (window.location.hash && first_load) {
       first_load = false;
       // name_click();
@@ -167,9 +166,8 @@ function resize_name() {
     }
   }
 }
-/*
 // change the font size of other elements, according to the main name
-function recursive_resize_font (elements) {
+function recursive_resize_font(elements) {
   for (c = 0; c < elements.children.length; c++) {
     if (elements.children[c].children.length) recursive_resize_font(elements.children[c]);
     else {
@@ -188,6 +186,7 @@ function recursive_resize_font (elements) {
   }
 }
 
+/*
 // =======================================================================
 // =                    PARTIAL TECHNICAL/ANIMATION                      =
 // =======================================================================

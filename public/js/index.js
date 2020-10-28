@@ -1,7 +1,7 @@
-let name_div = document.getElementById('name');
-name_div.style.cursor = "pointer";
-name_div.addEventListener("click", debug_change_name);
-debug_change_name("mobile30")
+// let name_div = document.getElementById('name');
+// name_div.style.cursor = "pointer";
+// name_div.addEventListener("click", debug_change_name);
+debug_change_name("mobile31")
 
 // debug
 function debug_change_name(new_name) {
@@ -61,10 +61,10 @@ function init() {
   // resize on load
   resize_divs();
 
-  // // name clicking listener
-  // let name_div = document.getElementById('name');
-  // name_div.style.cursor = "pointer";
-  // name_div.addEventListener("click", name_click);
+  // name clicking listener
+  let name_div = document.getElementById('name');
+  name_div.style.cursor = "pointer";
+  name_div.addEventListener("click", name_click);
 
   // tabs head clicking listener
   let tabs_title = document.getElementsByClassName('head');
@@ -89,7 +89,7 @@ function init() {
   // testing ---------------------------------------------
 }
 
-/*
+
 // =======================================================================
 // =                           VISUALS                                   =
 // =======================================================================
@@ -111,7 +111,7 @@ function single_collapse(id) {
   // let bodies = document.getElementsByClassName('body');
   // bodies[div_index].style.maxHeight = bodies[div_index].scrollHeight + "px";
 }
-*/
+
 
 // collapse bodies upon clicking title or name
 // links do not cause collapse animations
@@ -161,7 +161,7 @@ function resize_name() {
     for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
     if (window.location.hash && first_load) {
       first_load = false;
-      // name_click();
+      name_click();
       setTimeout(call_anchors, anim_len * 1000);
     }
   }
@@ -186,15 +186,14 @@ function recursive_resize_font(elements) {
   }
 }
 
-/*
 // =======================================================================
 // =                    PARTIAL TECHNICAL/ANIMATION                      =
 // =======================================================================
-// do a lil animation thang when anchors are called from other pages
-function call_anchors() {
-  let anchor = window.location.hash.match(/(?<=#)(.*$)/g)[0];
-  single_collapse(anchor);
-}
+// // do a lil animation thang when anchors are called from other pages
+// function call_anchors() {
+//   let anchor = window.location.hash.match(/(?<=#)(.*$)/g)[0];
+//   single_collapse(anchor);
+// }
 
 // rotate name on click, disable clicking for animation length
 // change visibility of other elements depending on status
@@ -232,7 +231,7 @@ function name_click() {
     setTimeout(function(){ click_enable = true; }, anim_len * 1000);
   }
 }
-*/
+
 // initialize css animations with transforms and rules
 function update_css_anim() {
 

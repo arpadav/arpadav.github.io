@@ -65,13 +65,14 @@ function init() {
   // name_div.style.cursor = "pointer";
   // name_div.addEventListener("click", name_click);
 
-  // tabs head clicking listener
-  let tabs_title = document.getElementsByClassName('head');
-  for (i = 0; i < tabs_title.length; i++) {
-    tabs_title[i].style.cursor = "pointer";
-    // tabs_title[i].addEventListener("click", toggle_collapse);
-    tabs_title[i].addEventListener("click", debug_change_name);
-  }
+  // IF REMOVE THIS, THEN WORK
+  // // tabs head clicking listener
+  // let tabs_title = document.getElementsByClassName('head');
+  // for (i = 0; i < tabs_title.length; i++) {
+  //   tabs_title[i].style.cursor = "pointer";
+  //   // tabs_title[i].addEventListener("click", toggle_collapse);
+  //   tabs_title[i].addEventListener("click", debug_change_name);
+  // }
 
   // // add listener for resizing the window
   // window.addEventListener("resize", function(){

@@ -47,7 +47,7 @@ init();
 
 function init() {
   // resize on load
-  resize_divs();
+  // resize_divs();
 
   // name clicking listener
   let name_div = document.getElementById('name');
@@ -63,10 +63,10 @@ function init() {
   }
 
   // add listener for resizing the window
-  window.addEventListener("resize", function(){
-    clearTimeout(resize_timeout);
-    resize_timeout = setTimeout(resize_divs, 100);
-  });
+  // window.addEventListener("resize", function(){
+  //   clearTimeout(resize_timeout);
+  //   resize_timeout = setTimeout(resize_divs, 100);
+  // });
 
   // key event triggers name_click
   // keys: enter, space, numbers, letters

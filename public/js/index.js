@@ -48,6 +48,7 @@ init();
 function init() {
   // // resize on load
   // resize_divs();
+  update_css_anim();
 
   // name clicking listener
   let name_div = document.getElementById('name');

@@ -57,9 +57,9 @@ var tabs_pivot = ["left center"];
 init();
 
 function init() {
-  // // resize on load
-  // resize_divs();
-  //
+  // resize on load
+  resize_divs();
+
   // // name clicking listener
   // let name_div = document.getElementById('name');
   // name_div.style.cursor = "pointer";
@@ -128,7 +128,7 @@ function toggle_collapse(force_collapse) {
     }
   }
 }
-
+*/
 // resize elements (divs) based on load and window resize
 function resize_divs() {
   let main_div = document.getElementsByClassName('main');
@@ -151,21 +151,21 @@ function resize_name() {
   } else {
     // change scale of transform, depending on window height
     name_scale_in[0] = window.innerHeight / Number(container_div.style.width.match(/(.+?)(?=px)/g));
-    // update the css animation specs
-    update_css_anim();
+    // // update the css animation specs
+    // update_css_anim();
     // update other font sizes
     let headers = document.getElementsByClassName('head');
     let bodies = document.getElementsByClassName('body');
-    for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
-    for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
+    // for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
+    // for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
     if (window.location.hash && first_load) {
       first_load = false;
-      name_click();
+      // name_click();
       setTimeout(call_anchors, anim_len * 1000);
     }
   }
 }
-
+/*
 // change the font size of other elements, according to the main name
 function recursive_resize_font (elements) {
   for (c = 0; c < elements.children.length; c++) {

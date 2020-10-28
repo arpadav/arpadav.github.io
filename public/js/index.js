@@ -302,7 +302,7 @@ function update_css_anim() {
       "transform-origin", false, tabs_pivot,
       "scale", true, tabs_scale_out));
 }
-
+/*
 // =======================================================================
 // =                           FULL TECHNICAL                            =
 // =======================================================================
@@ -321,7 +321,7 @@ function get_css_property(type, prop, str) {
     try { return type.cssText.match(RegExp(`(?<=${prop}:)(\\s*?)(.*?)(?=\\s*?\\;)`, 'g'))[0].trim(); }
     catch(err) { return null; }
   }
-}
+}*/
 
 // used in adding a rule for transformations
 // used in initialization, and (somewhat) beyond

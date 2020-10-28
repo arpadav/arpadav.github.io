@@ -15,9 +15,9 @@ h1 {
   text-align: center;
 }
 
-/* h1:hover, h2:hover {
+h1:hover, h2:hover {
   color: #755cab;
-} */
+}
 
 p {
   font-family: "Courier New";
@@ -31,9 +31,7 @@ a {
   text-decoration: none;
 }
 
-/* div.main {
-  display:block;
-
+div.main {
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -43,9 +41,9 @@ a {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-} */
+}
 
-/* div.tab {
+div.tab {
   visibility: hidden;
   pointer-events: auto;
 }
@@ -65,7 +63,7 @@ a {
   0% {opacity: 1;}
   25% {opacity: 0;}
   100% {opacity: 0;}
-} */
+}
 
 @keyframes name_rotate_vert {}
 @keyframes name_rotate_horz {}

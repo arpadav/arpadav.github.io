@@ -64,17 +64,14 @@ function init() {
   // let name_div = document.getElementById('name');
   // name_div.style.cursor = "pointer";
   // name_div.addEventListener("click", name_click);
-
-
-  // IF COMMENT THIS, THEN WORK
+  //
   // // tabs head clicking listener
   // let tabs_title = document.getElementsByClassName('head');
   // for (i = 0; i < tabs_title.length; i++) {
   //   tabs_title[i].style.cursor = "pointer";
   //   tabs_title[i].addEventListener("click", toggle_collapse);
   // }
-
-  // RESIZE EVENT BROKEN ?
+  //
   // // add listener for resizing the window
   // window.addEventListener("resize", function(){
   //   clearTimeout(resize_timeout);

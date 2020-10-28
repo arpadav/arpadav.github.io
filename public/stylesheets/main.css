@@ -45,7 +45,7 @@ div.main {
   transform: translate(-50%, -50%);
 }
 
-div.tab {
+/* div.tab {
   visibility: hidden;
   pointer-events: auto;
 }
@@ -65,7 +65,7 @@ div.tab {
   0% {opacity: 1;}
   25% {opacity: 0;}
   100% {opacity: 0;}
-}
+} */
 
 @keyframes name_rotate_vert {}
 @keyframes name_rotate_horz {}

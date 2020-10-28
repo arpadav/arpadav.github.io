@@ -1,14 +1,14 @@
-// let name_div = document.getElementById('name');
-// name_div.style.cursor = "pointer";
-// name_div.addEventListener("click", debug_change_name);
-// debug_change_name("test2")
-//
-// // debug
-// function debug_change_name(new_name) {
-//   let name_div = document.getElementById('name');
-//   if (typeof new_name == "string") name_div.children[0].innerHTML = new_name;
-//   else name_div.children[0].innerHTML = name_div.children[0].innerHTML + "1";
-// }
+let name_div = document.getElementById('name');
+name_div.style.cursor = "pointer";
+name_div.addEventListener("click", debug_change_name);
+debug_change_name("test2")
+
+// debug
+function debug_change_name(new_name) {
+  let name_div = document.getElementById('name');
+  if (typeof new_name == "string") name_div.children[0].innerHTML = new_name;
+  else name_div.children[0].innerHTML = name_div.children[0].innerHTML + "1";
+}
 
 // static & technicals
 // --------------------------------------------
@@ -61,35 +61,35 @@ function init() {
   // resize on load
   resize_divs();
 
-  // name clicking listener
-  let name_div = document.getElementById('name');
-  name_div.style.cursor = "pointer";
-  name_div.addEventListener("click", name_click);
-
-  // tabs head clicking listener
-  let tabs_title = document.getElementsByClassName('head');
-  for (i = 0; i < tabs_title.length; i++) {
-    tabs_title[i].style.cursor = "pointer";
-    tabs_title[i].addEventListener("click", toggle_collapse);
-  }
-
-  // add listener for resizing the window
-  window.addEventListener("resize", function(){
-    clearTimeout(resize_timeout);
-    resize_timeout = setTimeout(resize_divs, 100);
-  });
-
-  // key event triggers name_click
-  // keys: enter, space, numbers, letters
-  document.body.onkeyup = function(e) {
-    if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
-  }
+  // // name clicking listener
+  // let name_div = document.getElementById('name');
+  // name_div.style.cursor = "pointer";
+  // name_div.addEventListener("click", name_click);
+  //
+  // // tabs head clicking listener
+  // let tabs_title = document.getElementsByClassName('head');
+  // for (i = 0; i < tabs_title.length; i++) {
+  //   tabs_title[i].style.cursor = "pointer";
+  //   tabs_title[i].addEventListener("click", toggle_collapse);
+  // }
+  //
+  // // add listener for resizing the window
+  // window.addEventListener("resize", function(){
+  //   clearTimeout(resize_timeout);
+  //   resize_timeout = setTimeout(resize_divs, 100);
+  // });
+  //
+  // // key event triggers name_click
+  // // keys: enter, space, numbers, letters
+  // document.body.onkeyup = function(e) {
+  //   if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
+  // }
 
   // testing ---------------------------------------------
   // testing ---------------------------------------------
 }
 
-
+/*
 // =======================================================================
 // =                           VISUALS                                   =
 // =======================================================================
@@ -129,7 +129,7 @@ function toggle_collapse(force_collapse) {
     }
   }
 }
-
+*/
 // resize elements (divs) based on load and window resize
 function resize_divs() {
   let main_div = document.getElementsByClassName('main');
@@ -157,16 +157,16 @@ function resize_name() {
     // update other font sizes
     let headers = document.getElementsByClassName('head');
     let bodies = document.getElementsByClassName('body');
-    for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
-    for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
+    // for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
+    // for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
     if (window.location.hash && first_load) {
       first_load = false;
-      name_click();
+      // name_click();
       setTimeout(call_anchors, anim_len * 1000);
     }
   }
 }
-
+/*
 // change the font size of other elements, according to the main name
 function recursive_resize_font (elements) {
   for (c = 0; c < elements.children.length; c++) {
@@ -232,7 +232,7 @@ function name_click() {
     setTimeout(function(){ click_enable = true; }, anim_len * 1000);
   }
 }
-
+*/
 // initialize css animations with transforms and rules
 function update_css_anim() {
 

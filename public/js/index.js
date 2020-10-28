@@ -1,6 +1,4 @@
-// let name_div = document.getElementById('name');
-// name_div.style.cursor = "pointer";
-// name_div.addEventListener("click", debug_change_name);
+/*
 debug_change_name("mobile31")
 
 // debug
@@ -9,6 +7,7 @@ function debug_change_name(new_name) {
   if (typeof new_name == "string") name_div.children[0].innerHTML = new_name;
   else name_div.children[0].innerHTML = name_div.children[0].innerHTML + "x";
 }
+*/
 
 // static & technicals
 // --------------------------------------------
@@ -108,10 +107,7 @@ function single_collapse(id) {
       headers.children[i].style.maxHeight = headers.children[i].scrollHeight + "px";
     }
   }
-  // let bodies = document.getElementsByClassName('body');
-  // bodies[div_index].style.maxHeight = bodies[div_index].scrollHeight + "px";
 }
-
 
 // collapse bodies upon clicking title or name
 // links do not cause collapse animations
@@ -189,16 +185,19 @@ function recursive_resize_font(elements) {
 // =======================================================================
 // =                    PARTIAL TECHNICAL/ANIMATION                      =
 // =======================================================================
-// // do a lil animation thang when anchors are called from other pages
-// function call_anchors() {
-//   let anchor = window.location.hash.match(/(?<=#)(.*$)/g)[0];
-//   single_collapse(anchor);
-// }
+// do a lil animation thang when anchors are called from other pages
+function call_anchors() {
+  // REGEX LOOKBEHIND BREAKS MOBILE
+  // REGEX LOOKBEHIND BREAKS MOBILE
+  // REGEX LOOKBEHIND BREAKS MOBILE
+  // let anchor = window.location.hash.match(/(?<=#)(.*$)/g)[0];
+  let anchor = window.location.hash.match(/(?:#)(.*$)/g)[0].substring(1);
+  single_collapse(anchor);
+}
 
 // rotate name on click, disable clicking for animation length
 // change visibility of other elements depending on status
 function name_click() {
-  // debug_change_name();
   let name_div = document.getElementById('name');
   let tabs = document.getElementsByClassName('tab');
   if (click_enable) {
@@ -234,13 +233,6 @@ function name_click() {
 
 // initialize css animations with transforms and rules
 function update_css_anim() {
-
-  // console.log(create_css_transform_rule(0,
-  //   "translate", true, name_anim_begin_pos,
-  //   "rotate", true, name_anim_begin_rot,
-  //   "transform-origin", false, name_rot_crux,
-  //   "scale", true, name_scale_out));
-
   // NAME INITIAL ROTATION
   let keyframes = find_keyframes_rule("name_rotate_vert");
   keyframes.deleteRule("0%");
@@ -301,7 +293,6 @@ function update_css_anim() {
       "transform-origin", false, tabs_pivot,
       "scale", true, tabs_scale_out));
 }
-/*
 // =======================================================================
 // =                           FULL TECHNICAL                            =
 // =======================================================================
@@ -312,6 +303,11 @@ function update_css_anim() {
 // RAW:
 // TYPE.cssText.match(/(?<=PROP:)(\s*?)(.*?)(?=\s*?\;)/g)[0].trim();
 // TYPE.cssText.match(RegExp(`(?<=${PROP}:)(\\s*?)(.*?)(?=\\s*?\\;)`, 'g'))[0].trim();
+
+// REGEX LOOKBEHIND BREAKS MOBILE
+// REGEX LOOKBEHIND BREAKS MOBILE
+// REGEX LOOKBEHIND BREAKS MOBILE
+/*
 function get_css_property(type, prop, str) {
   if (str) {
     try { return type.cssText.match(RegExp(`(?<=${prop}:)(\\s*?)(.*?)(?=\\"\\s*?\\;)`, 'g'))[0].match(/(?<=\")(.*?)$/g)[0]; }
@@ -372,8 +368,6 @@ function create_css_transform_rule() {
     });
     rule = rule + "; ";
   });
-
-  console.log(rule + " }");
 
   return rule + " }";
 }

@@ -72,11 +72,11 @@ function init() {
     tabs_title[i].addEventListener("click", toggle_collapse);
   }
 
-  // add listener for resizing the window
-  window.addEventListener("resize", function(){
-    clearTimeout(resize_timeout);
-    resize_timeout = setTimeout(resize_divs, 100);
-  });
+  // // add listener for resizing the window
+  // window.addEventListener("resize", function(){
+  //   clearTimeout(resize_timeout);
+  //   resize_timeout = setTimeout(resize_divs, 100);
+  // });
 
   // key event triggers name_click
   // keys: enter, space, numbers, letters

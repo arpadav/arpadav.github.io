@@ -46,6 +46,7 @@ var tabs_pivot = ["left center"];
 init();
 
 function init() {
+  alert("alert on load");
   // // resize on load
   // resize_divs();
   update_css_anim();
@@ -188,9 +189,14 @@ function call_anchors() {
 // rotate name on click, disable clicking for animation length
 // change visibility of other elements depending on status
 function name_click() {
+  alert("clicked immed");
   let name_div = document.getElementById('name');
   let tabs = document.getElementsByClassName('tab');
+
+  alert("clicked before functions");
+
   if (click_enable) {
+    alert("clicked_enable");
     click_enable = false;
     if (rotated) {
       if (!first_load) window.location.hash = '';
@@ -203,18 +209,22 @@ function name_click() {
       }
       rotated = false;
     } else {
+      alert("!rotated");
       if (tabs_first_invisible) {
         set_tab_visibility(true);
         tabs_first_invisible = false;
+        alert("first invis");
       }
       toggle_collapse(true);
       name_div.style.animation = `name_rotate_vert ${anim_len}s forwards`;
       name_div.style.webkitAnimation  = `name_rotate_vert ${anim_len}s forwards`;
+      alert("name anim");
       for (i = 0; i < tabs.length; i++) {
         tabs[i].style.animation = `tabs_rotate_vert ${anim_len}s forwards, fade_in ease ${anim_len}s forwards`;
         tabs[i].style.webkitAnimation  = `tabs_rotate_vert ${anim_len}s forwards, fade_in ease ${anim_len}s forwards`;
         tabs[i].style.pointerEvents = "auto";
       }
+      alert("tabs anim");
       rotated = true;
     }
     setTimeout(function(){ click_enable = true; }, anim_len * 1000);

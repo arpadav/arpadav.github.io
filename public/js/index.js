@@ -64,19 +64,19 @@ function init() {
   // let name_div = document.getElementById('name');
   // name_div.style.cursor = "pointer";
   // name_div.addEventListener("click", name_click);
-  //
-  // // tabs head clicking listener
-  // let tabs_title = document.getElementsByClassName('head');
-  // for (i = 0; i < tabs_title.length; i++) {
-  //   tabs_title[i].style.cursor = "pointer";
-  //   tabs_title[i].addEventListener("click", toggle_collapse);
-  // }
-  //
-  // // add listener for resizing the window
-  // window.addEventListener("resize", function(){
-  //   clearTimeout(resize_timeout);
-  //   resize_timeout = setTimeout(resize_divs, 100);
-  // });
+
+  // tabs head clicking listener
+  let tabs_title = document.getElementsByClassName('head');
+  for (i = 0; i < tabs_title.length; i++) {
+    tabs_title[i].style.cursor = "pointer";
+    tabs_title[i].addEventListener("click", toggle_collapse);
+  }
+
+  // add listener for resizing the window
+  window.addEventListener("resize", function(){
+    clearTimeout(resize_timeout);
+    resize_timeout = setTimeout(resize_divs, 100);
+  });
 
   // key event triggers name_click
   // keys: enter, space, numbers, letters
@@ -110,6 +110,7 @@ function single_collapse(id) {
   // let bodies = document.getElementsByClassName('body');
   // bodies[div_index].style.maxHeight = bodies[div_index].scrollHeight + "px";
 }
+*/
 
 // collapse bodies upon clicking title or name
 // links do not cause collapse animations
@@ -128,7 +129,6 @@ function toggle_collapse(force_collapse) {
     }
   }
 }
-*/
 // resize elements (divs) based on load and window resize
 function resize_divs() {
   let main_div = document.getElementsByClassName('main');
@@ -301,7 +301,7 @@ function update_css_anim() {
       "transform-origin", false, tabs_pivot,
       "scale", true, tabs_scale_out));
 }
-/*
+
 // =======================================================================
 // =                           FULL TECHNICAL                            =
 // =======================================================================
@@ -321,7 +321,7 @@ function get_css_property(type, prop, str) {
     catch(err) { return null; }
   }
 }
-*/
+
 // used in adding a rule for transformations
 // used in initialization, and (somewhat) beyond
 // returns a string (rule) to be added to the CSS rules
@@ -377,7 +377,7 @@ function create_css_transform_rule() {
 
   return rule + " }";
 }
-/*
+
 // uses CSS DOM to look through CSS rules
 // used in finding CSS styles
 function find_selectortext_rule(rule) {
@@ -391,7 +391,7 @@ function find_selectortext_rule(rule) {
   }
   return null;
 }
-*/
+
 // uses CSS DOM to look through CSS rules
 // used in initialization of keyframe animations
 function find_keyframes_rule(rule) {

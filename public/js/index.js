@@ -46,8 +46,9 @@ var tabs_pivot = ["left center"];
 init();
 
 function init() {
-  // resize on load
-  resize_divs();
+  // // resize on load
+  // resize_divs();
+  update_css_anim();
 
   // name clicking listener
   let name_div = document.getElementById('name');

@@ -55,39 +55,39 @@ var tabs_anim_end_pos = ["10%", "0%"];
 var tabs_pivot = ["left center"];
 // --------------------------------------------
 
-// init();
-//
-// function init() {
-//   // resize on load
-//   resize_divs();
-//
-//   // // name clicking listener
-//   // let name_div = document.getElementById('name');
-//   // name_div.style.cursor = "pointer";
-//   // name_div.addEventListener("click", name_click);
-//   //
-//   // // tabs head clicking listener
-//   // let tabs_title = document.getElementsByClassName('head');
-//   // for (i = 0; i < tabs_title.length; i++) {
-//   //   tabs_title[i].style.cursor = "pointer";
-//   //   tabs_title[i].addEventListener("click", toggle_collapse);
-//   // }
-//   //
-//   // // add listener for resizing the window
-//   // window.addEventListener("resize", function(){
-//   //   clearTimeout(resize_timeout);
-//   //   resize_timeout = setTimeout(resize_divs, 100);
-//   // });
-//
-//   // key event triggers name_click
-//   // keys: enter, space, numbers, letters
-//   document.body.onkeyup = function(e) {
-//     if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
-//   }
-//
-//   // testing ---------------------------------------------
-//   // testing ---------------------------------------------
-// }
+init();
+
+function init() {
+  // resize on load
+  resize_divs();
+
+  // // name clicking listener
+  // let name_div = document.getElementById('name');
+  // name_div.style.cursor = "pointer";
+  // name_div.addEventListener("click", name_click);
+  //
+  // // tabs head clicking listener
+  // let tabs_title = document.getElementsByClassName('head');
+  // for (i = 0; i < tabs_title.length; i++) {
+  //   tabs_title[i].style.cursor = "pointer";
+  //   tabs_title[i].addEventListener("click", toggle_collapse);
+  // }
+  //
+  // // add listener for resizing the window
+  // window.addEventListener("resize", function(){
+  //   clearTimeout(resize_timeout);
+  //   resize_timeout = setTimeout(resize_divs, 100);
+  // });
+  //
+  // // key event triggers name_click
+  // // keys: enter, space, numbers, letters
+  // document.body.onkeyup = function(e) {
+  //   if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
+  // }
+
+  // testing ---------------------------------------------
+  // testing ---------------------------------------------
+}
 
 /*
 // =======================================================================
@@ -130,42 +130,42 @@ function toggle_collapse(force_collapse) {
   }
 }
 */
-// // resize elements (divs) based on load and window resize
-// function resize_divs() {
-//   let main_div = document.getElementsByClassName('main');
-//   fs_cur = Number(main_div[0].style.fontSize.match(/(.+?)(?=px)/g));
-//   fs_new = Math.round(window.innerWidth / 32);
-//   resize_name();
-// }
-//
-// // recursive resizing of name
-// function resize_name() {
-//   let container_div = document.getElementById('home');
-//   let main_div = document.getElementsByClassName('main');
-//   let timeout = 5;
-//
-//   if (fs_new != fs_cur) {
-//     if (fs_new > fs_cur) main_div[0].style.fontSize = `${++fs_cur}px`;
-//     else main_div[0].style.fontSize = `${--fs_cur}px`;
-//     container_div.style.width = `${14 * fs_cur}px`;
-//     setTimeout(resize_name, timeout);
-//   } else {
-//     // change scale of transform, depending on window height
-//     name_scale_in[0] = window.innerHeight / Number(container_div.style.width.match(/(.+?)(?=px)/g));
-//     // update the css animation specs
-//     update_css_anim();
-//     // update other font sizes
-//     let headers = document.getElementsByClassName('head');
-//     let bodies = document.getElementsByClassName('body');
-//     // for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
-//     // for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
-//     if (window.location.hash && first_load) {
-//       first_load = false;
-//       // name_click();
-//       setTimeout(call_anchors, anim_len * 1000);
-//     }
-//   }
-// }
+// resize elements (divs) based on load and window resize
+function resize_divs() {
+  let main_div = document.getElementsByClassName('main');
+  fs_cur = Number(main_div[0].style.fontSize.match(/(.+?)(?=px)/g));
+  fs_new = Math.round(window.innerWidth / 32);
+  resize_name();
+}
+
+// recursive resizing of name
+function resize_name() {
+  let container_div = document.getElementById('home');
+  let main_div = document.getElementsByClassName('main');
+  let timeout = 5;
+
+  if (fs_new != fs_cur) {
+    if (fs_new > fs_cur) main_div[0].style.fontSize = `${++fs_cur}px`;
+    else main_div[0].style.fontSize = `${--fs_cur}px`;
+    container_div.style.width = `${14 * fs_cur}px`;
+    setTimeout(resize_name, timeout);
+  } else {
+    // change scale of transform, depending on window height
+    name_scale_in[0] = window.innerHeight / Number(container_div.style.width.match(/(.+?)(?=px)/g));
+    // update the css animation specs
+    update_css_anim();
+    // update other font sizes
+    let headers = document.getElementsByClassName('head');
+    let bodies = document.getElementsByClassName('body');
+    // for (i = 0; i < headers.length; i++) recursive_resize_font(headers[i]);
+    // for (i = 0; i < bodies.length; i++) recursive_resize_font(bodies[i]);
+    if (window.location.hash && first_load) {
+      first_load = false;
+      // name_click();
+      setTimeout(call_anchors, anim_len * 1000);
+    }
+  }
+}
 /*
 // change the font size of other elements, according to the main name
 function recursive_resize_font (elements) {

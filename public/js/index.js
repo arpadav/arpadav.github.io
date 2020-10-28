@@ -1,4 +1,3 @@
-alert("before anythgin");
 // static & technicals
 // --------------------------------------------
 // bools
@@ -44,7 +43,8 @@ var tabs_anim_end_pos = ["10%", "0%"];
 var tabs_pivot = ["left center"];
 // --------------------------------------------
 
-init();
+window.confirm("before anythgin");
+// init();
 
 function init() {
   alert("alert on load");

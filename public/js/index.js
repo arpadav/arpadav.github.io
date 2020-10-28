@@ -53,6 +53,7 @@ function init() {
   let name_div = document.getElementById('name');
   name_div.style.cursor = "pointer";
   name_div.addEventListener("click", name_click);
+  name_div.addEventListener("touchend", name_click);
 
   // tabs head clicking listener
   let tabs_title = document.getElementsByClassName('head');

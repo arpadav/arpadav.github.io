@@ -230,9 +230,9 @@ function update_css_anim() {
 
   // NAME INITIAL ROTATION
   let keyframes = find_keyframes_rule("name_rotate_vert");
-  keyframes.deleteRule("1%");
+  keyframes.deleteRule("0%");
   keyframes.deleteRule("100%");
-  keyframes.appendRule(create_css_transform_rule(1,
+  keyframes.appendRule(create_css_transform_rule(0,
     "translate", true, name_anim_begin_pos,
     "rotate", true, name_anim_begin_rot,
     "transform-origin", false, name_pivot,
@@ -245,9 +245,9 @@ function update_css_anim() {
 
   // NAME SECOND ROTATION
   keyframes = find_keyframes_rule("name_rotate_horz");
-  keyframes.deleteRule("1%");
+  keyframes.deleteRule("0%");
   keyframes.deleteRule("100%");
-  keyframes.appendRule(create_css_transform_rule(1,
+  keyframes.appendRule(create_css_transform_rule(0,
     "translate", true, name_anim_end_pos,
     "rotate", true, name_anim_end_rot,
     "transform-origin", false, name_pivot,
@@ -260,9 +260,9 @@ function update_css_anim() {
 
     // TABS INITIAL ROTATION
     keyframes = find_keyframes_rule("tabs_rotate_vert");
-    keyframes.deleteRule("1%");
+    keyframes.deleteRule("0%");
     keyframes.deleteRule("100%");
-    keyframes.appendRule(create_css_transform_rule(1,
+    keyframes.appendRule(create_css_transform_rule(0,
       "translate", true, tabs_anim_begin_pos,
       "rotate", true, tabs_anim_begin_rot,
       "transform-origin", false, tabs_pivot,
@@ -275,9 +275,9 @@ function update_css_anim() {
 
     // TABS SECOND ROTATION
     keyframes = find_keyframes_rule("tabs_rotate_horz");
-    keyframes.deleteRule("1%");
+    keyframes.deleteRule("0%");
     keyframes.deleteRule("100%");
-    keyframes.appendRule(create_css_transform_rule(1,
+    keyframes.appendRule(create_css_transform_rule(0,
       "translate", true, tabs_anim_end_pos,
       "rotate", true, tabs_anim_end_rot,
       "transform-origin", false, tabs_pivot,

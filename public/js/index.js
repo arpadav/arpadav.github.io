@@ -1,3 +1,14 @@
+let name_div = document.getElementById('name');
+name_div.style.cursor = "pointer";
+name_div.addEventListener("click", debug_change_name);
+
+
+// debug
+function debug_change_name() {
+  let name_div = document.getElementById('name');
+  name_div.children[0].innerHTML = name_div.children[0].innerHTML + "1";
+}
+/*
 // static & technicals
 // --------------------------------------------
 // bools
@@ -46,45 +57,35 @@ var tabs_pivot = ["left center"];
 init();
 
 function init() {
+  // resize on load
+  resize_divs();
+
+  // name clicking listener
   let name_div = document.getElementById('name');
   name_div.style.cursor = "pointer";
-  name_div.addEventListener("click", debug_change_name);
+  name_div.addEventListener("click", name_click);
 
-  // // resize on load
-  // resize_divs();
-  //
-  // // name clicking listener
-  // let name_div = document.getElementById('name');
-  // name_div.style.cursor = "pointer";
-  // name_div.addEventListener("click", name_click);
-  //
-  // // tabs head clicking listener
-  // let tabs_title = document.getElementsByClassName('head');
-  // for (i = 0; i < tabs_title.length; i++) {
-  //   tabs_title[i].style.cursor = "pointer";
-  //   tabs_title[i].addEventListener("click", toggle_collapse);
-  // }
-  //
-  // // add listener for resizing the window
-  // window.addEventListener("resize", function(){
-  //   clearTimeout(resize_timeout);
-  //   resize_timeout = setTimeout(resize_divs, 100);
-  // });
-  //
-  // // key event triggers name_click
-  // // keys: enter, space, numbers, letters
-  // document.body.onkeyup = function(e) {
-  //   if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
-  // }
-  //
-  // // testing ---------------------------------------------
-  // // testing ---------------------------------------------
-}
+  // tabs head clicking listener
+  let tabs_title = document.getElementsByClassName('head');
+  for (i = 0; i < tabs_title.length; i++) {
+    tabs_title[i].style.cursor = "pointer";
+    tabs_title[i].addEventListener("click", toggle_collapse);
+  }
 
-// debug
-function debug_change_name() {
-  let name_div = document.getElementById('name');
-  name_div.children[0].innerHTML = name_div.children[0].innerHTML + "1";
+  // add listener for resizing the window
+  window.addEventListener("resize", function(){
+    clearTimeout(resize_timeout);
+    resize_timeout = setTimeout(resize_divs, 100);
+  });
+
+  // key event triggers name_click
+  // keys: enter, space, numbers, letters
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
+  }
+
+  // testing ---------------------------------------------
+  // testing ---------------------------------------------
 }
 
 // =======================================================================
@@ -400,4 +401,4 @@ function find_keyframes_rule(rule) {
     }
   }
   return null;
-}
+}*/

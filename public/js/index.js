@@ -1,7 +1,7 @@
 let name_div = document.getElementById('name');
 name_div.style.cursor = "pointer";
 name_div.addEventListener("click", debug_change_name);
-debug_change_name("mobile28")
+debug_change_name("mobile29")
 
 // debug
 function debug_change_name(new_name) {
@@ -70,8 +70,8 @@ function init() {
   let tabs_title = document.getElementsByClassName('head');
   for (i = 0; i < tabs_title.length; i++) {
     tabs_title[i].style.cursor = "pointer";
-    // tabs_title[i].addEventListener("click", toggle_collapse);
-    tabs_title[i].addEventListener("click", debug_change_name);
+    tabs_title[i].addEventListener("click", toggle_collapse);
+    // tabs_title[i].addEventListener("click", debug_change_name);
   }
 
   // add listener for resizing the window
@@ -112,6 +112,7 @@ function single_collapse(id) {
   // let bodies = document.getElementsByClassName('body');
   // bodies[div_index].style.maxHeight = bodies[div_index].scrollHeight + "px";
 }
+*/
 
 // collapse bodies upon clicking title or name
 // links do not cause collapse animations
@@ -130,7 +131,6 @@ function toggle_collapse(force_collapse) {
     }
   }
 }
-*/
 // resize elements (divs) based on load and window resize
 function resize_divs() {
   let main_div = document.getElementsByClassName('main');

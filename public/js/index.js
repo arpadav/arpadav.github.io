@@ -43,39 +43,35 @@ var tabs_anim_end_pos = ["10%", "0%"];
 var tabs_pivot = ["left center"];
 // --------------------------------------------
 
-window.confirm("before anythgin");
-// init();
+init();
 
 function init() {
-  alert("alert on load");
-  // // resize on load
-  // resize_divs();
-  update_css_anim();
+  // resize on load
+  resize_divs();
 
   // name clicking listener
   let name_div = document.getElementById('name');
-  // name_div.style.cursor = "pointer";
+  name_div.style.cursor = "pointer";
   name_div.addEventListener("click", name_click);
-  // name_div.addEventListener("touchend", name_click);
 
   // tabs head clicking listener
-  // let tabs_title = document.getElementsByClassName('head');
-  // for (i = 0; i < tabs_title.length; i++) {
-  //   // tabs_title[i].style.cursor = "pointer";
-  //   tabs_title[i].addEventListener("click", toggle_collapse);
-  // }
+  let tabs_title = document.getElementsByClassName('head');
+  for (i = 0; i < tabs_title.length; i++) {
+    tabs_title[i].style.cursor = "pointer";
+    tabs_title[i].addEventListener("click", toggle_collapse);
+  }
 
-  // // add listener for resizing the window
-  // window.addEventListener("resize", function(){
-  //   clearTimeout(resize_timeout);
-  //   resize_timeout = setTimeout(resize_divs, 100);
-  // });
-  //
-  // // key event triggers name_click
-  // // keys: enter, space, numbers, letters
-  // document.body.onkeyup = function(e) {
-  //   if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
-  // }
+  // add listener for resizing the window
+  window.addEventListener("resize", function(){
+    clearTimeout(resize_timeout);
+    resize_timeout = setTimeout(resize_divs, 100);
+  });
+
+  // key event triggers name_click
+  // keys: enter, space, numbers, letters
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
+  }
 
   // testing ---------------------------------------------
   // testing ---------------------------------------------
@@ -190,14 +186,9 @@ function call_anchors() {
 // rotate name on click, disable clicking for animation length
 // change visibility of other elements depending on status
 function name_click() {
-  alert("clicked immed");
   let name_div = document.getElementById('name');
   let tabs = document.getElementsByClassName('tab');
-
-  alert("clicked before functions");
-
   if (click_enable) {
-    alert("clicked_enable");
     click_enable = false;
     if (rotated) {
       if (!first_load) window.location.hash = '';
@@ -210,22 +201,18 @@ function name_click() {
       }
       rotated = false;
     } else {
-      alert("!rotated");
       if (tabs_first_invisible) {
         set_tab_visibility(true);
         tabs_first_invisible = false;
-        alert("first invis");
       }
       toggle_collapse(true);
       name_div.style.animation = `name_rotate_vert ${anim_len}s forwards`;
       name_div.style.webkitAnimation  = `name_rotate_vert ${anim_len}s forwards`;
-      alert("name anim");
       for (i = 0; i < tabs.length; i++) {
         tabs[i].style.animation = `tabs_rotate_vert ${anim_len}s forwards, fade_in ease ${anim_len}s forwards`;
         tabs[i].style.webkitAnimation  = `tabs_rotate_vert ${anim_len}s forwards, fade_in ease ${anim_len}s forwards`;
         tabs[i].style.pointerEvents = "auto";
       }
-      alert("tabs anim");
       rotated = true;
     }
     setTimeout(function(){ click_enable = true; }, anim_len * 1000);

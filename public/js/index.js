@@ -151,8 +151,8 @@ function resize_name() {
   } else {
     // change scale of transform, depending on window height
     name_scale_in[0] = window.innerHeight / Number(container_div.style.width.match(/(.+?)(?=px)/g));
-    // // update the css animation specs
-    // update_css_anim();
+    // update the css animation specs
+    update_css_anim();
     // update other font sizes
     let headers = document.getElementsByClassName('head');
     let bodies = document.getElementsByClassName('body');
@@ -231,7 +231,7 @@ function name_click() {
     setTimeout(function(){ click_enable = true; }, anim_len * 1000);
   }
 }
-
+*/
 // initialize css animations with transforms and rules
 function update_css_anim() {
 
@@ -301,7 +301,7 @@ function update_css_anim() {
       "transform-origin", false, tabs_pivot,
       "scale", true, tabs_scale_out));
 }
-
+/*
 // =======================================================================
 // =                           FULL TECHNICAL                            =
 // =======================================================================
@@ -321,12 +321,12 @@ function get_css_property(type, prop, str) {
     catch(err) { return null; }
   }
 }
-
+*/
 // used in adding a rule for transformations
 // used in initialization, and (somewhat) beyond
 // returns a string (rule) to be added to the CSS rules
 // input format: (0-100 percent, string func1, bool trans_dep1, array params1, string func2, ...
-function create_css_transform_rule () {
+function create_css_transform_rule() {
   // save arguments
   let this_args = arguments;
 
@@ -373,9 +373,11 @@ function create_css_transform_rule () {
     rule = rule + "; ";
   });
 
+  console.log(rule + " }");
+
   return rule + " }";
 }
-
+/*
 // uses CSS DOM to look through CSS rules
 // used in finding CSS styles
 function find_selectortext_rule(rule) {
@@ -389,7 +391,7 @@ function find_selectortext_rule(rule) {
   }
   return null;
 }
-
+*/
 // uses CSS DOM to look through CSS rules
 // used in initialization of keyframe animations
 function find_keyframes_rule(rule) {
@@ -402,4 +404,4 @@ function find_keyframes_rule(rule) {
     }
   }
   return null;
-}*/
+}

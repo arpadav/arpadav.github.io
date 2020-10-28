@@ -1,3 +1,4 @@
+alert("before anythgin");
 // static & technicals
 // --------------------------------------------
 // bools

@@ -65,20 +65,20 @@ function init() {
   // name_div.style.cursor = "pointer";
   // name_div.addEventListener("click", name_click);
 
-  // IF REMOVE THIS, THEN WORK
+
+  // IF COMMENT THIS, THEN WORK
   // // tabs head clicking listener
   // let tabs_title = document.getElementsByClassName('head');
   // for (i = 0; i < tabs_title.length; i++) {
   //   tabs_title[i].style.cursor = "pointer";
-  //   // tabs_title[i].addEventListener("click", toggle_collapse);
-  //   tabs_title[i].addEventListener("click", debug_change_name);
+  //   tabs_title[i].addEventListener("click", toggle_collapse);
   // }
 
-  // // add listener for resizing the window
-  // window.addEventListener("resize", function(){
-  //   clearTimeout(resize_timeout);
-  //   resize_timeout = setTimeout(resize_divs, 100);
-  // });
+  // add listener for resizing the window
+  window.addEventListener("resize", function(){
+    clearTimeout(resize_timeout);
+    resize_timeout = setTimeout(resize_divs, 100);
+  });
 
   // key event triggers name_click
   // keys: enter, space, numbers, letters
@@ -112,8 +112,7 @@ function single_collapse(id) {
   // let bodies = document.getElementsByClassName('body');
   // bodies[div_index].style.maxHeight = bodies[div_index].scrollHeight + "px";
 }
-*/
-/*
+
 // collapse bodies upon clicking title or name
 // links do not cause collapse animations
 function toggle_collapse(force_collapse) {
@@ -130,7 +129,8 @@ function toggle_collapse(force_collapse) {
       else content.style.maxHeight = content.scrollHeight + "px";
     }
   }
-}*/
+}
+*/
 // resize elements (divs) based on load and window resize
 function resize_divs() {
   let main_div = document.getElementsByClassName('main');

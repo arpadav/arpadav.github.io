@@ -142,9 +142,14 @@ function toggle_collapse(force_collapse) {
       this.classList.toggle("active");
       let content = this.nextElementSibling;
       for (let i = 0; i < bodies.length; i++) if (bodies[i] != content) bodies[i].style.maxHeight = null;
-      if (content.style.maxHeight) content.style.maxHeight = null;
-      else content.style.maxHeight = content.scrollHeight + "px";
-      window.history.replaceState("#" + this.parentNode.id, '', "#" + this.parentNode.id);
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        window.history.replaceState(' ', '', ' ');
+      }
+      else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        window.history.replaceState("#" + this.parentNode.id, '', "#" + this.parentNode.id);
+      }
     }
   }
 }

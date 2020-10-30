@@ -1,2 +1,4 @@
 # arpadav.github.io
-*me website*
+personal, professional website
+
+will also hold a documented list of all my projects and notes

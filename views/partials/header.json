@@ -21,6 +21,11 @@
       "true_dir": "none"
     },
     {
+      "display": "CV",
+      "dir": "./#cv",
+      "true_dir": "none"
+    },
+    {
       "display": "Projects",
       "dir": "./projects/",
       "true_dir": "./views/pages/projects.html"

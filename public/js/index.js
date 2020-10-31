@@ -41,9 +41,9 @@ var tabs_scale_in = [1];
 var tabs_scale_out = [1];
 
 // scale of various segments
-h2_scale = 0.55;
-h3_scale = 0.425;
-p_scale = 0.275;
+var h2_scale = 0.55;
+var h3_scale = 0.425;
+var p_scale = 0.275;
 
 // name rotation specifications
 var name_anim_begin_rot = ["0deg"];
@@ -166,8 +166,10 @@ function toggle_scrollbar(){
 // calls resize name and reset tabs height to resize
 function resize_divs() {
   let main_div = document.getElementsByClassName('main');
+  // fs_cur = fs_cur ? Number(main_div[0].style.fontSize.match(/(.+?)(?=px)/g)) : 32;
   fs_cur = Number(main_div[0].style.fontSize.match(/(.+?)(?=px)/g));
   fs_new = Math.round(window.innerWidth / 32);
+
   resize_name();
   reset_tabs_height();
 }

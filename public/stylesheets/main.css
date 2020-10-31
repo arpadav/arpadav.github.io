@@ -13,7 +13,7 @@ body {
 
 h1, h2 {
   font-family: "Courier New";
-  color: #000090;
+  color: #000090; /* r:0, g:0, b:144 */
   font-weight: normal;
 }
 
@@ -22,7 +22,7 @@ h1 {
 }
 
 h1:hover, h2:hover, a:hover {
-  color: #755cab;
+  color: #755cab; /* r:117, g:92, b:171 */
 }
 
 a, p, ol, ul {
@@ -41,7 +41,7 @@ li {
   align-items: center;
 }
 
-div.main {
+.main {
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -53,7 +53,7 @@ div.main {
   transform: translate(-50%, -50%);
 }
 
-div.tab {
+.tab {
   visibility: hidden;
   pointer-events: auto;
 }

@@ -3,11 +3,11 @@ h1, h2, p, a {
   color: #000090;
 }
 
-a {
+.header a {
   font-size: 115%;
 }
 
-a:hover:not(.active) {
+.header a:hover:not(.active) {
   color: #755cab;
   text-decoration: underline;
 }
@@ -16,18 +16,18 @@ a:hover:not(.active) {
   background-color: #e5cbc5;
 }
 
-ul {
+.header ul {
   list-style-type: none;
   overflow: hidden;
   margin: 0;
   padding: 0;
 }
 
-li {
+.header li {
   float: left;
 }
 
-li a {
+.header li a {
   display: block;
   text-align: center;
   padding: 10px 20px;

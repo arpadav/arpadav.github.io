@@ -22,7 +22,7 @@
     },
     {
       "display": "CV",
-      "dir": "./#cv",
+      "dir": "./cv.pdf",
       "true_dir": "none"
     },
     {

@@ -1,19 +1,10 @@
-h1, h2, p, a {
+h1, h2, h3, p, a {
   font-family: "Times New Roman";
   color: #000090;
 }
 
-.header a {
-  font-size: 115%;
-}
-
-.header a:hover:not(.active) {
-  color: #755cab;
-  text-decoration: underline;
-}
-
-.active {
-  background-color: #e5cbc5;
+body {
+  background-color: #ffe2db;
 }
 
 .header ul {
@@ -27,6 +18,15 @@ h1, h2, p, a {
   float: left;
 }
 
+.header a {
+  font-size: 115%;
+}
+
+.header a:hover:not(.active) {
+  color: #755cab;
+  text-decoration: underline;
+}
+
 .header li a {
   display: block;
   text-align: center;
@@ -34,6 +34,24 @@ h1, h2, p, a {
   text-decoration: none;
 }
 
-body {
-  background-color: #ffe2db;
+.body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+
+  display: flex;
+  align-items: center;
+}
+
+.active .rotateimg90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }

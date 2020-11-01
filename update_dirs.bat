@@ -1,22 +1,55 @@
+:: gets a directory, creates a json file for said directory
+:: in the following format:
+:: folders[] - holds an indexed list of all folders
+:: folders[i]['name'] - holds the folder name
+:: folders[i]['files'][] -	holds an indexed list of all files 
+:: 							within the directory (minus title.txt
+::							and comments.txt)
+:: folders[i]['files'][j]['dir'] - file name + extension
+:: folders[i]['title'] - 	holds title of notes/project to be
+::							displayed in certain circumstances,
+::							given by title.txt within the folder
+:: folders[i]['comments'] - holds comments about notes/project
+::							to be displayed in cirtain
+::							circumstances, given by comments.txt
+::							in the folder
+
 @ECHO OFF
 
 TITLE %~n0%~x0
 SETLOCAL EnableDelayedExpansion
+SET files_in_dir=0
+
+SET title_file=title.txt
+SET title_in_dir=0
+
+SET comments_file=comments.txt
+SET comments_in_dir=0
 
 SET main_dir=%~dp0
 SET json_to=views\partials\
 
-:: first json dir
+:: FIRST json dir
 SET json_from1=%main_dir%resources\notes\school\
 SET json_to1=notes_school.json
+:: THIRD json dir
+SET json_from3=%main_dir%resources\projects\school\
+SET json_to3=projects_school.json
+:: FOURTH json dir
+SET json_from4=%main_dir%resources\projects\personal\
+SET json_to4=projects_personal.json
 
-:: start json generation for 1
+:: json generation for FIRST, then save
 CALL :get_json json_raw "%json_from1%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to1%"
+:: json generation for THIRD, then save
+CALL :get_json json_raw "%json_from3%"
+ECHO %json_raw% > "%main_dir%%json_to%%json_to3%"
+:: json generation for FOURTH, then save
+CALL :get_json json_raw "%json_from4%"
+ECHO %json_raw% > "%main_dir%%json_to%%json_to4%"
 
-:: start json generation for 2
-REM CALL :get_json json_raw %json_from2%
-REM ECHO %json_raw% > "%main_dir%%json_to%%json_to2%"
+GOTO :EOF
 
 :get_json
 ::get_json(return_value, dir)
@@ -29,14 +62,46 @@ CD %#dir%
 FOR /d %%d IN (*.*) DO (
 	SET return_json=!return_json!{^"name^":^"%%d^",^"files^":[
 	CD %%d
+	
+	SET files_in_dir=0
+	SET title_in_dir=0
+	SET comments_in_dir=0
 	FOR /r %%f IN (*.*) DO (
-		SET return_json=!return_json!{^"dir^":^"%%~nxf^"},
+		IF NOT %%~nxf==!title_file! IF NOT %%~nxf==!comments_file! (
+			SET files_in_dir=1
+			SET return_json=!return_json!{^"dir^":^"%%~nxf^"},
+		)
+		IF %%~nxf==!title_file! (
+			SET title_in_dir=1
+		)
+		IF %%~nxf==!comments_file! (
+			SET comments_in_dir=1
+		)
 	)
-	SET return_json=!return_json:~0,-1!]},
+	IF !files_in_dir!==1 (
+		SET return_json=!return_json:~0,-1!]
+	) ELSE (
+		SET return_json=!return_json!]
+	)
+	IF !title_in_dir!==1 (
+		SET /p title=<!title_file!
+		SET return_json=!return_json!,^"title^":^"!title!^"
+	) ELSE (
+		SET return_json=!return_json!,^"title^":^"^"
+	)
+	IF !comments_in_dir!==1 (
+		SET /p comments=<!comments_file!
+		SET return_json=!return_json!,^"comments^":^"!comments!^"
+	) ELSE (
+		SET return_json=!return_json!,^"comments^":^"^"
+	)	
+	SET return_json=!return_json!},
 	CD ..
 )
 SET return_json=!return_json:~0,-1!]}
-ECHO %return_json%
 
-SET "%~1=%return_json%"
+REM ECHO !return_json!
+REM PAUSE
+
+SET "%~1=!return_json!"
 GOTO :EOF

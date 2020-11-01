@@ -1,0 +1,1 @@
+Adjusting Hybrid-Energy Model of Photovoltaic Generators to fit Klucher Weather Model

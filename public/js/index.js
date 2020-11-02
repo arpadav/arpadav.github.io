@@ -1,4 +1,3 @@
-
 // debug_change_name("mobile31")
 
 // debug
@@ -8,7 +7,6 @@
 //   if (typeof new_name == "string") name_div.children[0].innerHTML = new_name;
 //   else name_div.children[0].innerHTML = name_div.children[0].innerHTML + "x";
 // }
-
 
 // static & technicals
 // --------------------------------------------
@@ -87,7 +85,7 @@ function init() {
   // key event triggers name_click
   // keys: enter, space, numbers, letters
   document.body.onkeyup = function(e) {
-    if(e.keyCode == 13 || e.keyCode == 32 || (e.keyCode >= 48 && e.keyCode <= 90)) name_click();
+    if(e.keyCode == 13 || e.keyCode == 32) name_click();
   }
 
   // testing ---------------------------------------------

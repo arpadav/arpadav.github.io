@@ -1,4 +1,4 @@
-h1, h2, h3, p, a {
+h1, h2, h3, h4, p, a {
   font-family: "Times New Roman";
   color: #000090;
 }
@@ -37,7 +37,7 @@ body {
 .body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.3s ease-out;
 }
 
 .card {
@@ -46,6 +46,16 @@ body {
 
   display: flex;
   align-items: center;
+}
+
+.center_card {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.active {
+  background-color: #f2d7d0;
 }
 
 .active .rotateimg90 {

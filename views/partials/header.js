@@ -1,14 +1,15 @@
-import {readJSON} from '../../public/js/technicals.js';
+import {readJSON} from '../../../public/js/technicals.js';
 
-readJSON('../partials/header.json', null, create_header_html);
+readJSON('../../../views/partials/header.json', null, create_header_html);
 
 // read from header.json
 function create_header_html(params, json_arr) {
   let header_html = '<ul>'
+  header_html = header_html + '<li><img src="../../../resources/images/alligator.png"/></li>';
   let pages = json_arr['pages'];
   for (let i = 0; i < pages.length; i++) {
     header_html = header_html + '<li><a ';
-    header_html = header_html + 'href=\"../../' + pages[i]['dir'] + '\" target=\"_parent\">' + pages[i]['display'] + '</a></li>';
+    header_html = header_html + 'href=\"../../../' + pages[i]['dir'] + '\" target=\"_parent\">' + pages[i]['display'] + '</a></li>';
   }
   document.getElementById('header').innerHTML = header_html + '</ul>';
 }

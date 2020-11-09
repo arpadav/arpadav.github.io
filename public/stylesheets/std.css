@@ -19,11 +19,11 @@ body {
 }
 
 .header a {
-  font-size: 115%;
+  font-size: 100%;
 }
 
 .header a:hover:not(.active) {
-  color: #755cab;
+  /* color: #755cab; */
   text-decoration: underline;
 }
 

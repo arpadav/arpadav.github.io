@@ -1,1 +1,1 @@
-GAN Plotter
+Physical Plotting Output of Generative Adversarial Network Trained on Landscape Portraits

@@ -2,27 +2,29 @@
 <html>
 <head id="head"></head>
 <script src="../../views/partials/head.js"></script>
+
 <div id='header' class='header'></div>
-<link rel="stylesheet" href="../../public/stylesheets/std.css">
-<iframe id="iframe" src="../../views/pages/subpages/2020terrainid.html" width="100%" style="border:none;" onload="setIframeHeight(this.id)"></iframe>
 <script type="module" src="../../views/partials/header.js"></script>
+
+<iframe id="iframe" src="../../views/pages/subpages/2020terrain.html" width="100%" style="border:none;" onload="setIframeHeight(this.id)"></iframe>
 <script>
 // from https://www.dyn-web.com/tutorials/iframes/height/
 function setIframeHeight(id) {
 	let ifrm = document.getElementById(id);
-    let doc = ifrm.contentDocument? ifrm.contentDocument: 
+    let doc = ifrm.contentDocument? ifrm.contentDocument:
         ifrm.contentWindow.document;
     ifrm.style.visibility = 'hidden';
-    ifrm.style.height = "10px"; 
-    ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+    ifrm.style.height = "10px";
+    ifrm.style.height = getDocHeight( doc ) + 30 + "px";
     ifrm.style.visibility = 'visible';
 }
 function getDocHeight(doc) {
 	doc = doc || document;
 	let body = doc.body, html = doc.documentElement;
-	let height = Math.max( body.scrollHeight, body.offsetHeight, 
+	let height = Math.max( body.scrollHeight, body.offsetHeight,
 		html.clientHeight, html.scrollHeight, html.offsetHeight );
 	return height;
 }
 </script>
+<link rel="stylesheet" href="../../public/stylesheets/std.css">
 </html>

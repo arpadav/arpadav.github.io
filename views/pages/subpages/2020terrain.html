@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head id="head"></head>
+<script src="../../partials/head.js"></script>
+<body>
+<link rel="stylesheet" href="../../../public/stylesheets/std.css">
+
+<h4>Terrain Identification using Sensory Prosthetic Limb Timeseries Data</h4>
+
+<hr>
+<p><i>Overview:</i></p>
+<p>See abstract of the report below</p>
+
+<hr>
+<p><i>My Contribution:</i></p>
+<p>Using Keras and the Google Colab environment, I ran 16 different neural network architectures in parallel to find the best performing model in identifying the terrain an impaired individual with a prosthetic limb was overcoming. Afterward, a simple gridsearch was performed for hyperparameter tuning. I used MATLAB for all the data pre-processing and post-processing. As seen in the report, a multi-layered convolutional network for the timeseries data was preferred as it was able to extract features from the data not normally seen. Afterward, a recurring network was used in a small window to evaluate said features and label the terrain accordingly. The data was overwhelmingly skewed torward the 'walking on flat surface' terrain, which is why in the report it's seen some predictions oscillate between other terrains and the previously stated. a SMOTE could be incorporated to improve this discrepency, however, its proven more difficult to incorporate such concepts due to my (current) lack of experience with SMOTE + timeseries data.</p>
+<p>Despite this, one of my models obtained an F1 score of 83.8%, which is 3rd in the class (of 28 teams). My teammates unfortunately only aided me near the end of the project, so they were able to help with the writing of the report.</p>
+
+<hr>
+<p><i>Literature:</i></p>
+<iframe class="center" src="../../../resources/projects/school/2020terrain/Project_1_1_Team_2_ECE_542.pdf" width=60% height=950></iframe>
+
+</body>
+<base target="_parent">
+</html>

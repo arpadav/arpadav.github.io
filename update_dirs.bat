@@ -38,6 +38,9 @@ SET json_to3=projects_school.json
 :: FOURTH json dir
 SET json_from4=%main_dir%resources\projects\personal\
 SET json_to4=projects_personal.json
+:: FIFTH json dir
+SET json_from5=%main_dir%resources\projects\professional\
+SET json_to5=projects_professional.json
 
 :: json generation for FIRST, then save
 CALL :get_json json_raw "%json_from1%"
@@ -48,6 +51,9 @@ ECHO %json_raw% > "%main_dir%%json_to%%json_to3%"
 :: json generation for FOURTH, then save
 CALL :get_json json_raw "%json_from4%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to4%"
+:: json generation for FIFTH, then save
+CALL :get_json json_raw "%json_from5%"
+ECHO %json_raw% > "%main_dir%%json_to%%json_to5%"
 
 GOTO :EOF
 

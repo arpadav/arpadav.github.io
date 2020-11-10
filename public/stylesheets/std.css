@@ -1,4 +1,4 @@
-h1, h2, h3, h4, p, a {
+h1, h2, h3, h4, p, a, li {
   font-family: "Times New Roman";
   color: #000090;
 }
@@ -48,10 +48,22 @@ body {
   align-items: center;
 }
 
-.center_card {
+/* .center_card {
   display: block;
   margin: 0 auto;
   width: 30%;
+} */
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center_desc {
+  margin-left: auto;
+  margin-right: auto;
+  width: 32em
 }
 
 .active {

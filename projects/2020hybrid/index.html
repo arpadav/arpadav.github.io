@@ -3,11 +3,27 @@
 <head id="head"></head>
 <script src="../../views/partials/head.js"></script>
 
-<div id='header' class='header'></div>
-<script type="module" src="../../views/partials/header.js"></script>
+<div id="sidebar" class="sidebar"></div>
+<script type="module" src="../../views/partials/sidebar.js"></script>
 
-<iframe id="iframe" src="../../views/pages/subpages/2020hybrid.html" width="100%" style="border:none;" onload="setIframeHeight(this.id)"></iframe>
+<div class="beside_sidebar">
+  <div id='header' class='header'></div>
+  <script type="module" src="../../views/partials/header.js"></script>
+
+  <iframe id="iframe" src="../../views/pages/subpages/2020hybrid.html" width="100%" style="border:none;" onload="setIframeHeight(this.id)"></iframe>
+</div>
+
 <script>
+var resize_timeout;
+init();
+function init() {
+  // add listener for resizing the window
+  window.addEventListener("resize", function(){
+    clearTimeout(resize_timeout);
+    resize_timeout = setTimeout(function () { setIframeHeight('iframe'); }, 200);
+  });
+}
+
 // from https://www.dyn-web.com/tutorials/iframes/height/
 function setIframeHeight(id) {
 	let ifrm = document.getElementById(id);

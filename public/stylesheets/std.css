@@ -6,25 +6,46 @@ h1, h2, h3, h4, p, a, li {
 body {
   background-color: #ffe2db;
 }
+html, body { height: 93%; }
+
+li > h3 {
+  font-weight: normal;
+}
+
+.sidebar {
+  list-style-type: none;
+  float: left;
+  text-align: center;
+
+  /* height: 100%; */
+  width: 290px;
+}
+
+.sidebar li {
+  padding: 5px 0px;
+}
+
+.beside_sidebar {
+  float: left;
+  width: calc(100% - 290px - 2px);
+}
 
 .header ul {
   list-style-type: none;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
 
-.header li {
-  float: left;
-}
-
-.header a {
-  font-size: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-left: -10px;
 }
 
 .header a:hover:not(.active) {
   /* color: #755cab; */
   text-decoration: underline;
+}
+
+.header li {
+  float: left;
 }
 
 .header li a {
@@ -40,6 +61,13 @@ body {
   transition: max-height 0.3s ease-out;
 }
 
+.main {
+  float: left;
+  clear: left;
+
+  width: 100%;
+}
+
 .card {
   position: relative;
   display: inline-block;
@@ -47,12 +75,6 @@ body {
   display: flex;
   align-items: center;
 }
-
-/* .center_card {
-  display: block;
-  margin: 0 auto;
-  width: 30%;
-} */
 
 .center {
   display: block;

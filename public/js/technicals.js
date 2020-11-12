@@ -13,7 +13,7 @@ function readJSON(path, params, callback) {
 function create_link_listing(loc, json_arr) {
   let link_listing = '<ul>';
   let folders = json_arr['folders'];
-  for (let i = 0; i < folders.length; i++) {
+  for (let i = folders.length - 1; i >= 0; i--) { // backwards, for rough chronological
     link_listing = link_listing + '<p>' + folders[i]['name'] + '</p><ul>';
     for (let j = 0; j < folders[i]['files'].length; j++) {
       link_listing = link_listing + '<li><a href=\"../../resources/notes/' + loc + '/' + folders[i]['name'] + '/' + folders[i]['files'][j]['dir'] + '\"';
@@ -30,7 +30,7 @@ function create_iframes(params, json_arr) {
   let loc = params[0];
   let iframe_list = '';
   let folders = json_arr['folders'];
-  for (let i = 0; i < folders.length; i++) {
+  for (let i = folders.length - 1; i >= 0; i--) { // backwards, for rough chronological
     iframe_list = iframe_list + '<div class=\"card\">';
     iframe_list = iframe_list + '<img src=\"../../resources/images/tri.png\" width=7 height=7 class=\"rotateimg90\"/>';
     iframe_list = iframe_list + '<h3 style=\"margin-left: 7px\">' + folders[i]['title'] + '</h3></div>';

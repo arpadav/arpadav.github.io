@@ -18,7 +18,7 @@ function create_sidebar_html(params, json_arr) {
     for (let i = 0; i < parents.length; i++) {
       sidebar_html = sidebar_html + '<li><h3>' + parents[i]['name'] + '</h3></li>';
       let children = parents[i]['children'];
-      for (let j = 0; j < children.length; j++) {
+      for (let j = children.length - 1; j >= 0; j--) { // backwards, for rough chronological
         sidebar_html = sidebar_html + '<li><a ';
         sidebar_html = sidebar_html + 'href=\"../../../projects/' + children[j]['dir'] + '\" target=\"_parent\"><i>' + children[j]['title'] + '</i></a></li>';
       }

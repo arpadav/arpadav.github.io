@@ -30,11 +30,11 @@ SET main_dir=%~dp0
 SET json_to=views\partials\
 
 :: FIRST json dir
-SET json_from1=%main_dir%resources\notes\school\
-SET json_to1=notes_school.json
+SET json_from1=%main_dir%resources\notes\academic\
+SET json_to1=notes_academic.json
 :: THIRD json dir
-SET json_from3=%main_dir%resources\projects\school\
-SET json_to3=projects_school.json
+SET json_from3=%main_dir%resources\projects\academic\
+SET json_to3=projects_academic.json
 :: FOURTH json dir
 SET json_from4=%main_dir%resources\projects\personal\
 SET json_to4=projects_personal.json
@@ -49,19 +49,29 @@ SET jsonf_to1=sidebar.json
 :: json generation for FIRST, then save
 CALL :get_json_files json_raw "%json_from1%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to1%"
+REM ECHO 1
+REM PAUSE
 :: json generation for THIRD, then save
 CALL :get_json_files json_raw "%json_from3%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to3%"
+REM ECHO 3
+REM PAUSE
 :: json generation for FOURTH, then save
 CALL :get_json_files json_raw "%json_from4%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to4%"
+REM ECHO 4
+REM PAUSE
 :: json generation for FIFTH, then save
 CALL :get_json_files json_raw "%json_from5%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to5%"
+REM ECHO 5
+REM PAUSE
 
-:: json generation for FIFTH, then save
+:: json generation for FIRST folder, then save
 CALL :get_json_folders json_raw "%jsonf_from1%"
 ECHO %json_raw% > "%main_dir%%json_to%%jsonf_to1%"
+REM ECHO 1f
+REM PAUSE
 
 GOTO :EOF
 

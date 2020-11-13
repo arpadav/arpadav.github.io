@@ -32,11 +32,11 @@ function create_iframes(params, json_arr) {
   let folders = json_arr['folders'];
   for (let i = folders.length - 1; i >= 0; i--) { // backwards, for rough chronological
     iframe_list = iframe_list + '<div class=\"card\">';
-    iframe_list = iframe_list + '<img src=\"../../resources/images/tri.png\" width=7 height=7 class=\"rotateimg90\"/>';
-    iframe_list = iframe_list + '<h3 style=\"margin-left: 7px\">' + folders[i]['title'] + '</h3></div>';
+    iframe_list = iframe_list + '<img style=\"width: 7px; height: 7px;\" src=\"../../resources/images/tri.png\" class=\"rotateimg90\"/>';
+    iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + '</i></h3></div>';
     iframe_list = iframe_list + '<div class=\"body\" id=\"' + folders[i]['name'] + '\"><p>' + folders[i]['comments'] + '</p>';
     iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br>';
-    iframe_list = iframe_list + '<iframe src=\"subpages/' + folders[i]['name'] + '.html\" title=\"' + folders[i]['name'] + '\" style=\"margin-left: 10%\" width=80% height=1000></iframe>';
+    iframe_list = iframe_list + '<iframe id=\"subpage_' + folders[i]['name'] + '\" class=\"iframes_fh\" src=\"subpages/' + folders[i]['name'] + '.html\" title=\"' + folders[i]['name'] + '\" style=\"margin-left: 10%\" width=80% onload=\"init_iframes_fh()\"></iframe>';
     iframe_list = iframe_list + '<br><a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a>';
     iframe_list = iframe_list + '</div>';
   }

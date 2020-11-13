@@ -5,7 +5,9 @@ h1, h2, h3, h4, p, a, li {
 
 body {
   background-color: #ffe2db;
+  overflow-x: hidden;
 }
+
 html, body { height: 93%; }
 
 li > h3 {
@@ -17,7 +19,6 @@ li > h3 {
   float: left;
   text-align: center;
 
-  /* height: 100%; */
   width: 290px;
 }
 
@@ -39,11 +40,6 @@ li > h3 {
   margin-left: -10px;
 }
 
-.header a:hover:not(.active) {
-  /* color: #755cab; */
-  text-decoration: underline;
-}
-
 .header li {
   float: left;
 }
@@ -53,6 +49,36 @@ li > h3 {
   text-align: center;
   padding: 10px 20px;
   text-decoration: none;
+}
+
+.header a:hover:not(.active) {
+  /* color: #755cab; */
+  text-decoration: underline;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center_desc {
+  margin-left: auto;
+  margin-right: auto;
+  width: 32em
 }
 
 .body {
@@ -66,26 +92,6 @@ li > h3 {
   clear: left;
 
   width: 100%;
-}
-
-.card {
-  position: relative;
-  display: inline-block;
-
-  display: flex;
-  align-items: center;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.center_desc {
-  margin-left: auto;
-  margin-right: auto;
-  width: 32em
 }
 
 .active {

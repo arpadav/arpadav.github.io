@@ -1,1 +1,1 @@
-SQL something and line generation
+Duke Energy: SQL Query and One-Line Diagram Automation & Generation

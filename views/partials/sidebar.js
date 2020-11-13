@@ -6,7 +6,7 @@ var no_links = ["projects", "notes"];
 
 // read from header.json
 function create_sidebar_html(params, json_arr) {
-  let sidebar_html = '<li><img src="../../../resources/images/alligator.png"/></li>'
+  let sidebar_html = '<li><img style=\"width: 268px;\" src="../../../resources/images/alligator.png"/></li>'
 
   let page = window.location.href.split("/");
   page = page[page.length - 1].split(".")[0];

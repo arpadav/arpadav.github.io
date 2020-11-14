@@ -41,6 +41,11 @@ li {
   align-items: center;
 }
 
+img {
+  width: auto;
+  height: 100%;
+}
+
 .main {
   margin: 0 auto;
   position: absolute;

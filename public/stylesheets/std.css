@@ -78,7 +78,8 @@ li > h3 {
 .center_desc {
   margin-left: auto;
   margin-right: auto;
-  width: 32em
+  width: 32em;
+  text-align: center;
 }
 
 .body {

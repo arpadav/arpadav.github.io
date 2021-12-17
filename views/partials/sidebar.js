@@ -2,7 +2,9 @@ import {readJSON} from '../../../public/js/technicals.js';
 
 readJSON('../../../views/partials/sidebar.json', null, create_sidebar_html);
 
-var no_links = ["projects", "notes"];
+// specify which has no project sidebar links
+// should change this later
+var no_links = ["projects", "notes", "language"];
 
 // read from header.json
 function create_sidebar_html(params, json_arr) {

@@ -29,22 +29,26 @@ SET comments_file=comments.txt
 SET main_dir=%~dp0
 SET json_to=views\partials\
 
-:: FIRST json dir
+:: FIRST json deep dir
 SET json_from1=%main_dir%resources\notes\academic\
 SET json_to1=notes_academic.json
-:: THIRD json dir
+:: THIRD json deep dir
 SET json_from3=%main_dir%resources\projects\academic\
 SET json_to3=projects_academic.json
-:: FOURTH json dir
+:: FOURTH json deep dir
 SET json_from4=%main_dir%resources\projects\personal\
 SET json_to4=projects_personal.json
-:: FIFTH json dir
+:: FIFTH json deep dir
 SET json_from5=%main_dir%resources\projects\professional\
 SET json_to5=projects_professional.json
 
+:: FIRST json surface dir
+SET json_s_from1=%main_dir%views\pages\
+SET json_s_to1=sidebar_exclude.json
+
 :: FIRST json folder
-SET jsonf_from1=%main_dir%resources\projects\
-SET jsonf_to1=sidebar.json
+SET json_f_from1=%main_dir%resources\projects\
+SET json_f_to1=sidebar.json
 
 :: json generation for FIRST, then save
 CALL :get_json_files json_raw "%json_from1%"
@@ -59,9 +63,13 @@ ECHO %json_raw% > "%main_dir%%json_to%%json_to4%"
 CALL :get_json_files json_raw "%json_from5%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to5%"
 
+:: json generation for FIRST surface, then save
+CALL :get_json_files_surface json_raw "%json_s_from1%"
+ECHO %json_raw% > "%main_dir%%json_to%%json_s_to1%"
+
 :: json generation for FIRST folder, then save
-CALL :get_json_folders json_raw "%jsonf_from1%"
-ECHO %json_raw% > "%main_dir%%json_to%%jsonf_to1%"
+CALL :get_json_folders json_raw "%json_f_from1%"
+ECHO %json_raw% > "%main_dir%%json_to%%json_f_to1%"
 
 GOTO :EOF
 
@@ -121,6 +129,33 @@ SET return_json=!return_json:~0,-1!]}
 SET "%~1=!return_json!"
 GOTO :EOF
 
+:get_json_files_surface
+::get_json_files_surface(return_value, dir)
+::CALL :get_json_files_surface json_raw %dir%
+SET #dir=%2%
+SET return_json={^"folders^":[
+
+CD %#dir%
+
+SET files_in_dir=0
+FOR /f %%f IN ('DIR /b /a-d *.*') DO (
+	SET first_char=%%f
+	SET first_char=!first_char:~0,1!
+	IF NOT !first_char!==%exclude_char% (
+		SET files_in_dir=1
+		SET return_json=!return_json!{^"dir^":^"%%~nxf^"},
+	)
+)
+IF !files_in_dir!==1 (
+	SET return_json=!return_json:~0,-1!]
+) ELSE (
+	SET return_json=!return_json!]
+)
+SET return_json=!return_json!}
+
+SET "%~1=!return_json!"
+GOTO :EOF
+
 :get_json_folders
 ::get_json_folders(return_value, dir)
 ::CALL :get_json_folders json_raw %dir%
@@ -130,33 +165,37 @@ SET return_json={^"parents^":[
 CD %#dir%
 
 FOR /d %%d IN (*.*) DO (
-	SET return_json=!return_json!{^"name^":^"%%d^",^"children^":[
-	CD %%d
+	SET first_char=%%d
+	SET first_char=!first_char:~0,1!
+	IF NOT !first_char!==%exclude_char% (
+		SET return_json=!return_json!{^"name^":^"%%d^",^"children^":[
+		CD %%d
 
-	SET title_in_dir=0
-	FOR /d %%d IN (*.*) DO (
-		SET first_char=%%d
-		SET first_char=!first_char:~0,1!
-		IF NOT !first_char!==%exclude_char% (
-			SET return_json=!return_json!{
-			CD %%d
+		SET title_in_dir=0
+		FOR /d %%d IN (*.*) DO (
+			SET first_char=%%d
+			SET first_char=!first_char:~0,1!
+			IF NOT !first_char!==%exclude_char% (
+				SET return_json=!return_json!{
+				CD %%d
 
-			FOR /r %%f IN (*.*) DO (
-				IF %%~nxf==!title_file! (
-					SET title_in_dir=1
-					SET /p title=<!title_file!
-					SET return_json=!return_json!^"title^":^"!title!^",
+				FOR /r %%f IN (*.*) DO (
+					IF %%~nxf==!title_file! (
+						SET title_in_dir=1
+						SET /p title=<!title_file!
+						SET return_json=!return_json!^"title^":^"!title!^",
+					)
 				)
+				IF !title_in_dir!==1 (
+					SET return_json=!return_json!^"dir^":^"%%d^"
+				)
+				CD ..
+				SET return_json=!return_json!},
 			)
-			IF !title_in_dir!==1 (
-				SET return_json=!return_json!^"dir^":^"%%d^"
-			)
-			CD ..
-			SET return_json=!return_json!},
 		)
+		SET return_json=!return_json:~0,-1!]},
+		CD ..
 	)
-	SET return_json=!return_json:~0,-1!]},
-	CD ..
 )
 SET return_json=!return_json:~0,-1!]}
 

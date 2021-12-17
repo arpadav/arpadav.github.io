@@ -1,3 +1,5 @@
+:: CHANGE TO RENAME PAGE TO ALLOW FOR PAGE TOO, NOT JUST SUBPAGE
+:: LATER
 :: renames a subpage (where it matters):
 :: subpage category (e.g. 'projects') - cat
 :: old name - oldname
@@ -17,7 +19,6 @@ TITLE %~n0%~x0
 SETLOCAL EnableDelayedExpansion
 
 SET main_dir=%~dp0
-REM SET main_dir=%main_dir%TEST\play\
 
 SET revert_changes=0
 SET reverting=0

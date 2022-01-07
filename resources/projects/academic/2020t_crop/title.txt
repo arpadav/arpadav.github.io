@@ -1,1 +1,1 @@
-Semantic Segmentation of Crop DamageSemantic Segmentation of Crop DamageSemantic Segmentation of Crop Damage
+Semantic Segmentation of Crop Damage                                                                                  

@@ -35,7 +35,8 @@ function create_iframes(params, json_arr) {
     console.log(folders[i]['title'].length);
     // add whitespace + some character to make headers same size on mobile
     // ~54 characters is sweet spot. if any still small, increase this
-    let char_len = 54;
+    // let char_len = 54;
+    let char_len = 100;
     let appendage = '';
     if (folders[i]['title'].length < char_len) {
       let num_space = char_len - folders[i]['title'].length - 1;

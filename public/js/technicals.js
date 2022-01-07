@@ -33,9 +33,22 @@ function create_iframes(params, json_arr) {
   for (let i = folders.length - 1; i >= 0; i--) { // backwards, for rough chronological
     console.log(folders[i]['title']);
     console.log(folders[i]['title'].length);
+    // add whitespace + some character to make headers same size on mobile
+    // ~54 characters is sweet spot. if any still small, increase this
+    let char_len = 54;
+    let appendage = '';
+    if (folders[i]['title'].length < char_len) {
+      let num_space = char_len - folders[i]['title'].length - 1;
+      console.log(num_space);
+      appendage = "&nbsp;";
+      // let extra_char = '▒';
+      let extra_char = ' ';
+      appendage = appendage.repeat(num_space) + extra_char;
+      console.log(appendage);
+    }
     iframe_list = iframe_list + '<div class=\"card\">';
     iframe_list = iframe_list + '<img style=\"width: 7px; height: 7px;\" src=\"../../resources/images/tri.png\" class=\"rotateimg90\"/>';
-    iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + '</i></h3></div>';
+    iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + appendage + '</i></h3></div>';
     iframe_list = iframe_list + '<div class=\"body\" id=\"' + folders[i]['name'] + '\"><p>' + folders[i]['comments'] + '</p>';
     iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br>';
     iframe_list = iframe_list + '<iframe id=\"subpage_' + folders[i]['name'] + '\" class=\"iframes_fh\" src=\"subpages/' + folders[i]['name'] + '.html\" title=\"' + folders[i]['name'] + '\" style=\"margin-left: 10%\" width=80% onload=\"init_iframes_fh()\"></iframe>';

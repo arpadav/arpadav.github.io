@@ -31,6 +31,8 @@ function create_iframes(params, json_arr) {
   let iframe_list = '';
   let folders = json_arr['folders'];
   for (let i = folders.length - 1; i >= 0; i--) { // backwards, for rough chronological
+    console.log(folders[i]['title']);
+    console.log(folders[i]['title'].length);
     iframe_list = iframe_list + '<div class=\"card\">';
     iframe_list = iframe_list + '<img style=\"width: 7px; height: 7px;\" src=\"../../resources/images/tri.png\" class=\"rotateimg90\"/>';
     iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + '</i></h3></div>';

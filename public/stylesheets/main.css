@@ -28,6 +28,7 @@ h1:hover, h2:hover, a:hover {
 a, p, ol, ul {
   font-family: "Courier New";
   text-decoration: none;
+  /* font-weight: normal; */
 }
 
 a {

@@ -31,22 +31,10 @@ function create_iframes(params, json_arr) {
   let iframe_list = '';
   let folders = json_arr['folders'];
   for (let i = folders.length - 1; i >= 0; i--) { // backwards, for rough chronological
-    console.log(folders[i]['title']);
-    console.log(folders[i]['title'].length);
     // add whitespace + some character to make headers same size on mobile
     // ~54 characters is sweet spot. if any still small, increase this
-    // let char_len = 54;
-    let char_len = 100;
     let appendage = '';
-    if (folders[i]['title'].length < char_len) {
-      let num_space = char_len - folders[i]['title'].length - 1;
-      console.log(num_space);
-      appendage = "&nbsp;";
-      // let extra_char = '▒';
-      let extra_char = ' ';
-      appendage = appendage.repeat(num_space) + extra_char;
-      console.log(appendage);
-    }
+    if (folders[i]['title'].length < 54) appendage = "&nbsp;".repeat(100);
     iframe_list = iframe_list + '<div class=\"card\">';
     iframe_list = iframe_list + '<img style=\"width: 7px; height: 7px;\" src=\"../../resources/images/tri.png\" class=\"rotateimg90\"/>';
     iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + appendage + '</i></h3></div>';

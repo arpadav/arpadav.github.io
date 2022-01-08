@@ -203,8 +203,9 @@ function resize_name() {
 
 // change the font size of other elements, according to the main name
 function recursive_resize_font(elements) {
+  let root_tag_exceptions = ['P'];
   for (let c = 0; c < elements.children.length; c++) {
-    if (elements.children[c].children.length) recursive_resize_font(elements.children[c]);
+    if (elements.children[c].children.length && !root_tag_exceptions.includes(elements.children[c].tagName)) recursive_resize_font(elements.children[c]);
     else {
       switch(elements.children[c].tagName) {
         case 'H2':
@@ -214,6 +215,9 @@ function recursive_resize_font(elements) {
           elements.children[c].style.fontSize = `${h3_scale * fs_new * name_scale_in[0]}px`;
           break;
         case 'P':
+          elements.children[c].style.fontSize = `${p_scale * fs_new * name_scale_in[0]}px`;
+          break;
+        case 'LI':
           elements.children[c].style.fontSize = `${p_scale * fs_new * name_scale_in[0]}px`;
           break;
       }

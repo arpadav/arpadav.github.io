@@ -1,0 +1,1 @@
+Analysis and Implementation of a Semantic Auto-Encoder for Zero-Short Learning

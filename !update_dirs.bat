@@ -38,9 +38,9 @@ SET json_to3=projects_academic.json
 :: FOURTH json deep dir
 SET json_from4=%main_dir%resources\projects\personal\
 SET json_to4=projects_personal.json
-:: FIFTH json deep dir
-SET json_from5=%main_dir%resources\projects\professional\
-SET json_to5=projects_professional.json
+REM :: FIFTH json deep dir
+REM SET json_from5=%main_dir%resources\projects\professional\
+REM SET json_to5=projects_professional.json
 
 :: FIRST json surface dir
 SET json_s_from1=%main_dir%views\pages\
@@ -59,9 +59,9 @@ ECHO %json_raw% > "%main_dir%%json_to%%json_to3%"
 :: json generation for FOURTH, then save
 CALL :get_json_files json_raw "%json_from4%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to4%"
-:: json generation for FIFTH, then save
-CALL :get_json_files json_raw "%json_from5%"
-ECHO %json_raw% > "%main_dir%%json_to%%json_to5%"
+REM :: json generation for FIFTH, then save
+REM CALL :get_json_files json_raw "%json_from5%"
+REM ECHO %json_raw% > "%main_dir%%json_to%%json_to5%"
 
 :: json generation for FIRST surface, then save
 CALL :get_json_files_surface json_raw "%json_s_from1%"

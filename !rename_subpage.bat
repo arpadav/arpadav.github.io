@@ -23,6 +23,9 @@ SET main_dir=%~dp0
 SET revert_changes=0
 SET reverting=0
 
+ECHO REMEMBER TO RUN IN ADMIN MODE 
+ECHO ====================================
+
 :: add more here if necessary
 ECHO 1: projects
 SET /p cat_idx="enter category num: "
@@ -48,7 +51,7 @@ FOR /d %%d IN (*) DO (
 CD %main_dir%
 
 :repeat_prompt
-ECHO ctrl+z/x/c then y to exit
+ECHO ctrl+c then y to exit
 SET /p oldname="enter old subpage name: "
 SET /p newname="enter new subpage name: "
 

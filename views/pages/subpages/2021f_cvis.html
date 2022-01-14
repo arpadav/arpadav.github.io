@@ -5,27 +5,54 @@
 <body>
 <link rel="stylesheet" href="../../../public/stylesheets/std.css">
 
-
-<h4>Computer Vision - Facial Recognition using Gaussian Mixture Models, Adaboost & Haar Features, and more...</h4>
+<h3>Computer Vision — Facial Recognition using Gaussian Mixture Models, Adaboost & Haar Features, and more...</h3>
+<h4>Individual Project (& one Group Project)</h4>
 
 <hr>
 <p><i>Overview:</i></p>
-<p></p>
+<ol>
+  <li><b>Project 1: Facial Detection using Classical Machine Learning with Various Mixture Models</b></li>
+    <ul style="list-style-type: none;"><li>
+        <img style="max-width: 750px" src="../../../resources/projects/academic/2021f_cvis/proj1_gmm3d.png" class="center"/>
+    </li></ul>
+    <ul style="list-style-type: none;"><li>Mixture models are using some distribution in N-dimensional space and clustering for classification. For example, the figure above shows a data in 2 & 3-D spaces and how they would be classified using a Gaussian mixture model. Note that these classification models can be distinct (where each cluster is a seperate form of classification) or merged (where everything a cluster is something, and everything excluded is not something). For facial detection, a merged model is used in a high dimensional space for classifying whether something is a face or not. The dimensionality is based off the number of pixels in the training images. Below are 20x20 (row 1) and 25x25 (row 2 & 3) Gaussian mixture models with 8 clusters. The means of each cluster are displayed below:</li></ul>
+    <br>
+    <ul style="list-style-type: none;"><li>
+        <img style="max-width: 600px" src="../../../resources/projects/academic/2021f_cvis/proj1_gmm20.png" class="center"/>
+        <img style="max-width: 600px" src="../../../resources/projects/academic/2021f_cvis/proj1_gmm25.png" class="center"/>
+    </li></ul>
+    <br>
+    <ul style="list-style-type: none;"><li>For this project, a t-Distribution, mixture of t-Distribution, as well as factor analysis were completed.</li></ul>
+
+  <br>
+  <li><b>Project 2: Facial Detection using Viola-Jones Algorithm: Adaboost + Haar-like Features</b></li>
+    <ul style="list-style-type: none;"><li>Haar-like features can be used in junction with Adaboost to create a lightweight and fast facial detection model. It is colloquially known as the Viola-Jones object detection algorithm, but has been popularized for facial recognition. It is commonly used by digital cameras to detect faces prior to taking photographs. For this project, this was implemented and trained using a face dataset. To achieve the lowest of accuracies, only the first 10-20 features need to be checked, but to achieve the full accuracy of the model, all features must be checked in a cascade fashion. Below is a sample image alongside the 15 strongest features for the face dataset. A total of ~250 features were used in multiple models for this project.</li></ul>
+    <br>
+    <ul style="list-style-type: none;"><li>
+        <img style="max-width: 700px" src="../../../resources/projects/academic/2021f_cvis/proj2_feat.png" class="center"/>
+    </li></ul>
+
+  <br>
+  <li><b>Project 3: Facial Detection using Simple Deep Learning</b></li>
+    <ul style="list-style-type: none;"><li>bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3bruh proj3</li></ul>
+</ol>
 
 <hr>
-<p><i>Personal Statement:</i></p>
-
-<!-- <hr>
 <p><i>My Contribution:</i></p>
-<p>As of November 2020, I have worked on </p> -->
+<p>For Project 3: Group Project — 3 members</p>
+<p>As of November 2020, I have worked on </p>
 
 <hr>
 <p><i>Literature:</i></p>
-<a href="../../../resources/projects/academic/2021f_cvis/Voros_Arpad_ECE_763_Project_1.pdf">Voros_Arpad_ECE_763_Project_1.pdf</a><br>
-<a href="../../../resources/projects/academic/2021f_cvis/Voros_Arpad_ECE_763_Project_2.pdf">Voros_Arpad_ECE_763_Project_2.pdf</a><br>
-<a href="../../../resources/projects/academic/2021f_cvis/Voros_Arpad_ECE_763_Project_3.pdf">Voros_Arpad_ECE_763_Project_3.pdf</a><br><br>
-<iframe class="center" src="../../../resources/projects/academic/2021f_cvis/Voros_Arpad_ECE_763_Project_1.pdf" width=60% height=950></iframe>
+<a href="../../../resources/notes/academic/2021%20-%20ECE%20763/Voros_Arpad_ECE763_Project_1.pdf">Voros_Arpad_ECE763_Project_1.pdf</a><br>
+<a href="../../../resources/notes/academic/2021%20-%20ECE%20763/Voros_Arpad_ECE763_Project_2.pdf">Voros_Arpad_ECE763_Project_2.pdf</a><br>
+<a href="../../../resources/notes/academic/2021%20-%20ECE%20763/Voros_Arpad_ECE763_Project_3.pdf">Voros_Arpad_ECE763_Project_3.pdf</a><br><br>
+<iframe class="center" src="../../../resources/notes/academic/2021%20-%20ECE%20763/Voros_Arpad_ECE763_Project_2.pdf" width=60% height=950></iframe>
 
+
+<hr>
+<p><i>Media Citation(s):</i></p>
+<p>Gaussian Mixture Model visual - <a href="https://stanford.edu/~cpiech/cs221/img/kmeans3d.png">https://stanford.edu/~cpiech/cs221/img/kmeans3d.png</a></p>
 
 </body>
 <base target="_parent">

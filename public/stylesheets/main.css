@@ -68,7 +68,7 @@ img {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .card {

@@ -30,7 +30,7 @@ var fs_new;
 // adjustables
 // --------------------------------------------
 // animation length
-var anim_len = 0.9;
+var anim_len = 0.8;
 
 // scale before/after click
 var name_scale_in = [1];

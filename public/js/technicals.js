@@ -34,7 +34,7 @@ function create_iframes(params, json_arr) {
     // add whitespace + some character to make headers same size on mobile
     // ~54 characters is sweet spot. if any still small, increase this
     let min_len = 54;
-    let offset = 20;
+    let offset = 40;
     let appendage = '';
     if (folders[i]['title'].length < min_len) appendage = "&nbsp;".repeat(min_len + offset - folders[i]['title'].length);
     iframe_list = iframe_list + '<div class=\"card\">';

@@ -41,6 +41,7 @@ function create_iframes(params, json_arr) {
     iframe_list = iframe_list + '<img style=\"width: 7px; height: 7px;\" src=\"../../resources/images/tri.png\" class=\"rotateimg90\"/>';
     iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + appendage + '</i></h3></div>';
     iframe_list = iframe_list + '<div class=\"body\" id=\"' + folders[i]['name'] + '\"><p>' + folders[i]['comments'] + '</p>';
+    // iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br><p></p>';
     iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br>';
     iframe_list = iframe_list + '<iframe id=\"subpage_' + folders[i]['name'] + '\" class=\"iframes_fh\" src=\"subpages/' + folders[i]['name'] + '.html\" title=\"' + folders[i]['name'] + '\" style=\"margin-left: 10%\" width=80% onload=\"init_iframes_fh()\"></iframe>';
     iframe_list = iframe_list + '<br><a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a>';

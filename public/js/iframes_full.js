@@ -21,7 +21,6 @@ function loop_iframes() {
 
 // from https://www.dyn-web.com/tutorials/iframes/height/
 function set_iframe_height(id) {
-  // console.log(id);
 	let ifrm = document.getElementById(id);
   let doc = ifrm.contentDocument ? ifrm.contentDocument : ifrm.contentWindow.document;
 
@@ -34,7 +33,6 @@ function set_iframe_height(id) {
 function get_doc_height(doc) {
 	doc = doc || document;
 	let body = doc.body, html = doc.documentElement;
-	let height = Math.max( body.scrollHeight, body.offsetHeight,
-		html.clientHeight, html.scrollHeight, html.offsetHeight );
+	let height = Math.max( html.clientHeight, html.scrollHeight, html.offsetHeight, body.scrollHeight, body.offsetHeight );
 	return height;
 }

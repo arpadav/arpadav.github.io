@@ -88,6 +88,10 @@ li > h3 {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
+
+  // mobile safari try fix
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .main {
@@ -108,3 +112,8 @@ li > h3 {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
+/* #MobileMenuDivWrapper { // trying to fix scroll on mobile
+  height: 100%;
+  width: 100%;
+} */

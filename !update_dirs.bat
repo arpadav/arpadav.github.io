@@ -32,6 +32,9 @@ SET json_to=views\partials\
 :: FIRST json deep dir
 SET json_from1=%main_dir%resources\notes\academic\
 SET json_to1=notes_academic.json
+:: SECOND json deep dir
+SET json_from2=%main_dir%resources\notes\personal\
+SET json_to2=notes_personal.json
 :: THIRD json deep dir
 SET json_from3=%main_dir%resources\projects\academic\
 SET json_to3=projects_academic.json
@@ -53,6 +56,9 @@ SET json_f_to1=sidebar.json
 :: json generation for FIRST, then save
 CALL :get_json_files json_raw "%json_from1%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to1%"
+:: json generation for SECOND, then save
+CALL :get_json_files json_raw "%json_from2%"
+ECHO %json_raw% > "%main_dir%%json_to%%json_to2%"
 :: json generation for THIRD, then save
 CALL :get_json_files json_raw "%json_from3%"
 ECHO %json_raw% > "%main_dir%%json_to%%json_to3%"

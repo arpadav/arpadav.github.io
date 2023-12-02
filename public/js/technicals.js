@@ -37,15 +37,38 @@ function create_iframes(params, json_arr) {
     let offset = 40;
     let appendage = '';
     if (folders[i]['title'].length < min_len) appendage = "&nbsp;".repeat(min_len + offset - folders[i]['title'].length);
-    iframe_list = iframe_list + '<div class=\"card\">';
-    iframe_list = iframe_list + '<img style=\"width: 7px; height: 7px;\" src=\"../../resources/images/tri.png\" class=\"rotateimg90\"/>';
-    iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + appendage + '</i></h3></div>';
-    iframe_list = iframe_list + '<div class=\"body\" id=\"' + folders[i]['name'] + '\"><p>' + folders[i]['comments'] + '</p>';
-    // iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br><p></p>';
-    iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br>';
-    iframe_list = iframe_list + '<iframe id=\"subpage_' + folders[i]['name'] + '\" class=\"iframes_fh\" src=\"subpages/' + folders[i]['name'] + '.html\" title=\"' + folders[i]['name'] + '\" style=\"margin-left: 10%\" width=80% onload=\"init_iframes_fh()\"></iframe>';
-    iframe_list = iframe_list + '<br><a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a>';
-    iframe_list = iframe_list + '</div>';
+    
+
+    let dropdown = `\
+    <div class="card">\
+    <img style="width: 7px; height: 7px;" src="../../resources/images/tri.png" class="rotateimg90"/>\
+    <h3 style="margin-left: 7px;"><i>${folders[i]['title']}${appendage}</i></h3></div>\
+    <div class="body" id=\"${folders[i]['name']}"><p>${folders[i]['comments']}</p>\
+    <a href="../../projects/${folders[i]['name']}" target="_parent">VIEW FULL PAGE</a><br>\
+    <iframe id="subpage_${folders[i]['name']}" class="iframes_fh" src="subpages/${folders[i]['name']}.html" title="${folders[i]['name']}" style="margin-left: 10%" width=80% onload="init_iframes_fh()"></iframe>\
+    <br><a href="../../projects/${folders[i]['name']}\" target="_parent">VIEW FULL PAGE</a>\
+    </div>`;
+
+    let just_link = `\
+    <a href="../../projects/${folders[i]['name']}\" target="_parent" class="no-underline">\
+      <div class="card">\
+          <img style="width: 7px; height: 7px;" src="../../resources/images/tri.png"/>\
+          <h3 style="margin-left: 7px;"><i>${folders[i]['title']}${appendage}</i></h3>\
+        </div>
+    </a>`;
+
+
+    iframe_list = iframe_list + just_link;
+
+    // iframe_list = iframe_list + '<div class=\"card\">';
+    // iframe_list = iframe_list + '<img style=\"width: 7px; height: 7px;\" src=\"../../resources/images/tri.png\" class=\"rotateimg90\"/>';
+    // iframe_list = iframe_list + '<h3 style=\"margin-left: 7px;\"><i>' + folders[i]['title'] + appendage + '</i></h3></div>';
+    // iframe_list = iframe_list + '<div class=\"body\" id=\"' + folders[i]['name'] + '\"><p>' + folders[i]['comments'] + '</p>';
+    // // iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br><p></p>';
+    // iframe_list = iframe_list + '<a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a><br>';
+    // iframe_list = iframe_list + '<iframe id=\"subpage_' + folders[i]['name'] + '\" class=\"iframes_fh\" src=\"subpages/' + folders[i]['name'] + '.html\" title=\"' + folders[i]['name'] + '\" style=\"margin-left: 10%\" width=80% onload=\"init_iframes_fh()\"></iframe>';
+    // iframe_list = iframe_list + '<br><a href=\"../../projects/' + folders[i]['name'] + '\" target=\"_parent\">VIEW FULL PAGE</a>';
+    // iframe_list = iframe_list + '</div>';
   }
   document.getElementById(loc).innerHTML = iframe_list;
   if (params[1]) params[1]();

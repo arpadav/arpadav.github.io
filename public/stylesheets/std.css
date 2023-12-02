@@ -89,7 +89,7 @@ li > h3 {
   overflow: hidden;
   transition: max-height 0.3s ease-out;
 
-  // mobile safari try fix
+  /* // mobile safari try fix */
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -111,6 +111,10 @@ li > h3 {
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.no-underline {
+  text-decoration: none;
 }
 
 /* #MobileMenuDivWrapper { // trying to fix scroll on mobile

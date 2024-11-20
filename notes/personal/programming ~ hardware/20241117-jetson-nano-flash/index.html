@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<!-- -------------------------------------------------- -->
+<!-- include header -->
+<!-- -------------------------------------------------- -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" charset="utf-8">
+<title>Arpad Voros</title>
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"></head>
+<!-- -------------------------------------------------- -->
+<!-- include sidebar -->
+<!-- -------------------------------------------------- -->
+<div id="sidebar" class="sidebar">
+    <!-- -------------------------------------------------- -->
+    <!-- include the gator -->
+    <!-- -------------------------------------------------- -->
+    <li>
+        <a href="/gator/" target="_parent">
+            <img style="width: 268px;" src="/images/alligator.png">
+        </a>
+    </li>
+    <!-- -------------------------------------------------- -->
+    <!-- match the type of sidebar, include that template -->
+    <!-- -------------------------------------------------- -->
+    
+    <!-- -------------------------------------------------- -->
+    <!-- add more if needed -->
+    <!-- -------------------------------------------------- -->
+    
+</div>
+<!-- -------------------------------------------------- -->
+<!-- include navbar -->
+<!-- -------------------------------------------------- -->
+<div class="beside-sidebar">
+    <div id="navbar" class="navbar">
+    <ul>
+        <!-- -------------------------------------------------- -->
+        <!-- loop through each link -->
+        <!-- -------------------------------------------------- -->
+        
+        <li>
+            <a href="/#" target="_parent">home</a>
+        </li>
+        
+        <li>
+            <a href="/#about" target="_parent">about</a>
+        </li>
+        
+        <li>
+            <a href="/#contact" target="_parent">contact</a>
+        </li>
+        
+        <li>
+            <a href="/#socials" target="_parent">socials</a>
+        </li>
+        
+        <li>
+            <a href="/cv.pdf" target="_parent">cv</a>
+        </li>
+        
+        <li>
+            <a href="/projects" target="_parent">projects</a>
+        </li>
+        
+        <li>
+            <a href="/notes" target="_parent">notes</a>
+        </li>
+        
+    </ul>
+</div>
+</div>
+<!-- -------------------------------------------------- -->
+<!-- markdown content -->
+<!-- -------------------------------------------------- -->
+<div id="markdown-content">
+    <style>
+        h1 {
+            margin-top: 0%;
+        }
+        img {
+            max-width: 50vw;
+            max-height: 70vh;
+            margin: 0 auto;
+            display: block;
+            object-fit: contain;
+        }
+    </style>
+    <head><style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #cccccc; background-color: #303030; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffcfaf; } /* Alert */
+    code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #dca3a3; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #f0dfaf; } /* ControlFlow */
+    code span.ch { color: #dca3a3; } /* Char */
+    code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+    code span.co { color: #7f9f7f; } /* Comment */
+    code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+    code span.do { color: #7f9f7f; } /* Documentation */
+    code span.dt { color: #dfdfbf; } /* DataType */
+    code span.dv { color: #dcdccc; } /* DecVal */
+    code span.er { color: #c3bf9f; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #c0bed1; } /* Float */
+    code span.fu { color: #efef8f; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+    code span.kw { color: #f0dfaf; } /* Keyword */
+    code span.op { color: #f0efd0; } /* Operator */
+    code span.ot { color: #efef8f; } /* Other */
+    code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #dca3a3; } /* SpecialChar */
+    code span.ss { color: #cc9393; } /* SpecialString */
+    code span.st { color: #cc9393; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #cc9393; } /* VerbatimString */
+    code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/css/std.css" />
+</head>
+<body>
+<h1 id="beginners-guide-to-flashing-nvidia-jetson-nano">Beginners Guide
+to Flashing NVIDIA Jetson Nano</h1>
+<p>This is meant as a tutorial, mainly for myself. In case I forget.</p>
+<p>I was struggling with flashing my old NVIDIA Jetson Nano Development
+Kit after swapping out microSD cards for a faster one. The previous one
+was flashed out-of-the-box (<a
+href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit">following
+the official NVIDIA tutorial</a>) and apparently it was not as simple as
+swapping out microSD cards. As a result, I had resort to flashing the
+Jetson via the micro USB port.</p>
+<p>I have to put the Jetson Nano into recovery mode and connect to a
+Linux machine to reflash. There are two options:</p>
+<ol type="1">
+<li><a
+href="https://docs.nvidia.com/jetson/archives/r34.1/DeveloperGuide/text/SD/FlashingSupport.html">Use
+the CLI for granular flashing (advanced)</a>. Note that you need to find
+and download the correct <code>Linux for Tegra</code> source <strong>for
+the Jetson Nano</strong> in order to find the proper flashing scripts.
+E.g. (not guaranteed to work for Jetson Nano) <a
+href="https://developer.nvidia.com/embedded/linux-tegra-r2821"><code>Tegra-R2821</code></a></li>
+<li><a href="https://developer.nvidia.com/sdk-manager">Use NVIDIA SDK
+manager (beginner)</a></li>
+</ol>
+<p>I went with option (2) since I have never done this before, and it
+was difficult to read NVIDIA's documentation as a beginner in this
+space.</p>
+<h2 id="get-nvidia-sdk-manager">Get NVIDIA SDK Manager</h2>
+<p>See: <a
+href="https://developer.nvidia.com/sdk-manager">https://developer.nvidia.com/sdk-manager</a></p>
+<p>Need to login / create an NVIDIA account to get the <code>.deb</code>
+file. E.g. <code>sdkmanager_2.2.0-12021_amd64.deb</code></p>
+<h2 id="put-jetson-nano-into-recovery-mode">Put Jetson Nano into
+Recovery Mode</h2>
+<p>A physical pin needs to be bridged to ground to enter, what is known
+in the embedded world as, "recovery mode". This essentially means the
+device's firmware is able to be overwritten.</p>
+<p>On the Jetson Nano Development Kit, this is found on the Button
+Header [J50]. The silkscreen on the bottom of the board should show pins
+3/4 which need to be jumped. Different versions of the carrier board and
+different Jetsons have this pin in different locations, so please check
+other pin-out diagrams online.</p>
+<p><img src="pinout.png" /></p>
+<h2 id="other-jetson-nano-peripherals">Other Jetson Nano
+Peripherals</h2>
+<ol type="1">
+<li>Required: Ethernet (for SDK components)</li>
+<li>Optional: Mouse, Keyboard, Monitor</li>
+</ol>
+<h2 id="run-nvidia-sdk-manager-from-ubuntu-18.04">Run NVIDIA SDK Manager
+from Ubuntu 18.04</h2>
+<p>This needs to be run inside of Ubuntu 18.04 in order to flash the
+Jetson Nano directly. Why? I don't know.</p>
+<p>If you are on Ubuntu 18.04, then simply <code>sudo apt install</code>
+the deb. Otherwise:</p>
+<ol type="1">
+<li><p>Create a <code>distrobox</code> instance</p>
+<ul>
+<li>Needs <code>usbutils</code> so that the SDK manager can find the
+device.</li>
+<li>Needs the remaining network utils so the SDK manager can SSH into
+the device later to install Jetson SDK components.</li>
+</ul>
+<p>Create the distro with root priviledges and enter.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">distrobox</span> create <span class="at">--root</span> <span class="at">--image</span> ubuntu:18.04 <span class="at">--additional-packages</span> <span class="st">&quot;usbutils netcat iptables network-manager dnsutils&quot;</span> <span class="at">--name</span> ubuntu18-db</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">distrobox</span> enter <span class="at">--root</span> ubuntu18-db</span></code></pre></div></li>
+<li><p>Add as package and install</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> sdkmanager_2.2.0-12021_amd64.deb</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt <span class="at">--fix-broken</span> install</span></code></pre></div></li>
+<li><p>Run</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sdkmanager</span></span></code></pre></div></li>
+</ol>
+<h2 id="sdk-manager-steps">SDK Manager Steps</h2>
+<p>Follow on-screen instructions.</p>
+<p>This should include logging on, selecting target hardware as Jetson
+Nano, selecting most recent supported version of Jetpack.</p>
+<p>Download all dependencies and create the OS image to flash.</p>
+<p>Ensure to select "Manual" mode for first time. Otherwise, "Automatic"
+mode works fine if the device is powered on and plugged in.</p>
+<p><img src="sdks3.png" /></p>
+<p>Can plug in monitor while being flashed for sanity. The NVIDIA logo
+with white background should appear upon completion. This screen will
+also show up:</p>
+<p><img src="components.png" /></p>
+<p>Hold off on installing until the configs on the Jetson are installed
+and it is rebooted (this is when you select <code>Pre-config</code> and
+you can verify the automatic config if plugged into monitor).</p>
+<p>Once the Jetson reboots and it is in the login screen, the device has
+been flashed! <strong><em>Remember to remove the recovery mode jumper
+pin once done!</em></strong></p>
+<p>It will prompt to install the SDK components. Try SSH'ing into it on
+another terminal. The IP, Username, and Pwd were all set within the SDK
+manager. Only after ssh works and confirmed, press <code>Install</code>.
+Given the <code>distrobox</code> deps which were installed in the
+<code>distrobox</code> provisioning part, this should yield no error
+and:</p>
+<p><img src="components-install.png" /></p>
+<p>This will just repeatadly ssh into the Jetson Nano and install
+essentials like CUDA, OpenCV, some DL stuff, etc. This step can be
+skipped, but not recommended.</p>
+<h2 id="debugging">Debugging</h2>
+<p>Note that if you run into any errors, please see the terminal output
+for an easy way to debug what is actually going on:</p>
+<p><img src="dbg.png" /></p>
+<p>In the image above, you see it can't find <code>nc</code> which can
+be installed using <code>sudo apt install netcat</code> on my
+<code>distrobox</code> instance. It could have just directly ssh'ed, but
+it said it failed because of a missing dependency.</p>
+<p>Lastly, if there are any issues during ANY part of this, save the
+logs or view the terminal output and review. It is likely dependency
+issues where you will have to re-flash after installing them, or
+verifying an internet connection.</p>
+</body>
+</html>
+
+</div>
+</html>

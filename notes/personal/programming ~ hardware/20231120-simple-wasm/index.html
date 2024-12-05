@@ -1,82 +1,4 @@
-<!DOCTYPE html>
-<html>
-<!-- -------------------------------------------------- -->
-<!-- include header -->
-<!-- -------------------------------------------------- -->
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" charset="utf-8">
-<title>20231120-simple-wasm - Arpad Voros</title>
-<link rel="manifest" href="/images/site.webmanifest">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"></head>
-<!-- -------------------------------------------------- -->
-<!-- include sidebar -->
-<!-- -------------------------------------------------- -->
-<div id="sidebar" class="sidebar">
-    <!-- -------------------------------------------------- -->
-    <!-- include the gator -->
-    <!-- -------------------------------------------------- -->
-    <li>
-        <a href="/gator/" target="_parent">
-            <img style="width: 268px;" src="/images/alligator.png">
-        </a>
-    </li>
-    <!-- -------------------------------------------------- -->
-    <!-- match the type of sidebar, include that template -->
-    <!-- -------------------------------------------------- -->
-    
-    <!-- -------------------------------------------------- -->
-    <!-- add more if needed -->
-    <!-- -------------------------------------------------- -->
-    
-</div>
-<!-- -------------------------------------------------- -->
-<!-- include navbar -->
-<!-- -------------------------------------------------- -->
-<div class="beside-sidebar">
-    <div id="navbar" class="navbar">
-    <ul>
-        <!-- -------------------------------------------------- -->
-        <!-- loop through each link -->
-        <!-- -------------------------------------------------- -->
-        
-        <li>
-            <a href="/#" target="_parent">home</a>
-        </li>
-        
-        <li>
-            <a href="/#about" target="_parent">about</a>
-        </li>
-        
-        <li>
-            <a href="/#contact" target="_parent">contact</a>
-        </li>
-        
-        <li>
-            <a href="/#socials" target="_parent">socials</a>
-        </li>
-        
-        <li>
-            <a href="/cv.pdf" target="_parent">cv</a>
-        </li>
-        
-        <li>
-            <a href="/projects" target="_parent">projects</a>
-        </li>
-        
-        <li>
-            <a href="/notes" target="_parent">notes</a>
-        </li>
-        
-    </ul>
-</div>
-</div>
-<!-- -------------------------------------------------- -->
-<!-- markdown content -->
-<!-- -------------------------------------------------- -->
-<div id="markdown-content">
-    <style>
-        #markdown-content h1 {
+<!doctype html><meta content="text/html; charset=utf-8"charset=utf-8 http-equiv=Content-Type><title>20231120-simple-wasm - Arpad Voros</title><link href=/images/site.webmanifest rel=manifest><link href=/images/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link href=/images/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=/images/apple-touch-icon.png rel=apple-touch-icon sizes=180x180></head><div class=sidebar id=sidebar><li><a href=/gator/ target=_parent> <img style="width: 268px;"src=/images/alligator.png> </a></div><div class=beside-sidebar><div class=navbar id=navbar><ul><li><a href=/# target=_parent>home</a><li><a href=/#about target=_parent>about</a><li><a href=/#contact target=_parent>contact</a><li><a href=/#socials target=_parent>socials</a><li><a href=/cv.pdf target=_parent>cv</a><li><a href=/projects target=_parent>projects</a><li><a href=/notes target=_parent>notes</a></ul></div></div><div id=markdown-content><style>#markdown-content h1 {
             margin-top: 0%;
         }
         #markdown-content img {
@@ -85,10 +7,7 @@
             margin: 0 auto;
             display: block;
             object-fit: contain;
-        }
-    </style>
-    <head><style>
-    code{white-space: pre-wrap;}
+        }</style><style>code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
@@ -164,70 +83,40 @@
     code span.st { color: #cc9393; } /* String */
     code span.va { } /* Variable */
     code span.vs { color: #cc9393; } /* VerbatimString */
-    code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="/css/std.css" />
-</head>
-<body>
-<h1 id="wasm-instructions-for-future-reference">WASM instructions (for
-future reference)</h1>
-<ol type="1">
-<li><p>Create new rust-wasm project</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> new <span class="op">&lt;</span>NAME<span class="op">&gt;</span> --lib</span></code></pre></div></li>
-<li><p>add the following to <code>Cargo.toml</code> (or respective
-versions of the libs):</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode toml"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">[lib]</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">crate-type</span> <span class="op">=</span> <span class="op">[</span><span class="st">&quot;cdylib&quot;</span><span class="op">]</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">[dependencies]</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dt">wasm-bindgen</span> <span class="op">=</span> <span class="st">&quot;0.2&quot;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># helpful (but not necessary) dependencies</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="dt">js-sys</span> <span class="op">=</span> <span class="st">&quot;0.3.65&quot;</span> <span class="co"># JS interface</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="dt">reqwasm</span> <span class="op">=</span> <span class="st">&quot;0.2&quot;</span> <span class="co"># requests: paired with futures</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="dt">wasm-bindgen-futures</span> <span class="op">=</span> <span class="st">&quot;0.4.38&quot;</span> <span class="co"># futures / async / await</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="dt">web-sys</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">version</span><span class="op"> =</span> <span class="st">&quot;0.3&quot;</span><span class="op">, </span><span class="dt">features</span><span class="op"> =</span> <span class="op">[</span><span class="st">&#39;</span><span class="vs">console</span><span class="st">&#39;</span><span class="op">] }</span> <span class="co"># console logging</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">[dev-dependencies]</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="dt">wasm-bindgen-test</span> <span class="op">=</span> <span class="st">&quot;0.2&quot;</span></span></code></pre></div></li>
-<li><p>build</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build</span></code></pre></div></li>
-<li><p>build wasm</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wasm-pack</span> build <span class="at">--release</span> <span class="at">--target</span> web <span class="at">--no-typescript</span> <span class="at">--out-dir</span> <span class="op">&lt;</span>OUT_DIR<span class="op">&gt;</span></span></code></pre></div></li>
-<li><p>In your <code>.js</code> file, this is how to initialize and
-use:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> init<span class="op">,</span> { <span class="op">&lt;</span>RUST_WASM_FUNCTIONS_AND_STRUCTS<span class="op">&gt;</span> } <span class="im">from</span> <span class="st">&#39;./pkg/&lt;PROJECT&gt;.js&#39;</span><span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">// this path is relative to the .js file                 ^^^^^^^^^^^^^^^^^^^</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">init</span>() {</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> <span class="fu">init</span>(<span class="st">&#39;./pkg/&lt;PROJECT&gt;_bg.wasm&#39;</span>)<span class="op">;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">example</span>() {</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// if &lt;RUST_WASM_FUNCTIONS_AND_STRUCTS&gt; contains a normal element</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// let&#39;s say, a function called `rust_print` and it expects a &amp;str</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rust_print</span>(<span class="st">&quot;Hello!&quot;</span>)<span class="op">;</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">async_example</span>() {</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// if &lt;RUST_WASM_FUNCTIONS_AND_STRUCTS&gt; contains an async element (with futures)</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// let&#39;s say, a function called `rust_request`</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> <span class="fu">rust_request</span>()<span class="op">;</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">init</span>()<span class="op">;</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>()<span class="op">;</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="cf">await</span> <span class="fu">async_example</span>()<span class="op">;</span></span></code></pre></div></li>
-</ol>
-</body>
-</html>
-
-</div>
-</html>
+    code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */</style><link href=/css/std.css rel=stylesheet><body><h1 id=wasm-instructions-for-future-reference>WASM instructions (for future reference)</h1><ol type=1><li><p>Create new rust-wasm project</p> <div class=sourceCode id=cb1><pre class="sourceCode bash"><code class="sourceCode bash"><span id=cb1-1><a aria-hidden=true href=#cb1-1 tabindex=-1></a><span class=ex>cargo</span> new <span class=op><</span>NAME<span class=op>></span> --lib</span></code></pre></div><li><p>add the following to <code>Cargo.toml</code> (or respective versions of the libs):</p> <div class=sourceCode id=cb2><pre class="sourceCode toml"><code class="sourceCode toml"><span id=cb2-1><a aria-hidden=true href=#cb2-1 tabindex=-1></a><span class=co># ...</span></span>
+<span id=cb2-2><a aria-hidden=true href=#cb2-2 tabindex=-1></a></span>
+<span id=cb2-3><a aria-hidden=true href=#cb2-3 tabindex=-1></a><span class=kw>[lib]</span></span>
+<span id=cb2-4><a aria-hidden=true href=#cb2-4 tabindex=-1></a><span class=dt>crate-type</span> <span class=op>=</span> <span class=op>[</span><span class=st>"cdylib"</span><span class=op>]</span></span>
+<span id=cb2-5><a aria-hidden=true href=#cb2-5 tabindex=-1></a></span>
+<span id=cb2-6><a aria-hidden=true href=#cb2-6 tabindex=-1></a><span class=kw>[dependencies]</span></span>
+<span id=cb2-7><a aria-hidden=true href=#cb2-7 tabindex=-1></a><span class=dt>wasm-bindgen</span> <span class=op>=</span> <span class=st>"0.2"</span></span>
+<span id=cb2-8><a aria-hidden=true href=#cb2-8 tabindex=-1></a></span>
+<span id=cb2-9><a aria-hidden=true href=#cb2-9 tabindex=-1></a><span class=co># helpful (but not necessary) dependencies</span></span>
+<span id=cb2-10><a aria-hidden=true href=#cb2-10 tabindex=-1></a><span class=dt>js-sys</span> <span class=op>=</span> <span class=st>"0.3.65"</span> <span class=co># JS interface</span></span>
+<span id=cb2-11><a aria-hidden=true href=#cb2-11 tabindex=-1></a><span class=dt>reqwasm</span> <span class=op>=</span> <span class=st>"0.2"</span> <span class=co># requests: paired with futures</span></span>
+<span id=cb2-12><a aria-hidden=true href=#cb2-12 tabindex=-1></a><span class=dt>wasm-bindgen-futures</span> <span class=op>=</span> <span class=st>"0.4.38"</span> <span class=co># futures / async / await</span></span>
+<span id=cb2-13><a aria-hidden=true href=#cb2-13 tabindex=-1></a><span class=dt>web-sys</span> <span class=op>=</span> <span class=op>{ </span><span class=dt>version</span><span class=op> =</span> <span class=st>"0.3"</span><span class=op>, </span><span class=dt>features</span><span class=op> =</span> <span class=op>[</span><span class=st>'</span><span class=vs>console</span><span class=st>'</span><span class=op>] }</span> <span class=co># console logging</span></span>
+<span id=cb2-14><a aria-hidden=true href=#cb2-14 tabindex=-1></a></span>
+<span id=cb2-15><a aria-hidden=true href=#cb2-15 tabindex=-1></a><span class=kw>[dev-dependencies]</span></span>
+<span id=cb2-16><a aria-hidden=true href=#cb2-16 tabindex=-1></a><span class=dt>wasm-bindgen-test</span> <span class=op>=</span> <span class=st>"0.2"</span></span></code></pre></div><li><p>build</p> <div class=sourceCode id=cb3><pre class="sourceCode bash"><code class="sourceCode bash"><span id=cb3-1><a aria-hidden=true href=#cb3-1 tabindex=-1></a><span class=ex>cargo</span> build</span></code></pre></div><li><p>build wasm</p> <div class=sourceCode id=cb4><pre class="sourceCode bash"><code class="sourceCode bash"><span id=cb4-1><a aria-hidden=true href=#cb4-1 tabindex=-1></a><span class=ex>wasm-pack</span> build <span class=at>--release</span> <span class=at>--target</span> web <span class=at>--no-typescript</span> <span class=at>--out-dir</span> <span class=op><</span>OUT_DIR<span class=op>></span></span></code></pre></div><li><p>In your <code>.js</code> file, this is how to initialize and use:</p> <div class=sourceCode id=cb5><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id=cb5-1><a aria-hidden=true href=#cb5-1 tabindex=-1></a><span class=im>import</span> init<span class=op>,</span> { <span class=op><</span>RUST_WASM_FUNCTIONS_AND_STRUCTS<span class=op>></span> } <span class=im>from</span> <span class=st>'./pkg/&LTPROJECT>.js'</span><span class=op>;</span></span>
+<span id=cb5-2><a aria-hidden=true href=#cb5-2 tabindex=-1></a><span class=co>// this path is relative to the .js file                 ^^^^^^^^^^^^^^^^^^^</span></span>
+<span id=cb5-3><a aria-hidden=true href=#cb5-3 tabindex=-1></a></span>
+<span id=cb5-4><a aria-hidden=true href=#cb5-4 tabindex=-1></a><span class=kw>async</span> <span class=kw>function</span> <span class=fu>init</span>() {</span>
+<span id=cb5-5><a aria-hidden=true href=#cb5-5 tabindex=-1></a>    <span class=cf>await</span> <span class=fu>init</span>(<span class=st>'./pkg/&LTPROJECT>_bg.wasm'</span>)<span class=op>;</span></span>
+<span id=cb5-6><a aria-hidden=true href=#cb5-6 tabindex=-1></a>}</span>
+<span id=cb5-7><a aria-hidden=true href=#cb5-7 tabindex=-1></a></span>
+<span id=cb5-8><a aria-hidden=true href=#cb5-8 tabindex=-1></a><span class=kw>function</span> <span class=fu>example</span>() {</span>
+<span id=cb5-9><a aria-hidden=true href=#cb5-9 tabindex=-1></a>    <span class=co>// if &LTRUST_WASM_FUNCTIONS_AND_STRUCTS> contains a normal element</span></span>
+<span id=cb5-10><a aria-hidden=true href=#cb5-10 tabindex=-1></a>    <span class=co>// let's say, a function called `rust_print` and it expects a &str</span></span>
+<span id=cb5-11><a aria-hidden=true href=#cb5-11 tabindex=-1></a>    <span class=fu>rust_print</span>(<span class=st>"Hello!"</span>)<span class=op>;</span></span>
+<span id=cb5-12><a aria-hidden=true href=#cb5-12 tabindex=-1></a>}</span>
+<span id=cb5-13><a aria-hidden=true href=#cb5-13 tabindex=-1></a></span>
+<span id=cb5-14><a aria-hidden=true href=#cb5-14 tabindex=-1></a><span class=kw>async</span> <span class=kw>function</span> <span class=fu>async_example</span>() {</span>
+<span id=cb5-15><a aria-hidden=true href=#cb5-15 tabindex=-1></a>    <span class=co>// if &LTRUST_WASM_FUNCTIONS_AND_STRUCTS> contains an async element (with futures)</span></span>
+<span id=cb5-16><a aria-hidden=true href=#cb5-16 tabindex=-1></a>    <span class=co>// let's say, a function called `rust_request`</span></span>
+<span id=cb5-17><a aria-hidden=true href=#cb5-17 tabindex=-1></a>    <span class=cf>await</span> <span class=fu>rust_request</span>()<span class=op>;</span></span>
+<span id=cb5-18><a aria-hidden=true href=#cb5-18 tabindex=-1></a>}</span>
+<span id=cb5-19><a aria-hidden=true href=#cb5-19 tabindex=-1></a></span>
+<span id=cb5-20><a aria-hidden=true href=#cb5-20 tabindex=-1></a><span class=fu>init</span>()<span class=op>;</span></span>
+<span id=cb5-21><a aria-hidden=true href=#cb5-21 tabindex=-1></a><span class=fu>example</span>()<span class=op>;</span></span>
+<span id=cb5-22><a aria-hidden=true href=#cb5-22 tabindex=-1></a><span class=cf>await</span> <span class=fu>async_example</span>()<span class=op>;</span></span></code></pre></div></ol></div><br>

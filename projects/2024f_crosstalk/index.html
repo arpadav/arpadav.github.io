@@ -1,0 +1,151 @@
+<!doctype html><meta content="text/html; charset=utf-8"charset=utf-8 http-equiv=Content-Type><title>crosstalk: In-memory pub-sub messaging for Rust - Arpad Voros</title><link href=/images/site.webmanifest rel=manifest><link href=/images/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link href=/images/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=/images/apple-touch-icon.png rel=apple-touch-icon sizes=180x180></head><div class=sidebar id=sidebar><li><a href=/gator/ target=_parent> <img style="width: 268px;"src=/images/alligator.png> </a><li>   <h3><b> personal</b></h3>      <li><a href=/projects/2022f_lang/ target=_parent> <i>Vocabulary-emphasized Language Learning Application using no 'Reference' Language</i> </a><li>§<li><a href=/projects/2020t_website/ target=_parent> <i>Personal Website — arpadav.github.io (hosted on arpadvoros.com)</i> </a><li>§<li><a href=/projects/2019t_plotter/ target=_parent> <i>Physical Plotting Output of Generative Adversarial Network Trained on Landscape Portraits</i> </a><li>§<li><a href=/projects/2018s_mra/ target=_parent> <i>Google Hangouts Chat-bot and iOS 'Alert' Application</i> </a><li>§<li><a href=/projects/2018f_theremin/ target=_parent> <i>Moog Theremin</i> </a><li>§<li><a href=/projects/2017f_mst/ target=_parent> <i>Muon Scattering Tomography: Utilizing Silicon Photomultiplier Arrays to Trilaterate Muon Multiple-Coulomb Scattering Events</i> </a><li>   <h3><b> rust crates</b></h3>      <li><a href=/projects/2024t_tinyklv/ target=_parent> <i>tinyklv: A KLV (Key-Length-Value) parser and generator for Rust</i> </a><li>§<li><a href=/projects/2024t_misb/ target=_parent> <i>misb: MISB Standards implementation in Rust</i> </a><li>§<li><a href=/projects/2024s_thisenum/ target=_parent> <i>thisenum: Assigning constants to enum arms</i> </a><li>§<li><a href=/projects/2024s_dted2/ target=_parent> <i>dted2: DTED reader for Rust</i> </a><li>§<li><a href=/projects/2024f_crosstalk/ target=_parent> <i>crosstalk: In-memory pub-sub messaging for Rust</i> </a><li>   <h3><b> academic</b></h3>      <li><a href=/projects/2021t_zsl/ target=_parent> <i>Analysis and Implementation of a Semantic Auto-Encoder for Zero-Short Learning</i> </a><li>§<li><a href=/projects/2021t_dimg/ target=_parent> <i>Digital Imaging — Scale-invariant Feature Transform, Laplacian Blending, Linear Spatial Filtering, and more...</i> </a><li>§<li><a href=/projects/2021f_vader/ target=_parent> <i>Senior Design — Directional Acoustic Deterrence of Elephants to Prevent Human-Elephant Conflict in sub-Saharan Africa</i> </a><li>§<li><a href=/projects/2021f_cvis/ target=_parent> <i>Computer Vision — Facial Recognition using Gaussian Mixture Models, Adaboost & Haar Features, and more...</i> </a><li>§<li><a href=/projects/2020t_terrain/ target=_parent> <i>Terrain Identification using Sensory Prosthetic Limb Timeseries Data</i> </a><li>§<li><a href=/projects/2020t_crop/ target=_parent> <i>Semantic Segmentation of Crop Damage</i> </a><li>§<li><a href=/projects/2020f_hybrid/ target=_parent> <i>Adjusting Hybrid-Energy Model of Photovoltaic Generators to fit Klucher Weather Model</i> </a><li>§<li><a href=/projects/2018s_nedm/ target=_parent> <i>Undergraduate Research for Intercollegiate Search for the Neutron Electric Dipole-Moment</i> </a><li>   <h3><b> mini projects</b></h3>      <li><a href=/projects/2023t_cgol/ target=_parent> <i>Conway's Game of Life using Rust + WASM</i> </a><li>§<li><a href=/projects/2017t_gdax/ target=_parent> <i>High School - Cryptocurrency Trading Bot</i> </a></div><div class=beside-sidebar><div class=navbar id=navbar><ul><li><a href=/# target=_parent>home</a><li><a href=/#about target=_parent>about</a><li><a href=/#contact target=_parent>contact</a><li><a href=/#socials target=_parent>socials</a><li><a href=/cv.pdf target=_parent>cv</a><li><a href=/projects target=_parent>projects</a><li><a href=/notes target=_parent>notes</a></ul></div><div class=project-body><h3>crosstalk: In-memory pub-sub messaging for Rust</h3><i><p>  Topic-based in-memory pub-sub mpmc messaging for Rust using enum arms as topics.</i><hr><h4>  Personal Project — <i><span style=font-weight:normal>Status:</span> Complete / Maintained</i></h4><p>  <b>Feb 2024</b>    — <i>Columbia, Maryland</i><p>Repositories</p>    — <a href=https://github.com/arpadav/crosstalk>crosstalk</a><hr><div id=markdown-content><style>#markdown-content h1 {
+                    margin-top: 0%;
+                }
+                #markdown-content img {
+                    max-width: 50vw;
+                    max-height: 70vh;
+                    margin: 0 auto;
+                    display: block;
+                    object-fit: contain;
+                }</style><style>code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #cccccc; background-color: #303030; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffcfaf; } /* Alert */
+    code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #dca3a3; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #f0dfaf; } /* ControlFlow */
+    code span.ch { color: #dca3a3; } /* Char */
+    code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+    code span.co { color: #7f9f7f; } /* Comment */
+    code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+    code span.do { color: #7f9f7f; } /* Documentation */
+    code span.dt { color: #dfdfbf; } /* DataType */
+    code span.dv { color: #dcdccc; } /* DecVal */
+    code span.er { color: #c3bf9f; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #c0bed1; } /* Float */
+    code span.fu { color: #efef8f; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+    code span.kw { color: #f0dfaf; } /* Keyword */
+    code span.op { color: #f0efd0; } /* Operator */
+    code span.ot { color: #efef8f; } /* Other */
+    code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #dca3a3; } /* SpecialChar */
+    code span.ss { color: #cc9393; } /* SpecialString */
+    code span.st { color: #cc9393; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #cc9393; } /* VerbatimString */
+    code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */</style><link href=/css/std.css rel=stylesheet><body><p><a href=https://crates.io/crates/crosstalk>https://crates.io/crates/crosstalk</a><p><em>Overview</em><p>This project spawned out of a need to have in-memory topic-based pub-sub communication for a monolithic project, which was modular in development. Meaning, there are various “sub-modules” of a monolithic binary that are spawned on different threads, with their own async runtimes.<p>There were many existing Rust-crates which had <code>mpmc</code> channels implemented, but none of them were “topic-based”. In addition, all topic-based solutions were things like <a href=https://en.wikipedia.org/wiki/ZeroMQ>ZMQ</a> or <a href=https://en.wikipedia.org/wiki/Data_Distribution_Service>DDS</a> which required data to be serialized, exposed on some port, sent over a bus to a buffer, deserialized, and then used. This is so unnecessary when I am working with a single binary and require it be in-memory, so the existing <code>mpmc</code> channels were the solution - I just needed to “topic-ize” them. Since all this was happening inside of the Rust binary, then using an enum for the topics was the natural choice.<p>This was my first time using procedural macros, but have since refactored the code with my current (2025) knowledge for some improvements. Until Rust decides to add a shared-state for proc-macro calls, the function to get subcribers/publishers requires a generic type <code>T</code>, which is a bit of a bummer for 2 main reasons:<ol type=1><li>The compiler can not infer the channel’s data-type <code>T</code>, requiring the developer to specify it.<li>If the channel topic’s data-type <code>D</code> is not user-specified <code>T</code>, this can only be caught during run-time.</ol><p>This crate will never panic, but (2) is quite disappointing, and can only be fixed with the shared-state proc-macro calls which can “store” the channel topic -> channel data-type in some <code>HashMap&LTTopic, proc_macro2::TokenStream></code>.<p>Originally, this project had used a manual implementation of pub-sub using <a href=https://docs.rs/flume/latest/flume/><code>flume</code></a>, but when I found out that <a href=https://tokio.rs/><code>tokio</code></a> already had a broadcast mpmc channel, I switched to them in <code>0.2</code>, which ended up making a lot of my work redundant and this crate ended up being more of a “wrapper”, but it was significantly faster and more performant, which is all I wanted.<p><em>README example</em><div class=sourceCode id=cb1><pre class="sourceCode rust"><code class="sourceCode rust"><span id=cb1-1><a aria-hidden=true href=#cb1-1 tabindex=-1></a><span class=at>#![</span>allow<span class=at>(</span>dead_code<span class=at>)]</span></span>
+<span id=cb1-2><a aria-hidden=true href=#cb1-2 tabindex=-1></a></span>
+<span id=cb1-3><a aria-hidden=true href=#cb1-3 tabindex=-1></a><span class=kw>use</span> <span class=pp>std::</span>thread<span class=op>;</span></span>
+<span id=cb1-4><a aria-hidden=true href=#cb1-4 tabindex=-1></a><span class=kw>use</span> <span class=pp>std::collections::</span>HashMap<span class=op>;</span></span>
+<span id=cb1-5><a aria-hidden=true href=#cb1-5 tabindex=-1></a><span class=kw>use</span> <span class=pp>crosstalk::</span>AsTopic<span class=op>;</span></span>
+<span id=cb1-6><a aria-hidden=true href=#cb1-6 tabindex=-1></a></span>
+<span id=cb1-7><a aria-hidden=true href=#cb1-7 tabindex=-1></a><span class=at>#[</span>derive<span class=at>(</span>AsTopic<span class=at>)]</span> <span class=co>// required for crosstalk topic</span></span>
+<span id=cb1-8><a aria-hidden=true href=#cb1-8 tabindex=-1></a><span class=kw>enum</span> TopicZoo <span class=op>{</span></span>
+<span id=cb1-9><a aria-hidden=true href=#cb1-9 tabindex=-1></a>    Topic1<span class=op>,</span></span>
+<span id=cb1-10><a aria-hidden=true href=#cb1-10 tabindex=-1></a>    Topic2<span class=op>,</span></span>
+<span id=cb1-11><a aria-hidden=true href=#cb1-11 tabindex=-1></a>    Topic3<span class=op>,</span></span>
+<span id=cb1-12><a aria-hidden=true href=#cb1-12 tabindex=-1></a>    Topic4<span class=op>,</span></span>
+<span id=cb1-13><a aria-hidden=true href=#cb1-13 tabindex=-1></a>    Topic5<span class=op>,</span></span>
+<span id=cb1-14><a aria-hidden=true href=#cb1-14 tabindex=-1></a>    Topic6<span class=op>,</span></span>
+<span id=cb1-15><a aria-hidden=true href=#cb1-15 tabindex=-1></a><span class=op>}</span></span>
+<span id=cb1-16><a aria-hidden=true href=#cb1-16 tabindex=-1></a></span>
+<span id=cb1-17><a aria-hidden=true href=#cb1-17 tabindex=-1></a><span class=at>#[</span>derive<span class=at>(</span><span class=bu>Clone</span><span class=at>)]</span> <span class=co>// required for crosstalk data</span></span>
+<span id=cb1-18><a aria-hidden=true href=#cb1-18 tabindex=-1></a><span class=at>#[</span>derive<span class=at>(</span><span class=bu>PartialEq</span><span class=op>,</span> <span class=bu>Debug</span><span class=at>)]</span></span>
+<span id=cb1-19><a aria-hidden=true href=#cb1-19 tabindex=-1></a><span class=kw>struct</span> Vehicle <span class=op>{</span></span>
+<span id=cb1-20><a aria-hidden=true href=#cb1-20 tabindex=-1></a>    make<span class=op>:</span> <span class=dt>String</span><span class=op>,</span></span>
+<span id=cb1-21><a aria-hidden=true href=#cb1-21 tabindex=-1></a>    model<span class=op>:</span> <span class=dt>String</span><span class=op>,</span></span>
+<span id=cb1-22><a aria-hidden=true href=#cb1-22 tabindex=-1></a>    color<span class=op>:</span> Color<span class=op>,</span></span>
+<span id=cb1-23><a aria-hidden=true href=#cb1-23 tabindex=-1></a>    wheels<span class=op>:</span> <span class=dt>u8</span><span class=op>,</span></span>
+<span id=cb1-24><a aria-hidden=true href=#cb1-24 tabindex=-1></a><span class=op>}</span></span>
+<span id=cb1-25><a aria-hidden=true href=#cb1-25 tabindex=-1></a></span>
+<span id=cb1-26><a aria-hidden=true href=#cb1-26 tabindex=-1></a><span class=at>#[</span>derive<span class=at>(</span><span class=bu>Clone</span><span class=at>)]</span> <span class=co>// required for crosstalk data</span></span>
+<span id=cb1-27><a aria-hidden=true href=#cb1-27 tabindex=-1></a><span class=at>#[</span>derive<span class=at>(</span><span class=bu>PartialEq</span><span class=op>,</span> <span class=bu>Debug</span><span class=at>)]</span></span>
+<span id=cb1-28><a aria-hidden=true href=#cb1-28 tabindex=-1></a><span class=kw>enum</span> Color <span class=op>{</span></span>
+<span id=cb1-29><a aria-hidden=true href=#cb1-29 tabindex=-1></a>    Red<span class=op>,</span></span>
+<span id=cb1-30><a aria-hidden=true href=#cb1-30 tabindex=-1></a>    Blue<span class=op>,</span></span>
+<span id=cb1-31><a aria-hidden=true href=#cb1-31 tabindex=-1></a>    Green</span>
+<span id=cb1-32><a aria-hidden=true href=#cb1-32 tabindex=-1></a><span class=op>}</span></span>
+<span id=cb1-33><a aria-hidden=true href=#cb1-33 tabindex=-1></a></span>
+<span id=cb1-34><a aria-hidden=true href=#cb1-34 tabindex=-1></a><span class=pp>crosstalk::init!</span> <span class=op>{</span></span>
+<span id=cb1-35><a aria-hidden=true href=#cb1-35 tabindex=-1></a>    <span class=pp>TopicZoo::</span>Topic1 <span class=op>=></span> <span class=dt>Vec</span><span class=op><</span><span class=dt>u32</span><span class=op>>,</span></span>
+<span id=cb1-36><a aria-hidden=true href=#cb1-36 tabindex=-1></a>    <span class=pp>TopicZoo::</span>Topic2 <span class=op>=></span> <span class=dt>String</span><span class=op>,</span></span>
+<span id=cb1-37><a aria-hidden=true href=#cb1-37 tabindex=-1></a>    <span class=pp>TopicZoo::</span>Topic3 <span class=op>=></span> Vehicle<span class=op>,</span></span>
+<span id=cb1-38><a aria-hidden=true href=#cb1-38 tabindex=-1></a>    <span class=pp>TopicZoo::</span>Topic4 <span class=op>=></span> HashMap<span class=op><&</span><span class=dt>str</span><span class=op>,</span> <span class=dt>Vec</span><span class=op><</span>Vehicle<span class=op>>>,</span></span>
+<span id=cb1-39><a aria-hidden=true href=#cb1-39 tabindex=-1></a>    <span class=pp>TopicZoo::</span>Topic5 <span class=op>=></span> Color<span class=op>,</span></span>
+<span id=cb1-40><a aria-hidden=true href=#cb1-40 tabindex=-1></a><span class=op>}</span></span>
+<span id=cb1-41><a aria-hidden=true href=#cb1-41 tabindex=-1></a><span class=co>// TopicZoo::Topic6 not included: defaults to String</span></span>
+<span id=cb1-42><a aria-hidden=true href=#cb1-42 tabindex=-1></a></span>
+<span id=cb1-43><a aria-hidden=true href=#cb1-43 tabindex=-1></a><span class=at>#[</span><span class=pp>tokio::</span>main<span class=at>]</span></span>
+<span id=cb1-44><a aria-hidden=true href=#cb1-44 tabindex=-1></a><span class=kw>async</span> <span class=kw>fn</span> main() <span class=op>{</span></span>
+<span id=cb1-45><a aria-hidden=true href=#cb1-45 tabindex=-1></a>    <span class=kw>let</span> <span class=kw>mut</span> node <span class=op>=</span> <span class=pp>crosstalk::BoundedNode::</span><span class=op><</span>TopicZoo<span class=op>></span><span class=pp>::</span>new(<span class=dv>1024</span>)<span class=op>;</span></span>
+<span id=cb1-46><a aria-hidden=true href=#cb1-46 tabindex=-1></a></span>
+<span id=cb1-47><a aria-hidden=true href=#cb1-47 tabindex=-1></a>    <span class=kw>let</span> (pub0_topic5<span class=op>,</span> <span class=kw>mut</span> sub0_topic5) <span class=op>=</span> node</span>
+<span id=cb1-48><a aria-hidden=true href=#cb1-48 tabindex=-1></a>        <span class=op>.</span>pubsub(<span class=pp>TopicZoo::</span>Topic5)</span>
+<span id=cb1-49><a aria-hidden=true href=#cb1-49 tabindex=-1></a>        <span class=op>.</span><span class=kw>await</span></span>
+<span id=cb1-50><a aria-hidden=true href=#cb1-50 tabindex=-1></a>        <span class=op>.</span>unwrap()<span class=op>;</span></span>
+<span id=cb1-51><a aria-hidden=true href=#cb1-51 tabindex=-1></a>    <span class=kw>let</span> <span class=kw>mut</span> sub1_topic5 <span class=op>=</span> node</span>
+<span id=cb1-52><a aria-hidden=true href=#cb1-52 tabindex=-1></a>        <span class=op>.</span>subscriber(<span class=pp>TopicZoo::</span>Topic5)</span>
+<span id=cb1-53><a aria-hidden=true href=#cb1-53 tabindex=-1></a>        <span class=op>.</span><span class=kw>await</span></span>
+<span id=cb1-54><a aria-hidden=true href=#cb1-54 tabindex=-1></a>        <span class=op>.</span>unwrap()<span class=op>;</span></span>
+<span id=cb1-55><a aria-hidden=true href=#cb1-55 tabindex=-1></a></span>
+<span id=cb1-56><a aria-hidden=true href=#cb1-56 tabindex=-1></a>    <span class=kw>let</span> message <span class=op>=</span> <span class=pp>Color::</span>Red<span class=op>;</span></span>
+<span id=cb1-57><a aria-hidden=true href=#cb1-57 tabindex=-1></a></span>
+<span id=cb1-58><a aria-hidden=true href=#cb1-58 tabindex=-1></a>    <span class=pp>thread::</span>spawn(<span class=kw>move</span> <span class=op>||</span> <span class=op>{</span> pub0_topic5<span class=op>.</span>write(message)<span class=op>;</span> <span class=op>}</span>)<span class=op>;</span></span>
+<span id=cb1-59><a aria-hidden=true href=#cb1-59 tabindex=-1></a></span>
+<span id=cb1-60><a aria-hidden=true href=#cb1-60 tabindex=-1></a>    <span class=kw>let</span> received_0 <span class=op>=</span> sub0_topic5<span class=op>.</span>read()<span class=op>.</span><span class=kw>await</span><span class=op>;</span></span>
+<span id=cb1-61><a aria-hidden=true href=#cb1-61 tabindex=-1></a>    <span class=kw>let</span> received_1 <span class=op>=</span> sub1_topic5<span class=op>.</span>read()<span class=op>.</span><span class=kw>await</span><span class=op>;</span></span>
+<span id=cb1-62><a aria-hidden=true href=#cb1-62 tabindex=-1></a></span>
+<span id=cb1-63><a aria-hidden=true href=#cb1-63 tabindex=-1></a>    <span class=pp>println!</span>(<span class=st>"{:?}"</span><span class=op>,</span> received_0)<span class=op>;</span></span>
+<span id=cb1-64><a aria-hidden=true href=#cb1-64 tabindex=-1></a>    <span class=pp>println!</span>(<span class=st>"{:?}"</span><span class=op>,</span> received_1)<span class=op>;</span></span>
+<span id=cb1-65><a aria-hidden=true href=#cb1-65 tabindex=-1></a>    <span class=pp>assert_eq!</span>(received_0<span class=op>,</span> received_1)<span class=op>;</span></span>
+<span id=cb1-66><a aria-hidden=true href=#cb1-66 tabindex=-1></a><span class=op>}</span></span></code></pre></div></div><br></div><base target=_top></div><link href=/css/std.css rel=stylesheet>

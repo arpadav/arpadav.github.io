@@ -220,8 +220,11 @@ function resize_name() {
                 `${h2_scale * fs_new * name_scale_in[0]}px`;
             recursive_resize_font(headers[i]);
         }
-        for (let i = 0; i < bodies.length; i++)
+        for (let i = 0; i < bodies.length; i++) {
+            bodies[i].style.fontSize =
+                `${p_scale * fs_new * name_scale_in[0]}px`;
             recursive_resize_font(bodies[i]);
+        }
         if (window.location.hash && first_load) {
             first_load = false;
             name_click();
@@ -232,32 +235,27 @@ function resize_name() {
 
 // change the font size of other elements, according to the main name
 function recursive_resize_font(elements) {
-    let root_tag_exceptions = ["P"];
-    for (let c = 0; c < elements.children.length; c++) {
-        if (
-            elements.children[c].children.length &&
-            !root_tag_exceptions.includes(elements.children[c].tagName)
-        )
-            recursive_resize_font(elements.children[c]);
-        else {
-            switch (elements.children[c].tagName) {
-                case "H2":
-                    elements.children[c].style.fontSize =
-                        `${h2_scale * fs_new * name_scale_in[0]}px`;
-                    break;
-                case "H3":
-                    elements.children[c].style.fontSize =
-                        `${h3_scale * fs_new * name_scale_in[0]}px`;
-                    break;
-                case "P":
-                    elements.children[c].style.fontSize =
-                        `${p_scale * fs_new * name_scale_in[0]}px`;
-                    break;
-                case "LI":
-                    elements.children[c].style.fontSize =
-                        `${p_scale * fs_new * name_scale_in[0]}px`;
-                    break;
-            }
+    const nodes = elements.querySelectorAll("*");
+    for (let i = 0; i < nodes.length; i++) {
+        const el = nodes[i];
+        if (!el.tagName) continue;
+        const size = p_scale * fs_new * name_scale_in[0];
+        switch (el.tagName) {
+            case "H2":
+                el.style.fontSize = `${h2_scale * fs_new * name_scale_in[0]}px`;
+                break;
+            case "H3":
+                el.style.fontSize = `${h3_scale * fs_new * name_scale_in[0]}px`;
+                break;
+            case "P":
+            case "LI":
+                el.style.fontSize = `${size}px`;
+                break;
+            case "A":
+                if (!el.querySelector("h1, h2, h3, h4, h5, h6")) {
+                    el.style.fontSize = `${size}px`;
+                }
+                break;
         }
     }
 }

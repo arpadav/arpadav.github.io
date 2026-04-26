@@ -1,0 +1,1754 @@
+<!doctype html><html class="light sidebar-visible" dir=ltr lang=en><meta charset=UTF-8><title>tinyklv</title><meta content=noindex name=robots><meta name=description><meta content="width=device-width,initial-scale=1" name=viewport><meta content=#ffffff name=theme-color><link href=favicon-de23e50b.svg rel=icon><link rel="shortcut icon" href=favicon-8114d1fc.png><link href=css/variables-8adf115d.css rel=stylesheet><link href=css/general-2459343d.css rel=stylesheet><link href=css/chrome-ae938929.css rel=stylesheet><link href=css/print-9e4910d8.css media=print rel=stylesheet><link href=fonts/fonts-9644e21d.css rel=stylesheet><link href=highlight-493f70e1.css id=mdbook-highlight-css rel=stylesheet><link href=tomorrow-night-4c0ae647.css id=mdbook-tomorrow-night-css rel=stylesheet><link href=ayu-highlight-3fdfc3ac.css id=mdbook-ayu-highlight-css rel=stylesheet><script>const path_to_root=``,default_light_theme=`light`,default_dark_theme=`navy`;window.path_to_searchindex_js=`searchindex-65cbd879.js`;</script><script src=toc-d2539d47.js></script><body><div id=mdbook-help-container><div id=mdbook-help-popup><h2 class=mdbook-help-title>Keyboard shortcuts</h2><div><p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters<p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book<p>Press <kbd>?</kbd> to show this help<p>Press <kbd>Esc</kbd> to hide this help</div></div></div><div id=mdbook-body-container><script>try{let theme=localStorage.getItem(`mdbook-theme`),sidebar=localStorage.getItem(`mdbook-sidebar`);theme.startsWith(`"`)&&theme.endsWith(`"`)&&localStorage.setItem(`mdbook-theme`,theme.slice(1,theme.length-1)),sidebar.startsWith(`"`)&&sidebar.endsWith(`"`)&&localStorage.setItem(`mdbook-sidebar`,sidebar.slice(1,sidebar.length-1))}catch{}</script><script>const default_theme=window.matchMedia(`(prefers-color-scheme: dark)`).matches?default_dark_theme:default_light_theme;let theme;try{theme=localStorage.getItem(`mdbook-theme`)}catch{}theme??=default_theme;const html=document.documentElement;html.classList.remove(`light`),html.classList.add(theme),html.classList.add(`js`);</script><input class=hidden id=mdbook-sidebar-toggle-anchor type=checkbox><script>let sidebar=null;const sidebar_toggle=document.getElementById(`mdbook-sidebar-toggle-anchor`);if(document.body.clientWidth>=1080){try{sidebar=localStorage.getItem(`mdbook-sidebar`)}catch{}sidebar||=`visible`}else sidebar=`hidden`,sidebar_toggle.checked=!1;sidebar===`visible`?sidebar_toggle.checked=!0:html.classList.remove(`sidebar-visible`);</script><nav aria-label="Table of contents" class=sidebar id=mdbook-sidebar><mdbook-sidebar-scrollbox class=sidebar-scrollbox></mdbook-sidebar-scrollbox><noscript><iframe class=sidebar-iframe-outer src=toc.html></iframe></noscript><div class=sidebar-resize-handle id=mdbook-sidebar-resize-handle><div class=sidebar-resize-indicator></div></div></nav><div class=page-wrapper id=mdbook-page-wrapper><div class=page><div id=mdbook-menu-bar-hover-placeholder></div><div class="menu-bar sticky" id=mdbook-menu-bar><div class=left-buttons><label aria-label="Toggle Table of Contents" title="Toggle Table of Contents" aria-controls=mdbook-sidebar class=icon-button for=mdbook-sidebar-toggle-anchor id=mdbook-sidebar-toggle><span class=fa-svg><svg viewbox="0 0 448 512" xmlns=http://www.w3.org/2000/svg><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span></label><button aria-label="Change theme" title="Change theme" aria-controls=mdbook-theme-list aria-expanded=false aria-haspopup=true class=icon-button id=mdbook-theme-toggle type=button><span class=fa-svg><svg viewbox="0 0 576 512" xmlns=http://www.w3.org/2000/svg><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span></button><ul aria-label=Themes class=theme-popup id=mdbook-theme-list role=menu><li role=none><button class=theme id=mdbook-theme-default_theme role=menuitem>Auto</button><li role=none><button class=theme id=mdbook-theme-light role=menuitem>Light</button><li role=none><button class=theme id=mdbook-theme-rust role=menuitem>Rust</button><li role=none><button class=theme id=mdbook-theme-coal role=menuitem>Coal</button><li role=none><button class=theme id=mdbook-theme-navy role=menuitem>Navy</button><li role=none><button class=theme id=mdbook-theme-ayu role=menuitem>Ayu</button></ul><button aria-keyshortcuts="/ s" aria-label="Toggle Searchbar" title="Search (`/`)" aria-controls=mdbook-searchbar aria-expanded=false class=icon-button id=mdbook-search-toggle type=button><span class=fa-svg><svg viewbox="0 0 512 512" xmlns=http://www.w3.org/2000/svg><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span></button></div><h1 class=menu-title>tinyklv</h1><div class=right-buttons><a aria-label="Print this book" title="Print this book" href=print.html> <span class=fa-svg id=print-button><svg viewbox="0 0 512 512" xmlns=http://www.w3.org/2000/svg><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span> </a><a aria-label="Git repository" title="Git repository" href=https://github.com/arpadav/tinyklv> <span class=fa-svg><svg viewbox="0 0 496 512" xmlns=http://www.w3.org/2000/svg><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> </a></div></div><div class=hidden id=mdbook-search-wrapper><form class=searchbar-outer id=mdbook-searchbar-outer><div class=search-wrapper><input placeholder="Search this book ..." aria-controls=mdbook-searchresults-outer aria-describedby=searchresults-header id=mdbook-searchbar name=searchbar type=search><div class=spinner-wrapper><span class=fa-svg id=fa-spin><svg viewbox="0 0 512 512" xmlns=http://www.w3.org/2000/svg><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span></div></div></form><div class="searchresults-outer hidden" id=mdbook-searchresults-outer><div class=searchresults-header id=mdbook-searchresults-header></div><ul id=mdbook-searchresults></ul></div></div><script>document.getElementById(`mdbook-sidebar-toggle`).setAttribute(`aria-expanded`,sidebar===`visible`),document.getElementById(`mdbook-sidebar`).setAttribute(`aria-hidden`,sidebar!==`visible`),Array.from(document.querySelectorAll(`#mdbook-sidebar a`)).forEach(function(link){link.setAttribute(`tabIndex`,sidebar===`visible`?0:-1)});</script><div class=content id=mdbook-content><main><h1 id=introduction><a class=header href=#introduction>Introduction</a></h1><p><code>tinyklv</code> is a derive-macro framework for encoding and decoding <a href=https://en.wikipedia.org/wiki/KLV>Key-Length-Value (KLV)</a> binary streams in Rust. It is built on top of <a href=https://crates.io/crates/winnow><code>winnow</code></a> parser combinators.<p><code>tinyklv</code> is protocol-agnostic, and is usually used to create protocols. The derive macro generates encoder/decoder trait implementations, allowing for byte-stream data to be generated and parsed on the fly.<h2 id=who-this-is-for><a class=header href=#who-this-is-for>Who this is for</a></h2><p>Anyone decoding or emitting binary framed data in Rust. Some examples may include telemetry parsers, video metadata tools, embedded protocol handlers,] test harnesses for custom binary formats.<p>Prior exposure to <code>winnow</code> helps but is not required, but is highly encouranged. This book introduces parser-combinator concepts where they matter.<h2 id=quick-start><a class=header href=#quick-start>Quick start</a></h2><pre><code class=language-sh>cargo add tinyklv
+</code></pre><p>Then head to <a href=#tutorial-01---first-packet>Tutorial 01 - First packet</a>.<h2 id=stability><a class=header href=#stability>Stability</a></h2><p><code>tinyklv</code> is pre-1.0. The public surface is stable under the <code>#[derive(Klv)]</code> macro, but the crate is still moving toward its first tagged release.<div style=break-before:page;page-break-before:always></div><h1 id=what-is-klv><a class=header href=#what-is-klv>What is KLV?</a></h1><p><strong>K</strong>ey–<strong>L</strong>ength–<strong>V</strong>alue is a framing pattern: each logical field in a stream of bytes is prefixed by a key (identifier) and a length (size of the value in bytes), followed by the value payload. Stacking these triples back to back gives you a self-describing record:<pre><code class=language-text>┌─────┬─────┬───────────┬─────┬─────┬───────────┐
+│ KEY │ LEN │ VALUE ... │ KEY │ LEN │ VALUE ... │
+└─────┴─────┴───────────┴─────┴─────┴───────────┘
+</code></pre><p>And in order to find the start of your KLV packet/frame in a sea of streamed data, you use a key called a <em>sentinel</em> (magic bytes). This is usually a unique identifier of 16+ bytes to indicate the start of a stream. That is immediately followed by a length header and you have a full KLV packet:<pre><code class=language-text>┌────────────────┬─────────────────┬───────────────────┐
+│ KEY (SENTINEL) │ LEN (FRAME LEN) │ DATA (KLV's ...)  │
+└────────────────┴─────────────────┴───────────────────┘
+</code></pre><h2 id=the-klv-pattern><a class=header href=#the-klv-pattern>The KLV pattern</a></h2><p>As you can tell, the entire packet also follows this Key Length Value format, enabling it to be nested and use similar logic during encoding and decoding.<p>Here is an example of a complex, nested KLV packet:<pre><code class=language-text>┌───────────────────────────────────────────────────────┐
+│ .. other data ..                                      │
+├─────────────────────────┬─────────────────────────────┤
+│ 0x03 0x05 .. (SENTINEL) │ 0x13 (PKT LEN = 19 bytes)   │
+├─────────────────────────┴─────────────────────────────┤
+│ KLV #1 (simple value)                                 │
+│ ┌────────┬────────┬─────────────────────────────────┐ │
+│ │ K 0x01 │ L 0x02 │ V 0xAA 0xBB                     │ │
+│ └────────┴────────┴─────────────────────────────────┘ │
+├───────────────────────────────────────────────────────┤
+│ KLV #2 (value is a nested KLV train)                  │
+│ ┌────────┬────────┬─────────────────────────────────┐ │
+│ │ K 0x02 │ L 0x08 │ V (nested KLV, 8 bytes)         │ │
+│ └────────┴────────┤                                 │ │
+│                   │ ┌────────┬────────┬───────────┐ │ │
+│                   │ │ K 0x03 │ L 0x06 │ V 0x04 .. │ │ │
+│                   │ └────────┴────────┴───────────┘ │ │
+│                   └─────────────────────────────────┘ │
+├───────────────────────────────────────────────────────┤
+│ KLV #3 (simple value)                                 │
+│ ┌────────┬────────┬─────────────────────────────────┐ │
+│ │ K 0x05 │ L 0x03 │ V 0xDE 0xAD 0xFF                │ │
+│ └────────┴────────┴─────────────────────────────────┘ │
+├───────────────────────────────────────────────────────┤
+│ .. other data ..                                      │
+└───────────────────────────────────────────────────────┘
+</code></pre><p>This enabled:<ul><li><strong>Forward compatibility.</strong> Unknown keys can be skipped - the length tells the parser how many bytes to drop. Adding a field does not break old decoders.<li><strong>Self-describing.</strong> A decoder does not need to know field offsets up front.<li><strong>Stream-resyncable.</strong> When you lose framing on a noisy transport (UDP, radio, RS-422), the sentinel lets you skip garbage and rejoin the stream at the next frame boundary.</ul><h2 id=design-choices-tinyklv-leaves-to-you><a class=header href=#design-choices-tinyklv-leaves-to-you>Design choices <code>tinyklv</code> leaves to you</a></h2><p>The KLV <em>shape is fixed</em>, but the concrete encoding of each part is not:<div class=table-wrapper><table><thead><tr><th>Part<th>Typical choices<tbody><tr><td>Sentinel<td>Any fixed 16+ bytes is common<tr><td>Key<td>1-byte <code>u8</code>, 2-byte <code>u16</code>, or multi-byte BER-OID<tr><td>Length<td>1-byte <code>u8</code>, BER variable-width, or explicit 4-byte <code>u32</code><tr><td>Value<td>Anything</table></div><p><code>tinyklv</code> provides codec functions for each of these (see <a href=#codecs>Codecs reference</a>) and lets you mix them on a per-container and per-field basis.<p>Move on to <a href=#tutorial-01---first-packet>Tutorial 01 - First packet</a> to see how these pieces compose.<h2 id=where-you-see-klv-in-the-wild><a class=header href=#where-you-see-klv-in-the-wild>Where you see KLV in the wild</a></h2><ul><li>Airborne and ground-sensor telemetry carried inside MPEG-TS video streams<li>Satellite and UAV command-and-control buses<li>Industrial sensor packets on CANbus/RS-485<li>Custom in-house binary protocols that evolved from a “just enough” spec</ul><div style=break-before:page;page-break-before:always></div><h1 id=fundamentals><a class=header href=#fundamentals>Fundamentals</a></h1><p>Core features of <code>tinyklv</code>, from first decode to full round-trip.<div class=table-wrapper><table><thead><tr><th>#<th>Tutorial<th>Concept<tbody><tr><td>01<td><a href=#tutorial-01---first-packet>First packet</a><td>KLV triple structure, basic <code>DecodeValue</code><tr><td>02<td><a href=#tutorial-02---out-of-order--prelude>Out-of-order & prelude</a><td>Keyed dispatch, <code>prelude::*</code><tr><td>03<td><a href=#tutorial-03---frames--sentinels>Frames & sentinels</a><td><code>DecodeFrame</code>, sentinel seeking<tr><td>04<td><a href=#tutorial-04---default-codecs>Default codecs</a><td>Container-level <code>default(typ = T, ...)</code><tr><td>05<td><a href=#tutorial-05---custom-decoder-functions>Custom decoder functions</a><td>Writing a <code>fn(&mut S) -> Result&lt;T></code><tr><td>06<td><a href=#tutorial-06---implementing-decodevalue>Implementing DecodeValue</a><td>Trait-based codec on the type<tr><td>07<td><a href=#tutorial-07---value-lengths>Value lengths</a><td>Subslices and <code>varlen = true</code><tr><td>08<td><a href=#tutorial-08---latebind-transforms>Latebind transforms</a><td>Post-decode <code>Fn(T) -> U</code> and <code>Fn(&mut T)</code><tr><td>09<td><a href=#tutorial-09---encoding--sigils>Encoding & sigils</a><td><code>EncodeValue</code>, <code>&</code> and <code>*</code> sigils<tr><td>10<td><a href=#tutorial-10---macros>Macros</a><td>Macros for <code>enc</code>/<code>dec</code><tr><td>11<td><a href=#tutorial-11---optional-fields-default-and-fallback-impls>Optional fields & default</a><td><code>Option&lt;T></code>, <code>default</code>, <code>trait_fallback</code></table></div><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-01---first-packet><a class=header href=#tutorial-01---first-packet>Tutorial 01 - First packet</a></h1><p>Before we begin, some information about <code>tinyklv</code>’s proc-macro format.<h2 id=derive-macro><a class=header href=#derive-macro>Derive macro</a></h2><p><code>tinyklv</code>’s main entry-point is its derive proc-macro <code>tinyklv::Klv</code>. When applying <code>#[derive(Klv)]</code> onto a named-struct (e.g. one with fields), a series of traits are attempted to be implemented, including both decoding and encoding.<h2 id=container-attributes><a class=header href=#container-attributes>Container Attributes</a></h2><p>In order to decode, the bare-minimum <code>Klv</code> requires is a key and a len decoder. This will indicate how every key and every length value is decoded. Note, that keys can be more descriptive literals, e.g. <code>&'static str</code>, which is why the key decoder exists to convert this into bytes (using ASCII? UTF8?). Usually, just bytes will do, and the <code>#[klv(key(dec = ..)]</code> container attribute will use a binary decoder of some unsigned int, varying precision, varying endianness.<p>The <code>#[klv(len(..)]</code> attribute should always decode as <code>usize</code> and encode from <code>usize</code>. This is because the parsers using <code>winnow</code> usually “take” bytes will always end up being coerced into a <code>usize</code> via the <a href=https://docs.rs/winnow/latest/winnow/stream/trait.ToUsize.html#tymethod.to_usize><code>ToUsize</code> trait</a> anyways. It allows the developer to know up-front that that conversion is happening.<p><a href=#container-attributes-1>All container attributes here</a><h2 id=field-attributes><a class=header href=#field-attributes>Field attributes</a></h2><p>Same <code>#[klv(..)]</code> format is used, where here <code>#[klv(key = literal)]</code> is used to assign a key to the specified field. Similarly, <code>#[klv(dec = ..)]</code> is used to point to a function or macro which can decode the byte stream into its specified type.<p>No length value is necessary: decoders will either have fixed-length decoding baked-into the function itself, or will take in a length value.Decoder function signatures are discussed more in the <a href=#tutorial-05---custom-decoder-functions>Implementing Custom Decoder</a> tutorial.<p><a href=#field-attributes-1>All field attributes here</a><h2 id=trait-implementation><a class=header href=#trait-implementation>Trait implementation</a></h2><p>Decoding is driven by <code>DecodeValue::decode_value</code>, which takes <code>&mut &[u8]</code> and advances the slice pointer in place.<p><a href=#traits>All traits here</a><h2 id=example><a class=header href=#example>Example</a></h2><p><code>Heartbeat</code> carries two fields: a one-byte <code>sequence</code> and a two-byte big-endian <code>temperature_centideg</code>.<p>The container sets <code>key(dec = decb::u8)</code> and <code>len(dec = decb::u8_as_usize)</code> to say “one byte for the key, one byte for the length”. Each field picks its own value decoder (<code>decb::u8</code>, <code>decb::be_u16</code>).<p>In addition, you might see <code>allow_unimplemented_encode</code> here. This is a flag, where by default, <code>tinyklv::Klv</code> requires both encoding and decoding to be implemented. <a href=#allow_unimplemented_encode>More on this here</a><p>Run this example: <code>cargo run --example book_01_getting_started</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/01-getting-started.md` for full example
+use tinyklv::Klv;                   // proc-macro
+use tinyklv::DecodeValue;           // decode the value from bytes
+use tinyklv::prelude::*;            // additional prelude - helps with decoder loop
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+    )]
+    temperature_centideg: u16,
+}
+
+fn main() {
+    // manually construct the packet
+    let original_stream = [
+        0x01,       // sequence key
+        0x01,       // value len = 1
+        0x2A,       // sequence value = 42
+        0x02,       // temperature key
+        0x02,       // value len = 2
+        0x09, 0x2E, // temperature value = 2350
+    ];
+
+    // manually construct the value
+    let original_constructed = Heartbeat {
+        sequence: 42,
+        temperature_centideg: 2350,
+    };
+
+    // decode the value
+    // `winnow` is used internally, which requires a &mut Stream, in
+    // this case a &mut &[u8]. this allows for the slice to be borrowed
+    // and changing the pointer in a zero-copy manner
+    let decoded = Heartbeat::decode_value(
+        &mut original_stream.as_slice()
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, original_constructed);
+}</code></pre><h2 id=note><a class=header href=#note>Note</a></h2><p>For the first couple of examples, the stream is hand-built + annocated so you can see every byte.<h2 id=overview><a class=header href=#overview>Overview</a></h2><ul><li>KLV triples are <code>key | length | value</code>; the derive decodes them together.<li><code>decode_value</code> consumes the slice in place. <code>DecodeValue</code> trait provides this, and is imported from the prelude.<li><code>allow_unimplemented_encode</code> is a flag, which is used in this tutorial until encoding is covered.</ul><p><strong>Next:</strong> <a href=#tutorial-02---out-of-order--prelude>02 - Out-of-order & prelude</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-02---out-of-order--prelude><a class=header href=#tutorial-02---out-of-order--prelude>Tutorial 02 - Out-of-order & prelude</a></h1><p>Tutorial 01 imported <code>Klv</code> and <code>DecodeValue</code> by name. Every subsequent page replaces those two lines with a single <code>use tinyklv::prelude::*;</code> - the prelude re-exports the derive macro and every trait the book uses.<p>The more interesting change is the data layout. The <code>temperature_centideg</code> triple now appears <em>before</em> the <code>sequence</code> triple inside the stream. KLV is keyed, not positional: fields are located by their <code>key = ...</code> attribute, not by offset, so the decoder happily walks the stream and assembles the struct in whatever order the triples happened to arrive.<h2 id=example-1><a class=header href=#example-1>Example</a></h2><p>Run this example: <code>cargo run --example book_02_out_of_order</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/02-out-of-order.md` for full example
+use tinyklv::prelude::*;            // Klv and DecodeValue are already imported here
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+    )]
+    temperature_centideg: u16,
+}
+
+fn main() {
+    // manually construct the packet
+    let out_of_order_stream = [
+        0x02,       // temperature key
+        0x02,       // value len = 2
+        0x09, 0x2E, // temperature value = 2350
+        0x01,       // sequence key
+        0x01,       // value len = 1
+        0x2A,       // sequence value = 42
+    ];
+
+    // manually construct the value
+    let original_constructed = Heartbeat {
+        sequence: 42,
+        temperature_centideg: 2350,
+    };
+
+    // decode the value
+    let decoded = Heartbeat::decode_value(
+        &mut out_of_order_stream.as_slice()
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, original_constructed);
+}</code></pre><h2 id=overview-1><a class=header href=#overview-1>Overview</a></h2><ul><li><code>tinyklv::prelude::*</code> brings <code>Klv</code>, <code>DecodeValue</code>, and <code>DecodeFrame</code> into scope.<li>Reordered triples still decode - the derive dispatches on the key byte.<li>The byte layout (inline comments) is the only thing that changed vs 01.</ul><p><strong>Next:</strong> <a href=#tutorial-03---frames--sentinels>03 - Frames & sentinels</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-03---frames--sentinels><a class=header href=#tutorial-03---frames--sentinels>Tutorial 03 - Frames & sentinels</a></h1><p><code>DecodeValue::decode_value</code> assumed the slice started exactly on a KLV triple. Real streams are noisy: UDP payloads, log files, and serial ports prepend preambles, checksums, and other junk. Two new container attributes solve this - <code>#[klv(stream = &[u8])]</code> names the decoder input type. This is the default, but it is shown for clarity in most examples. And <code>#[klv(sentinel = b"HEARTBEAT")]</code> declares the magic bytes that mark the start of a frame.<p>This will allow for us to seek the sentinel and use <code>tinyklv::DecodeFrame</code>, which is simply a chain of <code>SeekSentinel::seek_sentinel</code> -> <code>DecodeValue::decode_value</code>. Call <code>Heartbeat::decode_frame(&mut stream)</code> and it walks past arbitrary leading junk until it matches <code>HEARTBEAT</code>, reads the length-prefixed body, and then hands the body to the same <code>decode_value</code> you used on Tutorial 01.<h2 id=example-2><a class=header href=#example-2>Example</a></h2><p>Run this example: <code>cargo run --example book_03_frame_and_sentinel</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/03-frames-and-sentinels.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro, DecodeFrame, and more
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],                 // default, shown explicitly for clarity
+    sentinel = b"HEARTBEAT",        // readable marker at the frame boundary
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+    )]
+    temperature_centideg: u16,
+}
+
+fn main() {
+    // hand-built stream: garbage bytes, then a real frame
+    let stream = [
+        0xDE, 0xAD, 0xBE, 0x00, // junk preamble, no sentinel here
+        // HEARTBEAT sentinel
+        0x48, 0x45, 0x41, 0x52, 0x54, 0x42, 0x45, 0x41, 0x54,
+        0x07,                   // body length = 7 bytes
+        0x01,                   // sequence key
+        0x01,                   // value len = 1
+        0x2A,                   // sequence value = 42
+        0x02,                   // temperature key
+        0x02,                   // value len = 2
+        0x09, 0x2E,             // temperature value = 2350
+    ];
+
+    // manually constructed expected value
+    let expected = Heartbeat {
+        sequence: 42,
+        temperature_centideg: 2350,
+    };
+
+    // decode_frame seeks past the junk, matches the sentinel, reads the
+    // length, then decodes the body
+    let decoded = Heartbeat::decode_frame(
+        &mut stream.as_slice(),
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, expected);
+}</code></pre><h2 id=overview-2><a class=header href=#overview-2>Overview</a></h2><ul><li><code>sentinel</code> adds a <code>SeekSentinel</code> implementation. <code>DecodeFrame</code> is blanket-impl’d on top.<li><code>decode_frame</code> is simply a chain of seeking the sentinel, getting the value, and calling <code>decode_value</code> on the body.</ul><p><strong>Next:</strong> <a href=#tutorial-04---default-codecs>04 - Default codecs</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-04---default-codecs><a class=header href=#tutorial-04---default-codecs>Tutorial 04 - Default codecs</a></h1><p><code>Heartbeat</code> now carries six fields. Writing <code>dec = decb::u8</code> on every <code>u8</code> field and <code>dec = decb::be_u16</code> on every <code>u16</code> field would be a lot of boiler-plate. Container-level <code>default(typ = T, dec = ...)</code> attaches a default codec to a concrete type, rather than it being field-specific. As a result, any field with type <code>T</code> which does not have a <code>dec = ..</code> field attribute will fall back to the default type, only needing <code>key = ..</code>!<p>Fields codecs will still take precidence over their defaults, if the same datatype (e.g. and enumeration) is decoded in different ways.<h2 id=example-3><a class=header href=#example-3>Example</a></h2><p>Run this example: <code>cargo run --example book_04_default_codec</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/04-default-codec.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro, traits
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    default(typ = u8,  dec = decb::u8),
+    default(typ = u16, dec = decb::be_u16),
+    default(typ = u32, dec = decb::be_u32),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(key = 0x01)] sequence:             u8,
+    #[klv(key = 0x02)] temperature_centideg: u16,
+    #[klv(key = 0x03)] battery_pct:          u8,
+    #[klv(key = 0x04)] rssi_dbm:             u8,
+    #[klv(key = 0x05)] uptime_s:             u32,
+    #[klv(key = 0x06)] mode_flags:           u8,
+}
+
+fn main() {
+    // manually construct the stream
+    let stream = [
+        0xDE, 0xAD, 0xBE, 0x00,             // junk preamble, no sentinel here
+        // "HEARTBEAT" sentinel
+        0x48, 0x45, 0x41, 0x52, 0x54, 0x42, 0x45, 0x41, 0x54,
+        0x16,                               // body length = 22 bytes
+        0x01, 0x01, 0x2A,                   // sequence          = 42
+        0x02, 0x02, 0x09, 0x2E,             // temperature       = 2350
+        0x03, 0x01, 0x57,                   // battery_pct       = 87
+        0x04, 0x01, 0xB8,                   // rssi_dbm          = 0xB8
+        0x05, 0x04, 0x00, 0x00, 0x0E, 0x10, // uptime_s          = 3600
+        0x06, 0x01, 0x03,                   // mode_flags        = 0b0000_0011
+    ];
+
+    // manually construct the expected value
+    let expected = Heartbeat {
+        sequence:             42,
+        temperature_centideg: 2350,
+        battery_pct:          87,
+        rssi_dbm:             0xB8,
+        uptime_s:             3600,
+        mode_flags:           0b0000_0011,
+    };
+
+    // seek sentinel, decode the value
+    let decoded = Heartbeat::decode_frame(
+        &mut stream.as_slice(),
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, expected);
+}</code></pre><h2 id=overview-3><a class=header href=#overview-3>Overview</a></h2><ul><li><code>default(typ = T, dec = f)</code> uses <code>f</code> as a decoder for every key with value of type <code>T</code>.<li>Field-level <code>dec = ...</code> still wins when a field needs something bespoke.<li>One default per type, listed in the container attribute, not repeated.</ul><p><strong>Next:</strong> <a href=#tutorial-05---custom-decoder-functions>05 - Custom decoder functions</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-05---custom-decoder-functions><a class=header href=#tutorial-05---custom-decoder-functions>Tutorial 05 - Custom decoder functions</a></h1><p>Every path passed to <code>dec = ...</code> obeys the same contract:<pre><code class=language-rust>fn &lt;name>(input: &mut S) -> tinyklv::Result&lt;T>;</code></pre><p>where <code>S</code> is the stream type which implements <code>winnow::stream::Stream</code> (here <code>&[u8]</code>) and <code>T</code> is the field type.<p>As a result, every “binary decoder” here imported using <code>decb</code> namespace are just helpers - nothing stops you from making your own.<p>Here the format stays the same (two-byte big-endian centidegrees) but the field type becomes a domain-specific <code>Celsius(f32)</code>. The free-standing <code>decode_celsius</code> function reads the <code>u16</code> and scales it. Because the field’s type is <code>Celsius</code>, the container’s <code>default(typ = u16, ...)</code> no longer applies - so the field attribute carries its own <code>dec = decode_celsius</code>.<h2 id=example-4><a class=header href=#example-4>Example</a></h2><p>Run this example: <code>cargo run --example book_05_custom_decoder_fn</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/05-custom-decoder.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro, traits
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Debug, PartialEq, Clone, Copy)]
+/// A custom struct representing degrees Celsius
+struct Celsius(f32);
+
+/// Read a big-endian `u16` of centidegrees, scale it to degrees Celsius
+fn decode_celsius(input: &mut &[u8]) -> tinyklv::Result&lt;Celsius> {
+    let centideg = decb::be_u16(input)?;
+    Ok(Celsius(centideg as f32 / 100.0))
+}
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    default(typ = u8,  dec = decb::u8),
+    default(typ = u32, dec = decb::be_u32),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(key = 0x01)]                          sequence:    u8,
+    #[klv(key = 0x02, dec = decode_celsius)]    temperature: Celsius,
+    #[klv(key = 0x03)]                          battery_pct: u8,
+    #[klv(key = 0x04)]                          rssi_dbm:    u8,
+    #[klv(key = 0x05)]                          uptime_s:    u32,
+    #[klv(key = 0x06)]                          mode_flags:  u8,
+}
+
+fn main() {
+    // manually construct the stream
+    let stream = [
+        0xDE, 0xAD, 0xBE, 0x00,             // junk preamble, no sentinel here
+        // "HEARTBEAT" sentinel
+        0x48, 0x45, 0x41, 0x52, 0x54, 0x42, 0x45, 0x41, 0x54,
+        0x16,                               // body length = 22 bytes
+        0x01, 0x01, 0x2A,                   // sequence         = 42
+        0x02, 0x02, 0x09, 0x2E,             // temperature      = 2350 centideg -> 23.50 C
+        0x03, 0x01, 0x57,                   // battery_pct      = 87
+        0x04, 0x01, 0xB8,                   // rssi_dbm         = 0xB8
+        0x05, 0x04, 0x00, 0x00, 0x0E, 0x10, // uptime_s         = 3600
+        0x06, 0x01, 0x03,                   // mode_flags       = 0b0000_0011
+    ];
+
+    // manually construct the expected value
+    let expected = Heartbeat {
+        sequence:    42,
+        temperature: Celsius(23.50),
+        battery_pct: 87,
+        rssi_dbm:    0xB8,
+        uptime_s:    3600,
+        mode_flags:  0b0000_0011,
+    };
+
+    // seek sentinel, decode the value
+    let decoded = Heartbeat::decode_frame(
+        &mut stream.as_slice(),
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, expected);
+}</code></pre><h2 id=overview-4><a class=header href=#overview-4>Overview</a></h2><ul><li><code>fn(&mut S) -> tinyklv::Result&lt;T></code> is the only contract - built-ins follow it.<li>Named functions, built-in codecs, and macro invocations all work in <code>dec = ...</code>.<li>Domain types get their decoder by wiring a bespoke function into <code>dec = ...</code>.<li>Container defaults match on type; changing the field type opts out cleanly.</ul><p><strong>Next:</strong> <a href=#tutorial-06---implementing-decodevalue>06 - Implementing DecodeValue</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-06---implementing-decodevalue><a class=header href=#tutorial-06---implementing-decodevalue>Tutorial 06 - Implementing <code>DecodeValue</code></a></h1><p>Tutorial 05 used a free-standing <code>decode_celsius</code> into the field attribute. That works, but the codec lives <em>next to</em> <code>Celsius</code>, not <em>on</em> it. Any other KLV struct that wants to embed a <code>Celsius</code> has to import the function.<p><code>tinyklv::DecodeValue&lt;S></code> lifts the same contract onto the type itself:<pre><code class=language-rust>impl DecodeValue&lt;&[u8]> for Celsius {
+    fn decode_value(input: &mut &[u8]) -> tinyklv::Result&lt;Self> { ... }
+}</code></pre><p><code>Celsius::decode_value</code> is now a method matching the <code>fn(&mut S) -> tinyklv::Result&lt;T></code> shape. The field attribute names the method directly (<code>dec = Celsius::decode_value</code>), and every downstream struct that embeds a <code>Celsius</code> gets the decoder for free.<h2 id=example-5><a class=header href=#example-5>Example</a></h2><p>Run this example: <code>cargo run --example book_06_decode_value_impl</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/06-decode-value-impl.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro, traits
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Debug, PartialEq, Clone, Copy)]
+/// Degrees Celsius, encoded as big-endian `u16` centidegrees
+struct Celsius(f32);
+
+/// `Celsius` carries its own contract; no free-standing decoder fn required
+impl DecodeValue&lt;&[u8]> for Celsius {
+    fn decode_value(input: &mut &[u8]) -> tinyklv::Result&lt;Self> {
+        let centideg = decb::be_u16(input)?;
+        Ok(Celsius(centideg as f32 / 100.0))
+    }
+}
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    default(typ = u8,  dec = decb::u8),
+    default(typ = u32, dec = decb::be_u32),
+    default(typ = Celsius, dec = Celsius::decode_value),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(key = 0x01)]  sequence:    u8,
+    #[klv(key = 0x02)]  temperature: Celsius,
+    #[klv(key = 0x03)]  battery_pct: u8,
+    #[klv(key = 0x04)]  rssi_dbm:    u8,
+    #[klv(key = 0x05)]  uptime_s:    u32,
+    #[klv(key = 0x06)]  mode_flags:  u8,
+}
+
+fn main() {
+    // manually construct the stream
+    let stream = [
+        0xDE, 0xAD, 0xBE, 0x00,             // junk preamble, no sentinel here
+        // "HEARTBEAT" sentinel
+        0x48, 0x45, 0x41, 0x52, 0x54, 0x42, 0x45, 0x41, 0x54,
+        0x16,                               // body length = 22 bytes
+        0x01, 0x01, 0x2A,                   // sequence         = 42
+        0x02, 0x02, 0x09, 0x2E,             // temperature      = 2350 centideg -> 23.50 C
+        0x03, 0x01, 0x57,                   // battery_pct      = 87
+        0x04, 0x01, 0xB8,                   // rssi_dbm         = 0xB8
+        0x05, 0x04, 0x00, 0x00, 0x0E, 0x10, // uptime_s         = 3600
+        0x06, 0x01, 0x03,                   // mode_flags       = 0b0000_0011
+    ];
+
+    // manually construct the expected value
+    let expected = Heartbeat {
+        sequence:    42,
+        temperature: Celsius(23.50),
+        battery_pct: 87,
+        rssi_dbm:    0xB8,
+        uptime_s:    3600,
+        mode_flags:  0b0000_0011,
+    };
+
+    // seek sentinel, decode the value
+    let decoded = Heartbeat::decode_frame(
+        &mut stream.as_slice(),
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, expected);
+}</code></pre><h2 id=overview-5><a class=header href=#overview-5>Overview</a></h2><ul><li><code>DecodeValue::decode_value</code> is the trait form of the same <code>fn(&mut S)</code> contract.<li>A type that implements it can be embedded in any KLV struct without extra wiring.<li>Encoding follows the same pattern via <code>EncodeValue</code> - covered in Tutorial 09.</ul><p><strong>Next:</strong> <a href=#tutorial-07---value-lengths>07 - Value lengths</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-07---value-lengths><a class=header href=#tutorial-07---value-lengths>Tutorial 07 - Value lengths</a></h1><p>Every field so far had a fixed width. <code>u8</code> is one byte, <code>u16</code> is two, <code>Celsius</code> is two. The KLV length byte was informational inside the body - the decoder ignored it because the field’s type already told it how many bytes to read.<h2 id=subslices><a class=header href=#subslices>Subslices</a></h2><p>Realistically, what happens is the key is sought, the len value is “grabbed” as a sub-slice, and only the sub-slice (value) is passed into the decoder. As a result, you can have functions work which can decode zero-padded values.<p>In this example, you see that <code>value: u16</code> and uses the big-endian <code>u16</code> decoder. However, the length is set to 4. As a result, the slice passed to the decoder will be of length 4, but the <code>u16</code> decoder will only use the first two values, discarding the rest.<p>Run this example: <code>cargo run --example book_07_a_subslice</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/07-val-lengths.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    allow_unimplemented_encode,
+)]
+struct U16OnlyTakeTwo {
+    #[klv(
+        key = 0x01,
+        dec = decb::be_u16,
+    )]
+    value: u16,
+}
+
+fn main() {
+    // manually construct the stream
+    let stream = [
+        0x01, 0x04, // key = 1, but len is 4 for a u16?
+        0x09, 0x2E, 0x00, 0x00, // value = 2350
+        // and for little-endian, you can use:
+        // 0x00, 0x00, 0x2E, 0x09
+    ];
+
+    // manually construct the expected value
+    let expected = U16OnlyTakeTwo {
+        value: 2350,
+    };
+
+    // seek sentinel, decode the value
+    let decoded = U16OnlyTakeTwo::decode_value(
+        &mut stream.as_slice(),
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, expected);
+}</code></pre><h2 id=variable-length><a class=header href=#variable-length>Variable length</a></h2><p><code>String</code> and other variable length types are different. Its width is only known at parse time, from the KLV length byte. The codec contract becomes:<pre><code class=language-rust>fn(len: usize) -> impl Fn(&mut S) -> Result&lt;T>;</code></pre><p>which is a function that takes the parsed length and returns a parser specialised to that length. Setting <code>varlen = true</code> on the field tells the derive to call <code>decs::to_string_utf8(len)(input)</code> instead of <code>decs::to_string_utf8(input)</code>.<p>Run this example: <code>cargo run --example book_07_b_varlen</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/07-val-lengths.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::dec::string as decs;   // string decoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    default(typ = u8,  dec = decb::u8),
+    default(typ = u16, dec = decb::be_u16),
+    default(typ = u32, dec = decb::be_u32),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(key = 0x01)]  sequence:             u8,
+    #[klv(key = 0x02)]  temperature_centideg: u16,
+    #[klv(key = 0x03)]  battery_pct:          u8,
+    #[klv(key = 0x04)]  rssi_dbm:             u8,
+    #[klv(key = 0x05)]  uptime_s:             u32,
+    #[klv(key = 0x06)]  mode_flags:           u8,
+
+    #[klv(
+        key = 0x07,
+        dec = decs::to_string_utf8,
+        varlen = true,
+    )]
+    station_id: String,
+}
+
+fn main() {
+    // manually construct the stream
+    let stream = [
+        0xDE, 0xAD, 0xBE, 0x00,                         // junk preamble, no sentinel here
+        // "HEARTBEAT" sentinel
+        0x48, 0x45, 0x41, 0x52, 0x54, 0x42, 0x45, 0x41, 0x54,
+        0x20,                                           // body length = 32 bytes
+        0x01, 0x01, 0x2A,                               // sequence             = 42
+        0x02, 0x02, 0x09, 0x2E,                         // temperature_centideg = 2350
+        0x03, 0x01, 0x57,                               // battery_pct          = 87
+        0x04, 0x01, 0xB8,                               // rssi_dbm             = 0xB8
+        0x05, 0x04, 0x00, 0x00, 0x0E, 0x10,             // uptime_s             = 3600
+        0x06, 0x01, 0x03,                               // mode_flags           = 0b0000_0011
+        0x07, 0x08,                                     // station_id: key, len = 8
+        0x53, 0x45, 0x4E, 0x53, 0x4F, 0x52, 0x2D, 0x37, // station_id value = "SENSOR-7"
+    ];
+
+    // manually construct the expected value
+    let expected = Heartbeat {
+        sequence:             42,
+        temperature_centideg: 2350,
+        battery_pct:          87,
+        rssi_dbm:             0xB8,
+        uptime_s:             3600,
+        mode_flags:           0b0000_0011,
+        station_id:           String::from("SENSOR-7"),
+    };
+
+    // seek sentinel, decode the value
+    let decoded = Heartbeat::decode_frame(
+        &mut stream.as_slice(),
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, expected);
+}</code></pre><h2 id=overview-6><a class=header href=#overview-6>Overview</a></h2><ul><li><code>varlen = true</code> selects the length-taking codec shape.<li><code>decs::to_string_utf8</code> is the canonical UTF-8 <code>String</code> decoder.<li>The outer body length still frames the packet; <code>varlen</code> only affects the field.</ul><p><strong>Next:</strong> <a href=#tutorial-08---latebind-transforms>08 - Latebind transforms</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-08---latebind-transforms><a class=header href=#tutorial-08---latebind-transforms>Tutorial 08 - Latebind transforms</a></h1><p><code>latebind</code> runs a function <em>after</em> the field decoder. It comes in two shapes distinguished by a sigil.<h2 id=consuming><a class=header href=#consuming>Consuming</a></h2><ul><li>Notation: <code>latebind = path</code><li><code>path</code> signature: <code>Fn(T) -> U</code></ul><p>The decoder reads a raw <code>T</code> from the stream; <code>latebind</code> promotes it to the field’s declared type <code>U</code>. The example decodes <code>mode: Mode</code> with <code>dec = decb::u8</code> plus <code>latebind = Mode::from_u8</code>.<h2 id=mutating><a class=header href=#mutating>Mutating</a></h2><ul><li>Notation: <code>latebind = &mut path</code><li><code>path</code> signature: <code>Fn(&mut T)</code></ul><p>The field stays type <code>T</code>; the function patches it in place. The example decodes only <code>x</code> and <code>y</code> for <code>position: Coordinate</code>, then <code>Coordinate::apply_global_z</code> fills in the <code>z</code> from the <code>GLOBAL_Z</code> constant.<h2 id=example-6><a class=header href=#example-6>Example</a></h2><p>Run this example: <code>cargo run --example book_08_latebind</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/08-latebind.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+
+#[derive(Debug, PartialEq, Clone, Copy)]
+/// Operating mode, encoded as a single byte
+enum Mode {
+    Idle,
+    Active,
+    Error,
+    Unknown,
+}
+impl Mode {
+    /// Consuming latebind target: u8 value to `Mode`
+    fn from_u8(v: u8) -> Self {
+        match v {
+            0 => Mode::Idle,
+            1 => Mode::Active,
+            2 => Mode::Error,
+            _ => Mode::Unknown,
+        }
+    }
+}
+
+/// Site-wide altitude baseline, not transmitted per packet
+const GLOBAL_Z: f32 = 15.0;
+
+#[derive(Debug, PartialEq, Clone, Copy)]
+/// 3D position. Only `x` and `y` are encoded; `z` is site-configured
+struct Coordinate {
+    x: f32,
+    y: f32,
+    z: f32,
+}
+impl Coordinate {
+    /// Mutating latebind target: patch in the global altitude
+    fn apply_global_z(&mut self) {
+        self.z = GLOBAL_Z;
+    }
+}
+impl DecodeValue&lt;&[u8]> for Coordinate {
+    /// Read x and y from the stream; leave z at zero for the latebind step
+    fn decode_value(input: &mut &[u8]) -> tinyklv::Result&lt;Self> {
+        let x = decb::be_f32(input)?;
+        let y = decb::be_f32(input)?;
+        Ok(Coordinate { x, y, z: 0.0 })
+    }
+}
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8),
+    len(dec = decb::u8_as_usize),
+    default(typ = u8,  dec = decb::u8),
+    default(typ = u16, dec = decb::be_u16),
+    default(typ = u32, dec = decb::be_u32),
+    allow_unimplemented_encode,
+)]
+struct Heartbeat {
+    #[klv(key = 0x01)]  sequence:             u8,
+    #[klv(key = 0x02)]  temperature_centideg: u16,
+    #[klv(key = 0x03)]  battery_pct:          u8,
+    #[klv(key = 0x04)]  rssi_dbm:             u8,
+    #[klv(key = 0x05)]  uptime_s:             u32,
+
+    #[klv(
+        key = 0x06,
+        dec = decb::u8,
+        latebind = Mode::from_u8,
+    )]
+    mode: Mode,
+
+    #[klv(
+        key = 0x07,
+        dec = Coordinate::decode_value,
+        latebind = &mut Coordinate::apply_global_z,
+    )]
+    position: Coordinate,
+}
+
+fn main() {
+    // manually construct the stream
+    let stream = [
+        0xDE, 0xAD, 0xBE, 0x00,             // junk preamble, no sentinel here
+        // "HEARTBEAT" sentinel
+        0x48, 0x45, 0x41, 0x52, 0x54, 0x42, 0x45, 0x41, 0x54,
+        0x20,                               // body length = 32 bytes
+        0x01, 0x01, 0x2A,                   // sequence             = 42
+        0x02, 0x02, 0x09, 0x2E,             // temperature_centideg = 2350
+        0x03, 0x01, 0x57,                   // battery_pct          = 87
+        0x04, 0x01, 0xB8,                   // rssi_dbm             = 0xB8
+        0x05, 0x04, 0x00, 0x00, 0x0E, 0x10, // uptime_s             = 3600
+        0x06, 0x01, 0x01,                   // mode u8              = 1 -> Mode::Active
+        0x07, 0x08,                         // position: key, len = 8
+        0x3F, 0xC0, 0x00, 0x00,             // x = 1.5
+        0x40, 0x20, 0x00, 0x00,             // y = 2.5 (z injected by latebind)
+    ];
+
+    // manually construct the expected value
+    let expected = Heartbeat {
+        sequence:             42,
+        temperature_centideg: 2350,
+        battery_pct:          87,
+        rssi_dbm:             0xB8,
+        uptime_s:             3600,
+        mode:                 Mode::Active,
+        position:             Coordinate { x: 1.5, y: 2.5, z: GLOBAL_Z },
+    };
+
+    // seek sentinel, decode the value
+    let decoded = Heartbeat::decode_frame(
+        &mut stream.as_slice(),
+    ).unwrap();
+
+    // they equal!
+    assert_eq!(decoded, expected);
+}</code></pre><h2 id=overview-7><a class=header href=#overview-7>Overview</a></h2><ul><li>Consuming <code>latebind</code> promotes a temp type into a richer Rust type.<li>Mutating <code>latebind</code> injects context the decoded type format does not carry.<li>Both shapes run after the field decoder; both are field-level only.</ul><p><strong>Next:</strong> <a href=#tutorial-09---encoding--sigils>09 - Encoding & the <code>&</code> sigil</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-09---encoding--sigils><a class=header href=#tutorial-09---encoding--sigils>Tutorial 09 - Encoding & sigils</a></h1><h2 id=encode-function-signature><a class=header href=#encode-function-signature>Encode function signature</a></h2><p>Every example so far disabled encoding with <code>allow_unimplemented_encode</code>. By default, <code>tinyklv</code> requires both encoding and decoding to be available. Similarly, if only encoding/emitting is required, <code>allow_unimplemented_decode</code> is also provided.<p>Similar to decoding, custom encoders can be made. They follow the simple function signature of:<pre><code class=language-rust>fn &lt;name>(input: {1,2,3}) -> Vec&lt;u8>;</code></pre><p>where the output is always <code>Vec&lt;u8></code>. The input comes in one of three function signatures, which use <em>sigil’s</em> to describe the format of their inputs. The derive bridges the shapes with a leading sigil on <code>enc</code>:<ol><li><code>enc = f</code> - <code>f(&T) -> O</code><li><code>enc = &f</code> - <code>f(&lt;T as EncodeAs>::Borrowed) -> O</code><li><code>enc = *f</code> - <code>f&lt;T: Copy>(T) -> O</code></ol><p><code>tinyklv</code>’s provided encoders, by default, take the literal values themselves, so most need a sigil, e.g. <code>enc = &encb::u8</code>.<p>For the full dispatch story - how <code>&</code> routes through <code>EncodeAs</code>, which types get zero-cost coercion, and when to implement <code>EncodeAs</code> yourself - see <a href=#sigil-coercion-and-encodeas>Sigil coercion and <code>EncodeAs</code></a>.<h2 id=implementing-encodevalue><a class=header href=#implementing-encodevalue>Implementing <code>EncodeValue</code></a></h2><p>And similar to decoding, <code>tinyklv::EncodeValue</code> is used to expose <code>T::encode_value</code>, which by default takes in <code>&self</code>, so it can be used as <code>#[key(enc = MyStruct::encode_value)]</code><h2 id=example-7><a class=header href=#example-7>Example</a></h2><p>In this example, a hand-written <code>Mode::encode_value</code> already takes <code>&Mode</code>, so its field attribute omits the sigil.<p>Run this example: <code>cargo run --example book_09_encode_sigil</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/09-encode-sigil.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+#[derive(Debug, PartialEq, Clone, Copy)]
+/// Operating mode, encoded as a single byte
+enum Mode {
+    Idle,
+    Active,
+    Error,
+}
+impl Mode {
+    /// Consuming latebind target: u8 value to `Mode`
+    fn from_u8(v: u8) -> Self {
+        match v {
+            0 => Mode::Idle,
+            1 => Mode::Active,
+            _ => Mode::Error,
+        }
+    }
+}
+impl EncodeValue&lt;Vec&lt;u8>> for Mode {
+    /// Encoder takes `&Mode`; field attribute uses `enc = Mode::encode_value` (no sigil)
+    fn encode_value(&self) -> Vec&lt;u8> {
+        encb::u8(match self {
+            Mode::Idle   => 0,
+            Mode::Active => 1,
+            Mode::Error  => 2,
+        })
+    }
+}
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+        enc = *encb::be_u16,
+    )]
+    temperature_centideg: u16,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::be_u32,
+        enc = *encb::be_u32,
+    )]
+    uptime_s: u32,
+
+    #[klv(
+        key = 0x04,
+        dec = decb::u8,
+        enc = Mode::encode_value,
+        latebind = Mode::from_u8,
+    )]
+    mode: Mode,
+}
+
+fn main() {
+    // build the original packet
+    let original = Heartbeat {
+        sequence:             42,
+        temperature_centideg: 2350,
+        uptime_s:             3600,
+        mode:                 Mode::Active,
+    };
+
+    // encode_frame: sentinel + body-length + KLV triples
+    let frame = original.encode_frame();
+
+    // the same bytes, laid out by hand; proves the derive and your mental
+    // model agree before we stop hand-writing streams from Tutorial 10 on
+    let expected_frame = [
+        // "HEARTBEAT" sentinel
+        0x48, 0x45, 0x41, 0x52, 0x54, 0x42, 0x45, 0x41, 0x54,
+        0x10,                               // body length = 16 bytes
+        0x01, 0x01, 0x2A,                   // sequence             = 42
+        0x02, 0x02, 0x09, 0x2E,             // temperature_centideg = 2350
+        0x03, 0x04, 0x00, 0x00, 0x0E, 0x10, // uptime_s             = 3600
+        0x04, 0x01, 0x01,                   // mode u8              = 1 -> Mode::Active
+    ];
+
+    // confirm the frame the derive emits matches the hand-laid bytes
+    assert_eq!(frame.as_slice(), expected_frame.as_slice());
+
+    // decode_frame reverses the process
+    let decoded = Heartbeat::decode_frame(
+        &mut frame.as_slice(),
+    ).unwrap();
+
+    // the round-trip produces an identical struct
+    assert_eq!(decoded, original);
+}</code></pre><h2 id=overview-8><a class=header href=#overview-8>Overview</a></h2><ul><li>Derive-called encoders receive <code>&self.field</code>; sigils rewrite that.<li><code>enc = &f</code> routes through <code>EncodeAs</code> (owned containers, smart pointers, primitives).<li><code>enc = *f</code> is a shortcut for <code>Copy</code> primitive types.<li>Sigils are accepted on all encoder types, including container-attribute <code>default(...)</code> blocks as well as on individual fields.</ul><p><strong>Next:</strong> <a href=#tutorial-10---macros>10 - Macros</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-10---macros><a class=header href=#tutorial-10---macros>Tutorial 10 - Macros</a></h1><p><code>tinyklv</code> ships utility macros (<code>scale!</code>, <code>cast!</code>, and their encode counterparts) that expand to closures matching the decoder/encoder contract. Because they expand to the right signature, they work <strong>inline</strong> in <code>dec = ...</code> and <code>enc = ...</code> attributes:<pre><code class="language-rust ignore">const HEADING_SCALE: f64 = 360.0 / 65535.0;
+
+#[klv(
+    key = 0x02,
+    dec = tinyklv::scale!(decb::be_u16, f64, HEADING_SCALE),
+    enc = tinyklv::scale_enc!(
+        encb::be_u16, f64, u16, HEADING_SCALE,
+    ),
+)]
+heading_deg: f64,</code></pre><p>Any macro that expands to the decoder contract works - including your own. The rule is simple: if it produces <code>fn(&mut S) -> tinyklv::Result&lt;T></code>, it works in <code>dec = ...</code>.<p>Raw closures (e.g. <code>dec = |input| { ... }</code>) do <strong>not</strong> work in attribute position - that is a proc-macro parsing limitation. Use a named function instead when the transformation is too complex for the built-in macros.<h2 id=example-8><a class=header href=#example-8>Example</a></h2><p>Run the full macro example: <code>cargo run --example book_10_macro</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/05-custom-decoder.md` for full example
+//!
+//! Demonstrates `tinyklv::scale!`, `tinyklv::cast!`, and their encode
+//! counterparts used inline in `#[klv(...)]` attributes. Any macro
+//! that expands to a closure matching the decoder / encoder contract
+//! works in `dec = ...` / `enc = ...` - including container-level
+//! `default(typ = T, dec = ...)`.
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+// u16 [0, 65535] -> degrees [0.0, 360.0)
+const HEADING_SCALE: f64 = 360.0 / 65535.0;
+
+// u16 [0, 65535] -> metres [-900.0, 19000.0]
+const ALTITUDE_SCALE: f64 = 19900.0 / 65535.0;
+const ALTITUDE_OFFSET: f64 = -900.0;
+
+fn decode_altitude(
+    input: &mut &[u8],
+) -> tinyklv::Result&lt;f64> {
+    let raw = decb::be_u16.parse_next(input)?;
+    Ok(raw as f64 * ALTITUDE_SCALE + ALTITUDE_OFFSET)
+}
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8], // default, shown for clarity
+    sentinel = b"TELEMETRY",
+    key(dec = decb::u8, enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+struct TelemetryPacket {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8,
+    )]
+    node_id: u8,
+
+    // scale! inline: be_u16 -> f64 heading in degrees
+    #[klv(
+        key = 0x02,
+        dec = tinyklv::scale!(decb::be_u16, f64, HEADING_SCALE),
+        enc = tinyklv::scale_enc!(
+            encb::be_u16, f64, u16, HEADING_SCALE,
+        ),
+    )]
+    heading_deg: f64,
+
+    // named function for decode (scale + offset), scale_offset_enc! for encode
+    #[klv(
+        key = 0x03,
+        dec = decode_altitude,
+        enc = tinyklv::scale_offset_enc!(
+            encb::be_u16, f64, u16,
+            ALTITUDE_SCALE, ALTITUDE_OFFSET,
+        ),
+    )]
+    altitude_m: f64,
+
+    // cast! inline: be_u16 -> field u32
+    #[klv(
+        key = 0x04,
+        dec = tinyklv::cast!(decb::be_u16, u32),
+        enc = tinyklv::cast_enc!(encb::be_u16, u32, u16),
+    )]
+    sample_count: u32,
+
+    // plain u8 for comparison - no macro needed
+    #[klv(
+        key = 0x05,
+        dec = decb::u8,
+        enc = *encb::u8,
+    )]
+    quality: u8,
+}
+
+fn main() {
+    let pkt = TelemetryPacket {
+        node_id:      0x0A,
+        heading_deg:  180.0,
+        altitude_m:   5000.0,
+        sample_count: 1024,
+        quality:      99,
+    };
+
+    // encode -> decode roundtrip
+    let frame = pkt.encode_frame();
+
+    // junk before sentinel, then the frame
+    let mut data: Vec&lt;u8> = vec![
+        0x00, 0x00, 0xDE, 0xAD, 0x00,
+    ];
+    data.extend(&frame);
+
+    let decoded = TelemetryPacket::decode_frame(
+        &mut data.as_slice(),
+    ).unwrap();
+
+    // heading: u16 roundtrip loses sub-scale precision
+    let heading_tolerance = HEADING_SCALE;
+    assert!(
+        (decoded.heading_deg - pkt.heading_deg).abs()
+            &lt; heading_tolerance,
+        "heading: {} vs {}",
+        decoded.heading_deg, pkt.heading_deg,
+    );
+
+    // altitude: same precision loss from u16 quantisation
+    let altitude_tolerance = ALTITUDE_SCALE;
+    assert!(
+        (decoded.altitude_m - pkt.altitude_m).abs()
+            &lt; altitude_tolerance,
+        "altitude: {} vs {}",
+        decoded.altitude_m, pkt.altitude_m,
+    );
+
+    assert_eq!(decoded.sample_count, pkt.sample_count);
+    assert_eq!(decoded.quality, pkt.quality);
+    assert_eq!(decoded.node_id, pkt.node_id);
+
+    println!(
+        "roundtrip OK: heading={:.2}°, alt={:.1}m, \
+         samples={}, quality={}",
+        decoded.heading_deg,
+        decoded.altitude_m,
+        decoded.sample_count,
+        decoded.quality,
+    );
+}</code></pre><p>See <a href=#codecs>Reference > Codecs > Utility macros</a> for the complete macro table with signatures.<h2 id=overview-9><a class=header href=#overview-9>Overview</a></h2><ul><li>Macros allow for expressions and closures to be called in-line, as long as the function signatures match what is expected.</ul><p><strong>Next:</strong> <a href=#tutorial-11---optional-fields-default-and-fallback-impls>11 - Optional fields, <code>default</code>, and fallback impls</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-11---optional-fields-default-and-fallback-impls><a class=header href=#tutorial-11---optional-fields-default-and-fallback-impls>Tutorial 11 - Optional fields, <code>default</code>, and fallback impls</a></h1><h3 id=optiont-fields><a class=header href=#optiont-fields><code>Option&lt;T></code> fields</a></h3><p>Optional types are handled with ease. During encoding, they are omitted when <code>None</code> and encoded as expected when <code>Some</code>. Duringd ecoding, they simply default to <code>None</code>, but when encountered, it will populate it as <code>Some</code>.<p>This can be useful in majority of cases.<h3 id=default--default--expr-field-attributes><a class=header href=#default--default--expr-field-attributes><code>default</code> / <code>default = expr</code> field attributes</a></h3><p><em><strong>NOTE:</strong></em> <em>these are different than the <code>default</code> container attributes, which define default decoders/encoders</em><p>The <code>default</code> <em>field</em> attribute is similar to a <code>serde(default)</code>, where values are initialized using <code>&lt;T as Default>::default()</code>.<p>Rather, you can set a default value using <code>default = ..</code>, if you want it initialized using a different value than <code>&lt;T as Default>::default</code><p>For example<pre><code class=language-rust>#[derive(Default)]
+enum Color {
+    #[default]
+    Red,
+    Green,
+    Blue,
+}
+
+#[derive(Klv)]
+#[klv(..)]
+struct Paint {
+    #[klv(default)]
+    color_first: Color,     // &lt;-- initialized using Color::Red
+    
+    #[klv(default = Color::Blue)]
+    color_second: Color     // &lt;-- initialized using Color::Blue
+}</code></pre><p>A short packet with three keys: a required <code>sequence</code>, an optional <code>signal_dbm</code>, and a <code>battery_pct</code> that falls back to <code>100</code> when absent. The thin stream below is hand-rolled to show the grammar - just <code>key, len, value</code> triples. Decoding it produces <code>None</code> and <code>100</code> for the two missing keys; no error, no panic.<p>Run this example: <code>cargo run --example book_12_a_default</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/12-default-fallback.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::i8,
+        enc = *encb::i8,
+    )]
+    /// Absent in stream = `None`. Encoding a `None` emits no KLV triple
+    signal_dbm: Option&lt;i8>,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::u8,
+        enc = *encb::u8,
+        default = 100_u8,
+    )]
+    /// Absent in stream = `100` (the default expression); always emitted on encode
+    battery_pct: u8,
+}
+
+fn main() {
+    // manually constructed stream: only key 0x01 present
+    let thin_bytes: &[u8] = &[
+        0x01, 0x01, 42,
+    ];
+    let decoded = Heartbeat::decode_value(
+        &mut &thin_bytes[..],
+    ).unwrap();
+
+    assert_eq!(decoded.sequence, 42);
+    // signal_dbm was never in stream -> Option stayed None
+    assert_eq!(decoded.signal_dbm, None);
+    // battery_pct was never in stream -> default expression 100 survived
+    assert_eq!(decoded.battery_pct, 100);
+
+    // round-trip a full packet
+    let full = Heartbeat {
+        sequence:    7,
+        signal_dbm:  Some(-54),
+        battery_pct: 87,
+    };
+    let full_bytes = full.encode_value();
+    let full_decoded = Heartbeat::decode_value(
+        &mut full_bytes.as_slice(),
+    ).unwrap();
+    assert_eq!(full_decoded, full);
+
+    // when signal_dbm is None the encoded bytes are strictly shorter -
+    // a `None` field emits no KLV triple
+    let thin = Heartbeat { signal_dbm: None, ..full };
+    assert!(thin.encode_value().len() &lt; full_bytes.len());
+}</code></pre><h2 id=fallback-implementation><a class=header href=#fallback-implementation>Fallback Implementation</a></h2><h3 id=trait_fallback-container-level><a class=header href=#trait_fallback-container-level><code>trait_fallback</code> (container-level)</a></h3><p>Any field lacking a <code>enc</code>/<code>dec</code> in any location will automatically cause a proc-macro error. However, more frequently than not, <code>tinyklv::EncodeValue</code> and <code>tinyklv::DecodeValue</code> traits are utilized for impls on custom types.<p>As a result, it makes sense to use these instead of writing them out explicitly everytime. Therefore, we can use the <code>trait_fallback</code> container attribute to use the traits as a final fallback for finding the decoder/encoder:<pre><code class=language-rust>#[derive(Klv)]
+#[klv(..)]
+struct Paint {
+    #[klv(
+        key = 0x01,
+        dec = Size::decode_value,
+        enc = Size::encode_value,
+    )]
+    size: Size,
+    
+    #[klv(
+        key = 0x02,
+        dec = Color::decode_value,
+        enc = Color::encode_value,
+    )]
+    color: Color,
+}</code></pre><p>Instead, you can write:<pre><code class=language-rust>#[derive(Klv)]
+#[klv(
+    ..,
+    tinyklv_trait_fallback,
+)]
+struct Paint {
+    #[klv(key = 0x01)]
+    size: Size,
+    
+    #[klv(key = 0x02)]
+    color: Color,
+}</code></pre><p>Where <code>Size</code> and <code>Color</code> in both examples implement <code>tinyklv::EncodeValue</code> and <code>tinyklv::DecodeValue</code><h2 id=examples><a class=header href=#examples>Examples</a></h2><p>Run this example: <code>cargo run --example book_12_b_fallback</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/12-default-fallback.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+#[derive(Debug, PartialEq)]
+struct DeviceId(u16);
+impl DecodeValue&lt;&[u8]> for DeviceId {
+    fn decode_value(input: &mut &[u8]) -> tinyklv::Result&lt;Self> {
+        Ok(DeviceId(decb::be_u16(input)?))
+    }
+}
+impl EncodeValue&lt;Vec&lt;u8>> for DeviceId {
+    fn encode_value(&self) -> Vec&lt;u8> {
+        encb::be_u16(self.0)
+    }
+}
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+    trait_fallback,
+)]
+/// Fields lacking `enc` / `dec` fall back to the `EncodeValue` /
+/// `DecodeValue` impls on the field type
+struct Reading {
+    #[klv(key = 0x01)]
+    id: DeviceId,
+
+    #[klv(key = 0x02)]
+    opt_id: Option&lt;DeviceId>,
+}
+
+fn main() {
+    // full round-trip through the derived code paths
+    let full = Reading {
+        id:     DeviceId(0xBEEF),
+        opt_id: Some(DeviceId(42)),
+    };
+    let full_bytes = full.encode_value();
+    let full_decoded = Reading::decode_value(
+        &mut full_bytes.as_slice(),
+    ).unwrap();
+    assert_eq!(full_decoded, full);
+
+    // manually constructed stream: only key 0x01 present
+    let partial_bytes: &[u8] = &[
+        0x01, 0x02, 0xBE, 0xEF,
+    ];
+    let decoded = Reading::decode_value(
+        &mut &partial_bytes[..],
+    ).unwrap();
+    assert_eq!(decoded.id, DeviceId(0xBEEF));
+    assert_eq!(decoded.opt_id, None);
+}</code></pre><h2 id=overview-10><a class=header href=#overview-10>Overview</a></h2><ul><li><code>Option&lt;T></code> composes: a missing key stays <code>None</code>, a present one defers to <code>T</code>’s impls.<li>Bare field <code>default</code> (no <code>=</code>) calls <code>Default::default()</code> on the field type - handy when the type already has a sensible zero value.<li>Field <code>default = expr</code> supplies a concrete fallback; the field type stays <code>T</code>.<li>Field-level <code>enc</code> / <code>dec</code> take first precedence in which codec to use.<li>Container <code>default(typ = T, ..)</code> take second precedence in which codec to use.<li>Fallback runs last - it is opt-in and silent unless reached.</ul><p><strong>Next:</strong> <a href=#tutorial-12---nested-packets>12 - Nested packets</a><div style=break-before:page;page-break-before:always></div><h1 id=advanced><a class=header href=#advanced>Advanced</a></h1><p>Complex behaviour and real-world integration patterns.<div class=table-wrapper><table><thead><tr><th>#<th>Tutorial<th>Concept<tbody><tr><td>12<td><a href=#tutorial-12---nested-packets>Nested packets</a><td>Inner KLV bodies as field values<tr><td>13<td><a href=#tutorial-13---repeated-extraction>Repeated extraction</a><td><code>DrainFrames::drain_frames</code> for batches<tr><td>14<td><a href=#tutorial-14---break-conditions>Break conditions</a><td>Custom loop control via <code>BreakConditionType</code><tr><td>15<td><a href=#tutorial-15---streaming-partial-packets>Streaming partial packets</a><td><code>::decoder()</code>, <code>decode_partial</code>, and resume<tr><td>16<td><a href=#tutorial-16---async--tokio-streams>Async / Tokio streams</a><td>Driving <code>::decoder()</code> from Tokio channels</table></div><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-12---nested-packets><a class=header href=#tutorial-12---nested-packets>Tutorial 12 - Nested packets</a></h1><p>Real protocols carry sub-structures: a heartbeat may embed a GPS fix, an engine health block, or radio telemetry. Each sub-structure is itself a KLV body with its own key/length/value triples, occupying the value region of one field in the outer frame.<p>Similar to how custom structs can <code>impl DecodeValue</code> in order to call <code>T::decode_value</code>, well, you can have multiple structs <code>#[derive(Klv)]</code> and use them like so:<pre><code class="language-rust ignore">#[derive(Klv)]
+#[klv(..)]
+struct GpsFix {
+    #[klv(key = 0x02)]
+    val: u8,
+}
+
+#[derive(Klv)]
+#[klv(..)]
+struct Heartbeat {
+    #[klv(
+        key = 0x02,
+        dec = GpsFix::decode_value,
+        enc = GpsFix::encode_value,
+    )]
+    gps: GpsFix,
+}</code></pre><p>Because <code>#[derive(Klv)]</code> on the inner type generates <code>impl DecodeValue</code> and <code>impl EncodeValue</code>, both methods exist and compose cleanly.<p>The inner type is sentinel-less - it never appears as a top-level frame. It only shows up as the value region of a field in the outer struct. It can still be decoded in isolation (useful for unit tests of the inner data format), as the example demonstrates at the end.<h2 id=example-9><a class=header href=#example-9>Example</a></h2><p>Run this example: <code>cargo run --example book_12_nested_packets</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/12-nested-packets.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+#[derive(Klv, Debug, PartialEq, Clone, Copy)]
+#[klv(
+    stream = &[u8],
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+/// Nested sub-packet
+///
+/// Sentinel **could** exist for stand-alone packet, however
+/// in this example, it will never be seen as a top-level frame
+struct GpsFix {
+    #[klv(
+        key = 0x01,
+        dec = decb::be_i32,
+        enc = *encb::be_i32
+    )]
+    /// Latitude in micro-degrees (i32)
+    lat_udeg: i32,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_i32,
+        enc = *encb::be_i32
+    )]
+    /// Longitude in micro-degrees (i32)
+    lon_udeg: i32,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::u8,
+        enc = *encb::u8
+    )]
+    /// Number of satellites used for the fix
+    satellites: u8,
+}
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+/// Top-level heartbeat frame with a nested `GpsFix`
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+        enc = *encb::be_u16,
+    )]
+    temperature_centideg: u16,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::be_u32,
+        enc = *encb::be_u32,
+    )]
+    uptime_s: u32,
+
+    #[klv(
+        key = 0x04,
+        dec = GpsFix::decode_value,
+        enc = GpsFix::encode_value,
+    )]
+    /// Nested GpsFix: `dec`/`enc` to the derived methods on the inner type
+    gps: GpsFix,
+}
+
+fn main() {
+    // build a heartbeat carrying a GPS fix
+    let original = Heartbeat {
+        sequence:             42,
+        temperature_centideg: 2350,
+        uptime_s:             3600,
+        gps: GpsFix {
+            lat_udeg:   51_477_200,   // ~51.477 N (London)
+            lon_udeg:   -126_772,     // ~0.127 W
+            satellites: 9,
+        },
+    };
+
+    // encode - the GPS sub-packet occupies the value region of key 0x04 and
+    // contains its own key/length/value triples inside
+    let frame = original.encode_frame();
+
+    // decode - outer and inner are reconstructed in one call
+    let decoded = Heartbeat::decode_frame(
+        &mut frame.as_slice(),
+    ).unwrap();
+    assert_eq!(decoded, original);
+
+    // the inner type can also be used on its own, which is how we assert it
+    // round-trips independently of the outer frame
+    let inner_bytes = original.gps.encode_value();
+    let inner_decoded = GpsFix::decode_value(
+        &mut inner_bytes.as_slice(),
+    ).unwrap();
+    assert_eq!(inner_decoded, original.gps);
+}</code></pre><ul><li>Nested KLV is encoded explicitly; there is no implicit recursion.<li>Inner types derive <code>Klv</code> with no sentinel and get <code>DecodeValue</code>/<code>EncodeValue</code> for free.</ul><p><strong>Next:</strong> <a href=#tutorial-13---repeated-extraction>13 - Repeated extraction</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-13---repeated-extraction><a class=header href=#tutorial-13---repeated-extraction>Tutorial 13 - Repeated extraction</a></h1><p>Sensor pipelines frequently batch readings back-to-back inside a single UDP datagram, file record, or log line. When each reading is sentinel-framed, <code>drain_frames</code> peels them off one at a time until the buffer is exhausted.<p><code>tinyklv</code> exposes this as the <code>DrainFrames</code> trait, auto-implemented for any <code>T: DecodeFrame&lt;S></code> (which requires a sentinel):<pre><code class="language-rust ignore">let readings: Vec&lt;SensorReading> = SensorReading::drain_frames(&mut input)?;</code></pre><p>Semantics: <code>drain_frames</code> calls <code>decode_frame</code> until the stream either cleanly ends (returns whatever was collected so far) or hits a real parse error (propagates the error with context). Callers are never left guessing whether an empty <code>Vec</code> means “no items” or “parse failed on item N”.<p>For sentinel-less streams, use the <code>Vec&lt;T></code> blanket impl of <code>DecodeValue</code> instead:<pre><code class="language-rust ignore">let readings: Vec&lt;SensorReading> = Vec::&lt;SensorReading>::decode_value(&mut input)?;</code></pre><p>The example builds five <code>SensorReading</code> values, encodes each as a full frame, concatenates them into one buffer, and drains the whole batch in a single call.<p>Run this example: <code>cargo run --example book_13_repeated_extraction</code><pre><code class="language-rust no_run">#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/13-repeated-extraction.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+#[derive(Klv, Debug, PartialEq, Clone, Copy)]
+#[klv(
+    stream = &[u8],
+    sentinel = b"SENS",
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+/// A single sensor reading, sentinel-framed for batch extraction
+struct SensorReading {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8
+    )]
+    /// Sensor identifier (0..=255)
+    sensor_id: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_i32,
+        enc = *encb::be_i32
+    )]
+    /// Reading value in fixed-point centi-units
+    value_centiunit: i32,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::be_u32,
+        enc = *encb::be_u32
+    )]
+    /// Milliseconds since capture started
+    age_ms: u32,
+}
+
+fn main() {
+    // produce five readings from one sampling window
+    let original = vec![
+        SensorReading { sensor_id: 1, value_centiunit:  2_350, age_ms:    0 },
+        SensorReading { sensor_id: 2, value_centiunit:  2_400, age_ms:  100 },
+        SensorReading { sensor_id: 1, value_centiunit:  2_355, age_ms:  200 },
+        SensorReading { sensor_id: 3, value_centiunit: -1_000, age_ms:  350 },
+        SensorReading { sensor_id: 2, value_centiunit:  2_398, age_ms:  500 },
+    ];
+
+    // concatenate the encoded frames into one buffer
+    let batch: Vec&lt;u8> = original
+        .iter()
+        .flat_map(|r| r.encode_frame())
+        .collect();
+
+    // peel them all off in one call - DrainFrames::drain_frames comes
+    // from the prelude via the blanket impl for any T: DecodeFrame&lt;S>
+    let decoded = SensorReading::drain_frames(
+        &mut batch.as_slice(),
+    ).unwrap();
+
+    assert_eq!(decoded, original);
+}</code></pre><ul><li><code>DrainFrames::drain_frames</code> returns <code>Vec&lt;Self></code> from a sentinel-framed stream.<li><code>Vec&lt;T>::decode_value</code> returns <code>Vec&lt;T></code> from an unframed stream.<li>Clean EOF = success; parse error = propagated error, not silent truncation.</ul><p><strong>Next:</strong> <a href=#tutorial-14---break-conditions>14 - Break conditions</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-14---break-conditions><a class=header href=#tutorial-14---break-conditions>Tutorial 14 - Break conditions</a></h1><p>The derive-generated decode loop reads <code>(key, len)</code>, matches the key, decodes the value, and moves on. Occasionally you need something the standard loop doesn’t model:<ul><li><strong>Skip</strong> - consume and discard a reserved key’s value without erroring.<li><strong>Done</strong> - stop early when a terminator key appears, returning whatever was accumulated.<li><strong>Abort</strong> - stop and propagate an error, e.g. on a tamper-detection key.</ul><p><code>tinyklv</code> models all four outcomes with <code>BreakConditionType</code>:<pre><code class="language-rust ignore">pub enum BreakConditionType {
+    Proceed,         // run the normal decode step for this key
+    Skip,            // consume value bytes, continue the loop
+    Done,            // stop looping, return accumulated fields
+    Abort(Error),    // stop looping, return Err(Error)
+}</code></pre><p>The <code>BreakCondition</code> trait has a blanket impl that always returns <code>Proceed</code>, so derived types get the standard loop for free. To override it, <strong>you cannot derive <code>Klv</code> for the decoder side</strong> - the blanket impl wins. Instead, drop the derive on the decoder type and write a manual <code>DecodeValue</code> impl that embeds the break-condition match inside the loop body. The encode side can keep <code>#[derive(Klv)]</code> on a mirror struct that only produces bytes.<p>The example wires up a heartbeat where the transmitter emits a reserved key (<code>0xFE</code>, ignored today but meaningful to future firmware) and a terminator key (<code>0xFF</code>, stop decoding here). A <code>classify(key)</code> helper keeps the outcome table separate from the loop body, so the loop itself reads top to bottom.<p>Run this example: <code>cargo run --example book_14_break_condition</code><pre><code class="language-rust no_run">#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/14-break-condition.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+#[derive(Klv, Debug, PartialEq)]
+#[klv(
+    stream = &[u8],
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+/// Encoder-side mirror of the heartbeat body. Used only to produce bytes
+/// that the hand-written decoder below will consume
+struct HeartbeatEncoder {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+        enc = *encb::be_u16
+    )]
+   temperature_centideg: u16,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::be_u32,
+        enc = *encb::be_u32
+    )]
+    uptime_s: u32,
+}
+
+#[derive(Debug, PartialEq)]
+/// Hand-decoded form that honours the terminator / reserved keys
+struct HeartbeatDecoded {
+    sequence:             u8,
+    temperature_centideg: u16,
+    uptime_s:             u32,
+}
+
+/// Wire keys in use
+const KEY_SEQUENCE:    u8 = 0x01;
+const KEY_TEMPERATURE: u8 = 0x02;
+const KEY_UPTIME:      u8 = 0x03;
+const KEY_RESERVED:    u8 = 0xFE; // consume-and-skip
+const KEY_TERMINATOR:  u8 = 0xFF; // stop looping
+
+/// Classify a key into one of the four break-condition outcomes. Keeping
+/// this function separate makes the loop body below read top-to-bottom
+fn classify(key: u8) -> BreakConditionType {
+    match key {
+        KEY_RESERVED   => BreakConditionType::Skip,
+        KEY_TERMINATOR => BreakConditionType::Done,
+        _              => BreakConditionType::Proceed,
+    }
+}
+
+impl DecodeValue&lt;&[u8]> for HeartbeatDecoded {
+    fn decode_value(input: &mut &[u8]) -> tinyklv::Result&lt;Self> {
+        let mut sequence:    Option&lt;u8>  = None;
+        let mut temperature: Option&lt;u16> = None;
+        let mut uptime:      Option&lt;u32> = None;
+
+        loop {
+            // clean EOF while trying to read the next key ends the loop
+            let key = match decb::u8(input) {
+                Ok(k) => k,
+                Err(_) => break,
+            };
+            let len = decb::u8_as_usize(input)?;
+
+            // consult the break-condition classifier BEFORE dispatching
+            match classify(key) {
+                BreakConditionType::Proceed => {}
+                BreakConditionType::Skip => {
+                    // consume exactly `len` bytes and continue
+                    let _ = winnow::token::take::&lt;_, _, winnow::error::ContextError>(len)
+                        .parse_next(input)?;
+                    continue;
+                }
+                BreakConditionType::Done     => break,
+                BreakConditionType::Abort(e) => return Err(e),
+            }
+
+            // proceed: dispatch the value decoder based on key
+            match key {
+                KEY_SEQUENCE    => sequence    = Some(decb::u8(input)?),
+                KEY_TEMPERATURE => temperature = Some(decb::be_u16(input)?),
+                KEY_UPTIME      => uptime      = Some(decb::be_u32(input)?),
+                _ => {
+                    // unknown key - consume and drop
+                    let _ = winnow::token::take::&lt;_, _, winnow::error::ContextError>(len)
+                        .parse_next(input)?;
+                }
+            }
+        }
+
+        Ok(HeartbeatDecoded {
+            sequence:             sequence.unwrap_or_default(),
+            temperature_centideg: temperature.unwrap_or_default(),
+            uptime_s:             uptime.unwrap_or_default(),
+        })
+    }
+}
+
+fn main() {
+    // produce the canonical three-field body with the derive
+    let mut body = HeartbeatEncoder {
+        sequence:             42,
+        temperature_centideg: 2350,
+        uptime_s:             3600,
+    }.encode_value();
+
+    // splice in a reserved triple (key=0xFE, len=2, garbage) before the
+    // terminator - the decoder must silently discard it
+    body.extend_from_slice(&[KEY_RESERVED, 0x02, 0xDE, 0xAD]);
+    // append a terminator key (len=0) - the decoder must stop here
+    body.extend_from_slice(&[KEY_TERMINATOR, 0x00]);
+    // anything after the terminator must NOT be read - plant obvious junk
+    body.extend_from_slice(&[0xFF, 0xFF, 0xFF, 0xFF]);
+
+    // decode: skip drops the reserved bytes, done stops before the junk
+    let decoded = HeartbeatDecoded::decode_value(
+        &mut body.as_slice(),
+    ).unwrap();
+
+    assert_eq!(decoded, HeartbeatDecoded {
+        sequence:             42,
+        temperature_centideg: 2350,
+        uptime_s:             3600,
+    });
+}</code></pre><ul><li><code>BreakConditionType</code> enumerates the four loop outcomes.<li>The blanket impl blocks override on derived types - manual <code>DecodeValue</code> is required.<li>Encode side can still derive; a mirror struct keeps the byte layout honest.</ul><p><strong>Next:</strong> <a href=#tutorial-15---streaming-partial-packets>15 - Streaming partial packets</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-15---streaming-partial-packets><a class=header href=#tutorial-15---streaming-partial-packets>Tutorial 15 - Streaming partial packets</a></h1><p>Earlier chapters decoded one bounded input at a time: a full body with <code>decode_value</code>, or a full frame with <code>decode_frame</code>. Real transports are messier. TCP reads are short, ring buffers split arbitrarily, and a single logical packet may arrive across several chunks.<p><code>tinyklv</code> models that with <strong>partial packets</strong>. Internally, decoding can pause and return a partial state containing every field that landed so far. More bytes can then resume the same packet instead of restarting from byte zero.<p>Most callers should not manage that state manually. The usual entry point is <code>T::decoder()</code>, which owns a byte buffer, seeks sentinels, and drives <code>decode_partial</code> for you.<h2 id=decoder-for-framed-byte-streams><a class=header href=#decoder-for-framed-byte-streams><code>::decoder()</code> for framed byte streams</a></h2><p>Use <code>T::decoder()</code> when bytes are arriving from a continuous stream and <code>T</code> has a <code>sentinel = ...</code>. The decoder solves two problems at once:<ul><li>it finds packet boundaries in a noisy byte stream<li>it preserves an in-flight partial packet when a body is split across feeds</ul><p>At the top level, the loop is:<pre><code class=language-rust>let mut dec = Heartbeat::decoder();
+
+for chunk in chunks {
+    dec.feed(chunk);
+    for pkt in dec.iter() {
+        handle(pkt);
+    }
+}</code></pre><p>That is the main streaming API. <code>feed()</code> appends bytes, and <code>iter()</code> drains every packet that is complete right now.<p>If you already buffered some bytes, <code>&mut Decoder</code> also implements <code>IntoIterator</code>, so draining can be written as:<pre><code class=language-rust>dec.feed(&buf);
+let got: Vec&lt;Heartbeat> = (&mut dec).into_iter().collect();</code></pre><p>Internally, the decoder does not decode the final type directly. In fresh mode it:<ol><li>scans for the sentinel<li>reads the declared frame length<li>passes that exact body slice into <code>DecodePartial::decode_partial</code></ol><p>If the body completes, you get a final <code>Heartbeat</code>. If not, the decoder stores the partial and waits for the next <code>feed()</code>. The next decode call resumes from that partial state instead of re-seeking the sentinel.<p>This is why <code>::decoder()</code> is only for <strong>sentinel-framed streams</strong>. Without a sentinel there is no way to tell where one top-level packet ends and the next begins inside a continuous byte stream.<p>When the upstream reaches EOF, call <code>finish()</code> if you want to force the in-flight partial to finalise:<pre><code class=language-rust>let last = dec.finish()?;</code></pre><p>That succeeds only if every required field has already landed. Otherwise you get a malformed error naming the missing field.<h2 id=decode_partial-for-one-packet-body-at-a-time><a class=header href=#decode_partial-for-one-packet-body-at-a-time><code>decode_partial</code> for one packet body at a time</a></h2><p><code>DecodePartial</code> is the lower-level contract that powers the decoder. Unlike <code>decode_value</code>, it does not assume the body is complete. Instead it returns a <code>Packet&lt;T, P></code>:<pre><code class=language-rust>match Heartbeat::decode_partial(&mut body) {
+    Ok(Packet::Ready(pkt)) => handle(pkt),
+    Ok(Packet::NeedMore(partial)) => {
+        // save `partial`, append more body bytes, then resume
+    }
+    Err(label) => report(label),
+}</code></pre><p>The important difference is scope:<ul><li><code>Decoder</code> works on a <strong>framed stream</strong> of many top-level packets<li><code>decode_partial</code> works on <strong>one packet body</strong> and may pause mid-packet</ul><p>So direct <code>decode_partial</code> is for callers who already know the packet boundary and want explicit control over the in-flight state. Common examples are:<ul><li>a transport that already separated one frame for you<li>a custom buffer manager that stores packet bodies elsewhere<li>debugging or testing the exact <code>NeedMore</code> / resume behaviour</ul><p>One subtle point matters here: on <code>NeedMore</code>, the cursor is rewound to the start of the incomplete field. That means the next resume input should start with the still-unconsumed suffix, then append the new bytes that just arrived.<p>Another subtle point is finalisation. <code>decode_partial</code> does not treat EOF as “packet complete” - it treats it as “input ran out.” So if <em>you</em> know you have now supplied the entire body, you finalize the returned partial yourself.<p>Resuming uses the saved partial:<pre><code class=language-rust>let partial = match Heartbeat::decode_partial(&mut first_half)? {
+    Packet::NeedMore(p) => p,
+    Packet::Ready(pkt) => return Ok(pkt),
+};
+
+let mut resumed = Vec::from(first_half);
+resumed.extend_from_slice(second_half);
+let mut resumed_input = resumed.as_slice();
+
+let pkt = match Heartbeat::resume_partial(&mut resumed_input, partial)? {
+    Packet::Ready(pkt) => pkt,
+    Packet::NeedMore(partial) => partial.finalize()?,
+};</code></pre><p>The partial type is derive-generated. It mirrors the final struct, but each field is stored as an <code>Option&lt;T></code>. As bytes arrive, decoded fields are populated there. Finalisation happens only once decoding is done, either because the caller does it directly, or because a higher-level API such as <code>decode_value</code> or <code>Decoder</code> does it for you.<p>That is also why <code>decode_value</code> behaves differently. It is the one-shot API, so a <code>NeedMore</code> state is treated as truncation and surfaced as an error. <code>decode_partial</code> keeps the partial instead.<h2 id=example-10><a class=header href=#example-10>Example</a></h2><p>This example shows both levels:<ul><li><code>Heartbeat::decoder()</code> on a framed stream split into tiny chunks<li><code>Heartbeat::decode_partial()</code> / <code>resume_partial()</code> on one split body</ul><p>Run this example: <code>cargo run --example book_15_a_streaming_decode</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/15-streaming-decode.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+use tinyklv::ResumePartial;
+
+#[derive(Klv, Debug, Clone, PartialEq)]
+#[klv(
+    stream   = &[u8], // default, shown for clarity
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+        enc = *encb::be_u16,
+    )]
+    temperature_centideg: u16,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::be_u32,
+        enc = *encb::be_u32,
+    )]
+    uptime_s: u32,
+}
+
+fn main() {
+    let want = vec![
+        Heartbeat { sequence: 1, temperature_centideg: 2300, uptime_s: 10 },
+        Heartbeat { sequence: 2, temperature_centideg: 2310, uptime_s: 20 },
+        Heartbeat { sequence: 3, temperature_centideg: 2340, uptime_s: 30 },
+    ];
+    let mut buf: Vec&lt;u8> = vec![
+        // junk / zeros before the first sentinel
+        0xDE, 0xAD, 0x00, 0x00, 0xFF, 0x00,
+    ];
+    buf.extend(want.iter().flat_map(|p| p.encode_frame()));
+
+    // Pattern 1: feed the whole stream into `::decoder()`, then drain with
+    // IntoIterator on &mut Decoder.
+    {
+        let mut dec = Heartbeat::decoder();
+        dec.feed(&buf);
+        let got: Vec&lt;Heartbeat> = (&mut dec).into_iter().collect();
+        assert_eq!(got, want, "pattern 1 (::decoder + IntoIterator)");
+    }
+
+    // Pattern 2: drip-feed framed bytes and drain with iter() after each feed.
+    // 3 bytes is well below one framed packet, so every frame is split across
+    // several feeds - the decoder keeps the partial packet internally.
+    {
+        let mut dec = Heartbeat::decoder();
+        let mut got: Vec&lt;Heartbeat> = Vec::new();
+        for chunk in buf.chunks(3) {
+            dec.feed(chunk);
+            for pkt in dec.iter() {
+                got.push(pkt);
+            }
+        }
+        assert_eq!(got, want, "pattern 2 (::decoder + iter)");
+        assert!(dec.buffered().is_empty(), "no bytes left behind");
+    }
+
+    // Pattern 3: direct `decode_partial` / `resume_partial` on one body.
+    // This bypasses frame seeking completely - the caller already knows the
+    // body boundaries and manages the in-flight partial explicitly.
+    {
+        let original = want[0].clone();
+        let body = original.encode_value();
+        let split = 5;
+
+        let mut first_half: &[u8] = &body[..split];
+        let partial = match Heartbeat::decode_partial(&mut first_half).unwrap() {
+            Packet::Ready(_) => panic!("body should not be complete yet"),
+            Packet::NeedMore(partial) => partial,
+        };
+
+        let second_half: &[u8] = &body[split..];
+        let mut resumed_body = Vec::from(first_half);
+        resumed_body.extend_from_slice(second_half);
+
+        let mut resumed_input: &[u8] = &resumed_body;
+        let got = match Heartbeat::resume_partial(&mut resumed_input, partial).unwrap() {
+            Packet::Ready(pkt) => pkt,
+            Packet::NeedMore(partial) => partial.finalize().unwrap(),
+        };
+
+        assert_eq!(got, original, "pattern 3 (decode_partial + resume_partial)");
+        assert!(resumed_input.is_empty(), "resumed input fully consumed");
+    }
+
+    println!(
+        "all 3 patterns decoded {} packets correctly",
+        want.len(),
+    );
+}</code></pre><h2 id=overview-11><a class=header href=#overview-11>Overview</a></h2><ul><li><code>T::decoder()</code> is the high-level API for sentinel-framed streams.<li><code>DecodePartial</code> is the lower-level API for one packet body that may be incomplete.<li>Partial packets preserve already-decoded fields so resume does not restart from byte zero.<li><code>finish()</code> is the stream-end hook for forcing the current partial to finalise.</ul><p><strong>Next:</strong> <a href=#tutorial-16---async--tokio-streams>16 - Async / Tokio streams</a><div style=break-before:page;page-break-before:always></div><h1 id=tutorial-16---async--tokio-streams><a class=header href=#tutorial-16---async--tokio-streams>Tutorial 16 - Async / Tokio streams</a></h1><p><code>tinyklv</code> has no async surface. <code>T::decoder()</code> is synchronous - it takes <code>&[u8]</code> chunks via <code>feed()</code> and yields decoded values via <code>iter()</code> or <code>next()</code>. That is deliberate: packet framing is CPU-bound, and wrapping it in an async trait would force every user to pick a runtime at the library level.<p>To use it with an async byte source - a UDP socket, a Tokio mpsc channel, a websocket - you await chunks and hand them to the decoder:<h2 id=pattern-1---real-time-feed--iter><a class=header href=#pattern-1---real-time-feed--iter>Pattern 1 - real-time feed / iter</a></h2><p>Each <code>await</code> may deliver a partial frame. Feed it, drain whatever is complete, repeat:<pre><code class="language-rust ignore">let mut dec = T::decoder();
+while let Some(chunk) = rx.recv().await {
+    dec.feed(&chunk);
+    for pkt in dec.iter() {
+        handle(pkt);
+    }
+}</code></pre><p>Every complete packet is emitted immediately after the chunk that completes it arrives. Partial frames stay in the internal buffer until the next feed.<h2 id=full-example><a class=header href=#full-example>Full example</a></h2><p>The example simulates a byte source with a Tokio mpsc channel. The producer slices each encoded frame into two halves and sends them as separate chunks, proving the receiver reassembles a frame split across two awaits.<p>Run this example: <code>cargo run --example book_16_tokio_streams</code><pre><code class=language-rust>#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(clippy::unwrap_used)]
+//! See: `book/tutorial/16-tokio-streams.md` for full example
+use tinyklv::prelude::*;            // Klv proc-macro + traits
+use tinyklv::dec::binary as decb;   // binary decoders
+use tinyklv::enc::binary as encb;   // binary encoders
+
+#[derive(Klv, Debug, Clone, PartialEq)]
+#[klv(
+    stream   = &[u8], // default, shown for clarity
+    sentinel = b"HEARTBEAT",
+    key(dec = decb::u8,          enc = encb::u8),
+    len(dec = decb::u8_as_usize, enc = encb::u8_from_usize),
+)]
+struct Heartbeat {
+    #[klv(
+        key = 0x01,
+        dec = decb::u8,
+        enc = *encb::u8,
+    )]
+    sequence: u8,
+
+    #[klv(
+        key = 0x02,
+        dec = decb::be_u16,
+        enc = *encb::be_u16,
+    )]
+    temperature_centideg: u16,
+
+    #[klv(
+        key = 0x03,
+        dec = decb::be_u32,
+        enc = *encb::be_u32,
+    )]
+    uptime_s: u32,
+}
+
+/// Encode packets into KLV frames/packets, split each in two, return all chunks.
+fn make_chunks(packets: &[Heartbeat]) -> Vec&lt;Vec&lt;u8>> {
+    let mut chunks = Vec::new();
+    // junk / zeros before the first sentinel - the decoder skips them
+    chunks.push(vec![0xDE, 0xAD, 0x00, 0x00, 0xFF, 0x00]);
+    for p in packets {
+        let frame = p.encode_frame();
+        let split = frame.len() / 2;
+        chunks.push(frame[..split].to_vec());
+        chunks.push(frame[split..].to_vec());
+    }
+    chunks
+}
+
+#[tokio::main]
+async fn main() {
+    let originals = vec![
+        Heartbeat { sequence: 1, temperature_centideg: 2300, uptime_s: 10 },
+        Heartbeat { sequence: 2, temperature_centideg: 2310, uptime_s: 20 },
+        Heartbeat { sequence: 3, temperature_centideg: 2340, uptime_s: 30 },
+    ];
+    let chunks = make_chunks(&originals);
+
+    // Pattern 1: real-time feed/iter driven by channel receives.
+    // Each await point may deliver a partial frame; the decoder reassembles.
+    {
+        let (tx, mut rx) = tokio::sync::mpsc::channel::&lt;Vec&lt;u8>>(16);
+
+        let producer_chunks = chunks.clone();
+        let producer = tokio::spawn(async move {
+            for chunk in producer_chunks {
+                tx.send(chunk).await.unwrap();
+            }
+        });
+
+        let consumer = tokio::spawn(async move {
+            let mut dec = Heartbeat::decoder();
+            let mut decoded: Vec&lt;Heartbeat> = Vec::new();
+            while let Some(chunk) = rx.recv().await {
+                dec.feed(&chunk);
+                for pkt in dec.iter() {
+                    decoded.push(pkt);
+                }
+            }
+            decoded
+        });
+
+        producer.await.unwrap();
+        let decoded = consumer.await.unwrap();
+        assert_eq!(decoded, originals, "pattern 1 (feed + iter)");
+        println!("pattern 1: decoded {} packets in real-time", decoded.len());
+    }
+}</code></pre><h2 id=key-takeaways><a class=header href=#key-takeaways>Key takeaways</a></h2><ul><li><code>tinyklv</code> stays sync; async is the caller’s concern, one <code>feed()</code> call away.<li>Use <code>feed()</code> + <code>iter()</code> for real-time packet processing.<li><code>tokio</code> appears only as a transport dependency - no library-level async feature flag.</ul><div style=break-before:page;page-break-before:always></div><h1 id=container-attributes-1><a class=header href=#container-attributes-1>Container attributes</a></h1><p>Every attribute below is declared inside the <code>#[klv(...)]</code> on the struct definition. Each section gives the syntax, a one-paragraph semantic summary, and a minimal snippet showing the attribute in context.<h2 id=stream--type><a class=header href=#stream--type><code>stream = &lt;type></code></a></h2><pre><code class="language-rust ignore">#[klv(stream = &[u8])]</code></pre><p>Names the input type that every codec in this container consumes. Any <code>winnow::Stream</code> type works. Defaults to <code>&[u8]</code> and is usually written only for clarity, or when the stream is something else (for example, <code>&str</code> for text-based KLV dialects, or a custom buffered-reader type).<h2 id=sentinel--elements-of-stream><a class=header href=#sentinel--elements-of-stream><code>sentinel = &lt;elements of stream></code></a></h2><pre><code class="language-rust ignore">#[klv(sentinel = b"\xBE\xEF")]</code></pre><p>Declares the magic bytes that mark the start of a frame. Adding a sentinel causes the derive to implement <code>SeekSentinel</code> and, via a blanket impl, <code>DecodeFrame</code>. Without a sentinel, only <code>DecodeValue</code> is produced.<p>Usually, since stream defaults to <code>&[u8]</code>, a byte-string is used here. However, if the stream is <code>&str</code> then a <code>&'static str</code> can be used.<h2 id=keydec---enc--><a class=header href=#keydec---enc--><code>key(dec = ..., enc = ...)</code></a></h2><pre><code class="language-rust ignore">#[klv(key(dec = decb::u8, enc = encb::u8))]</code></pre><p>Associates the codec pair used for the <strong>key</strong> byte(s) of every KLV triple in this container. Supply <code>dec</code> for decoding support and <code>enc</code> for encoding support; either half can be omitted to stay unimplemented.<h2 id=lendec---enc--><a class=header href=#lendec---enc--><code>len(dec = ..., enc = ...)</code></a></h2><pre><code class="language-rust ignore">#[klv(len(dec = decb::u8_as_usize, enc = encb::u8_from_usize))]</code></pre><p>The length value will <em>always</em> be <code>usize</code>. Therefore, <code>dec</code> must output a <code>usize</code> and <code>enc</code> must accept a <code>usize</code>. Use the <code>_as_usize</code> / <code>_from_usize</code> variants from <code>decb</code> / <code>encb</code>.<h2 id=defaulttyp--t-dec---enc---varlen--bool><a class=header href=#defaulttyp--t-dec---enc---varlen--bool><code>default(typ = T, dec = ..., enc = ..., varlen = &lt;bool>)</code></a></h2><pre><code class="language-rust ignore">#[klv(
+    default(typ = u8,  dec = decb::u8,     enc = *encb::u8),
+    default(typ = u16, dec = decb::be_u16, enc = *encb::be_u16),
+    // `dec` and `enc` are independently optional: attach an encoder
+    // only, and decoders for `MyStruct` can still be used per-field
+    default(typ = MyStruct, enc = MyStruct::encode_value),
+)]</code></pre><p>Attaches a codec to a concrete field type. Every field of type <code>T</code> in the struct resolves its codec from this default unless it overrides locally. Only <code>typ</code> is required; <code>dec</code>, <code>enc</code>, and <code>varlen</code> are independently optional, so a default can supply just a decoder, just an encoder, or both. <code>varlen</code> selects the variable-length decoder shape; see <a href=#varlen--true><code>varlen</code></a>.<p>The <code>enc</code> path inside <code>default(...)</code> accepts the same <code>&</code> and <code>*</code> sigils as field-level <code>enc</code>. See <a href=#sigil-coercion-and-encodeas>Sigil coercion & <code>EncodeAs</code></a>.<h2 id=debug><a class=header href=#debug><code>debug</code></a></h2><pre><code class="language-rust ignore">#[klv(debug)]</code></pre><p>Prints the derive’s expansion to stderr at compile time. Useful when debugging codec wiring or diagnosing an attribute parse error.<h2 id=deny_unknown_keys><a class=header href=#deny_unknown_keys><code>deny_unknown_keys</code></a></h2><pre><code class="language-rust ignore">#[klv(deny_unknown_keys)]</code></pre><p>Makes the generated <code>decode_value</code> return an error when it encounters a key it does not have a field for. Without it, unknown keys are skipped silently for forward compatibility.<h2 id=allow_unimplemented_encode><a class=header href=#allow_unimplemented_encode><code>allow_unimplemented_encode</code></a></h2><pre><code class="language-rust ignore">#[klv(allow_unimplemented_encode)]</code></pre><p>Opts out of the encoder half of the derive. <code>EncodeValue</code> / <code>EncodeFrame</code> are not emitted. Useful for decode-only consumers of a third-party spec.<h2 id=allow_unimplemented_decode><a class=header href=#allow_unimplemented_decode><code>allow_unimplemented_decode</code></a></h2><pre><code class="language-rust ignore">#[klv(allow_unimplemented_decode)]</code></pre><p>Symmetric counterpart: opts out of <code>DecodeValue</code> / <code>DecodeFrame</code>. Use when the struct is an emitter-only producer.<h2 id=trait_fallback><a class=header href=#trait_fallback><code>trait_fallback</code></a></h2><pre><code class="language-rust ignore">#[klv(trait_fallback)]</code></pre><p>Opt-in flag. Fields lacking explicit <code>enc</code>/<code>dec</code> and not matched by a container <code>default(..)</code> fall back to the <code>EncodeValue</code>/<code>DecodeValue</code> trait impls on the field type. Field-level codecs and container <code>default(..)</code> both take precedence over the fallback.<h2 id=cross-reference><a class=header href=#cross-reference>Cross-reference</a></h2><div class=table-wrapper><table><thead><tr><th>Attribute<th>First introduced in<tbody><tr><td><code>stream</code><td><a href=#tutorial-03---frames--sentinels>03 - Frames & sentinels</a><tr><td><code>sentinel</code><td><a href=#tutorial-03---frames--sentinels>03 - Frames & sentinels</a><tr><td><code>key(dec, enc)</code><td><a href=#tutorial-01---first-packet>01 - First packet</a><tr><td><code>len(dec, enc)</code><td><a href=#tutorial-01---first-packet>01 - First packet</a><tr><td><code>default(typ, dec, enc, varlen)</code><td><a href=#tutorial-04---default-codecs>04 - Default codecs</a><tr><td><code>debug</code><td>Reference only<tr><td><code>deny_unknown_keys</code><td>Reference only<tr><td><code>allow_unimplemented_encode</code><td><a href=#tutorial-01---first-packet>01 - First packet</a><tr><td><code>allow_unimplemented_decode</code><td>Reference only<tr><td><code>trait_fallback</code><td><a href=tutorial/fundamentals/10-default-fallback.html>10 - Optional fields & default</a></table></div><div style=break-before:page;page-break-before:always></div><h1 id=field-attributes-1><a class=header href=#field-attributes-1>Field attributes</a></h1><p>Attributes declared on individual struct fields with <code>#[klv(...)]</code>. Each section gives syntax, a short semantic summary, and a minimal snippet.<h2 id=key--literal><a class=header href=#key--literal><code>key = &lt;literal></code></a></h2><pre><code class="language-rust ignore">#[klv(key = 0x02)]
+temperature_centideg: u16,</code></pre><p>The key byte(s) the field is matched on at decode time and emitted at encode time. Literal types match the codec in the container’s <code>key(dec = ..., enc = ...)</code> - usually an integer literal for byte keys.<h2 id=dec--path><a class=header href=#dec--path><code>dec = &lt;path></code></a></h2><pre><code class="language-rust ignore">#[klv(key = 0x01, dec = decb::u8)]
+sequence: u8,</code></pre><p>Associates the codec pair for this field. <code>dec</code> must match <code>fn(&mut S) -> tinyklv::Result&lt;T></code>, where <code>tinyklv::Result</code> is an alias for <code>winnow::Result</code><p><code>enc</code> must match <code>fn(&T) -> Vec&lt;u8></code> (when owned-argument, add the <code>&</code> sigil below). Either can be omitted when the container default covers the field type.<h2 id=enc--optional-sigil-path><a class=header href=#enc--optional-sigil-path><code>enc = &lt;optional sigil> &lt;path></code></a></h2><pre><code class="language-rust ignore">#[klv(
+    key = 0x02,
+    enc = &encb::be_u16,
+)]
+temperature_centideg: u16,
+
+#[klv(
+    key = 0x01,
+    enc = *encb::u8,
+)]
+sequence: u8,
+
+#[klv(
+    key = 0x03,
+    enc = MyStruct::encode_value,
+)]
+custom: MyStruct,</code></pre><p>Encoders by default expect <code>fn(&T) -> O</code>. The two sigils (<code>&</code> and <code>*</code>) rewrite how the field is handed to the encoder. See <a href=#sigil-coercion-and-encodeas>Sigil coercion & <code>EncodeAs</code></a> for the full dispatch semantics, built-in <code>EncodeAs</code> implementations, and when to write your own.<h2 id=varlen--true><a class=header href=#varlen--true><code>varlen = true</code></a></h2><pre><code class="language-rust ignore">#[klv(key = 0x07, varlen = true, dec = decs::to_string_utf8)]
+station_id: String,</code></pre><p>Selects the length-taking decoder shape. Instead of <code>fn(&mut S) -> Result&lt;T></code>, the derive calls <code>dec_fn(len)(input)</code> where <code>dec_fn</code> matches <code>fn(len: usize) -> impl Fn(&mut S) -> Result&lt;T></code>. Canonical use: UTF-8 strings and other length-prefixed payloads.<h2 id=default--default--expr><a class=header href=#default--default--expr><code>default</code> / <code>default = &lt;expr></code></a></h2><pre><code class="language-rust ignore">#[klv(key = 0x05, default)]
+uptime_s: u32,
+
+#[klv(key = 0x06, default = 100_u8)]
+battery_pct: u8,</code></pre><p>Fallback value used when the key is absent in the decoded stream. Without either form, an absent key raises a parse error.<div class=table-wrapper><table><thead><tr><th>Form<th>Emitted fallback<tbody><tr><td><code>default</code> (no value)<td><code>&lt;FieldType as ::core::default::Default>::default()</code><tr><td><code>default = &lt;expr></code><td>the inline expression, evaluated once per decode call</table></div><p>Use bare <code>default</code> when the field type already has a sensible zero value (primitives, <code>Option&lt;T></code>, <code>Vec&lt;T></code>, <code>String</code>, or any user type with <code>#[derive(Default)]</code>). Use <code>default = &lt;expr></code> when the fallback is a specific constant, a sentinel, or a non-<code>Default</code> value.<h2 id=latebind--optional-sigil-path><a class=header href=#latebind--optional-sigil-path><code>latebind = &lt;optional sigil> &lt;path></code></a></h2><pre><code class="language-rust ignore">#[klv(
+    key = 0x06,
+    dec = decb::u8,
+    latebind = Mode::from_u8,
+)]
+mode: Mode,
+
+#[klv(
+    key = 0x07,
+    dec = Coordinate::decode_value,
+    latebind = &mut Coordinate::apply_global_z,
+)]
+position: Coordinate,</code></pre><p>Runs after the field decoder.<p>Without the <code>&mut</code> sigil, the signature is <code>Fn(T) -> U</code>. The decoder produces <code>T</code>, <code>latebind</code> promotes it to the field’s declared type <code>U</code>.<p>With the <code>&mut</code> sigil, the signature is <code>Fn(&mut T)</code>. The field type stays <code>T</code>; the function patches the decoded value in place.<h2 id=cross-reference-1><a class=header href=#cross-reference-1>Cross-reference</a></h2><div class=table-wrapper><table><thead><tr><th>Attribute<th>First introduced in<tbody><tr><td><code>key = &lt;lit></code><td><a href=#tutorial-01---first-packet>01 - First packet</a><tr><td><code>dec = &lt;path></code><td><a href=#tutorial-01---first-packet>01 - First packet</a><tr><td><code>enc = &lt;path></code><td><a href=#tutorial-09---encoding--sigils>09 - Encoding & sigils</a><tr><td><code>enc = &&lt;path></code><td><a href=#tutorial-09---encoding--sigils>09 - Encoding & sigils</a><tr><td><code>enc = *&lt;path></code><td><a href=#tutorial-09---encoding--sigils>09 - Encoding & sigils</a><tr><td><code>varlen = true</code><td><a href=#tutorial-07---value-lengths>07 - Variable-length fields</a><tr><td><code>default</code><td><a href=tutorial/fundamentals/10-default-fallback.html>10 - Optional fields & default</a><tr><td><code>default = &lt;expr></code><td><a href=tutorial/fundamentals/10-default-fallback.html>10 - Optional fields & default</a><tr><td><code>latebind = &lt;path></code><td><a href=#tutorial-08---latebind-transforms>08 - Latebind transforms</a><tr><td><code>latebind = &mut &lt;path></code><td><a href=#tutorial-08---latebind-transforms>08 - Latebind transforms</a></table></div><div style=break-before:page;page-break-before:always></div><h1 id=sigil-coercion-and-encodeas><a class=header href=#sigil-coercion-and-encodeas>Sigil coercion and <code>EncodeAs</code></a></h1><p>An <code>enc</code> path (<code>#[klv(enc = ...)]</code> on a field, or <code>enc = ...</code> inside a container <code>default(...)</code> / <code>key(...)</code> / <code>len(...)</code> block) may carry a leading sigil - <code>&</code> or <code>*</code> - that tells the macro how to shape the call to the underlying encoder function. This page explains the three forms and when to use each.<h2 id=why-sigils-exist><a class=header href=#why-sigils-exist>Why sigils exist</a></h2><p>The <a href=#traits><code>EncodeValue</code></a> trait is defined as:<pre><code class="language-rust ignore">pub trait EncodeValue&lt;O: EncodedOutput> {
+    fn encode_value(&self) -> O;
+}</code></pre><p><code>&self</code> gives the derive macro access to each field by reference. So when the macro emits the per-field encode call, it has <code>&field_value</code> in hand.<p>But encoders come in three shapes:<ol><li><p><strong>Borrowed-form encoders</strong> already take a reference:</p> <pre><code class="language-rust ignore">fn my_encoder(input: &InnerValue) -> Vec&lt;u8> { ... }</code></pre> <p><code>&field_value</code> matches <code>&InnerValue</code> directly.</p><li><p><strong><code>EncodeAs</code>-coerced encoders</strong> take a cheaply-borrowed “natural” view of the value:</p> <pre><code class="language-rust ignore">pub fn utf8(s: &str) -> Vec&lt;u8> { ... }   // String -> &str
+pub fn slice(xs: &[u8]) -> Vec&lt;u8> { ... } // Vec&lt;u8> -> &[u8]</code></pre><li><p><strong>Value-form encoders</strong> - how all the built-in primitive encoders in <a href=#codecs><code>tinyklv::codecs::binary::enc</code></a> are written - take the value by value:</p> <pre><code class="language-rust ignore">pub fn u8(x: u8) -> Vec&lt;u8> { ... }
+pub fn be_u16(x: u16) -> Vec&lt;u8> { ... }</code></pre> <p>Passing <code>&u8</code> to <code>fn u8(x: u8)</code> is a type error. We need a bridge.</p></ol><p>The <code>&</code> and <code>*</code> sigils are those bridges.<h2 id=the-three-forms><a class=header href=#the-three-forms>The three forms</a></h2><div class=table-wrapper><table><thead><tr><th>Syntax<th>Encoder signature<th>Emitted call<tbody><tr><td><code>enc = path</code><td><code>fn(&T) -> O</code><td><code>path(&self.field)</code><tr><td><code>enc = &path</code><td><code>fn(T::Borrowed) -> O</code><td><code>path(EncodeAs::encode_as(&self.field))</code><tr><td><code>enc = *path</code><td><code>fn(T) -> O</code><td><code>path(self.field)</code></table></div><h3 id=no-sigil---direct-borrow><a class=header href=#no-sigil---direct-borrow>No sigil - direct borrow</a></h3><p>Use when your encoder already takes <code>&T</code>. Every encoder generated by <code>#[derive(Klv)]</code> falls in this bucket, because <code>EncodeValue::encode_value</code> takes <code>&self</code>:<pre><code class="language-rust ignore">#[klv(
+    key = 0x04,
+    dec = GpsFix::decode_value,
+    enc = GpsFix::encode_value,  // &GpsFix -> Vec&lt;u8>, no sigil needed
+)]
+gps: GpsFix,</code></pre><h3 id=with--sigil---encodeas-bridge><a class=header href=#with--sigil---encodeas-bridge>With <code>&</code> sigil - <code>EncodeAs</code> bridge</a></h3><p>Use when your encoder takes a borrowed view that differs from <code>&T</code> (primitives by value, <code>String -> &str</code>, <code>Vec&lt;T> -> &[T]</code>, smart pointers to inner):<pre><code class="language-rust ignore">#[klv(key = 0x02, dec = decb::be_u16, enc = &encb::be_u16)]
+temperature_centideg: u16,</code></pre><p>Under the hood (simplified):<pre><code class="language-rust ignore">encb::be_u16(EncodeAs::encode_as(&self.temperature_centideg))</code></pre><p>For primitives <code>EncodeAs::encode_as(&u16)</code> is <code>*self</code> - a <code>Copy</code> - so this compiles down to a plain call with zero overhead.<h3 id=with--sigil---by-value-for-copy-types><a class=header href=#with--sigil---by-value-for-copy-types>With <code>*</code> sigil - by-value for <code>Copy</code> types</a></h3><p>Use when your encoder takes <code>T</code> by value and <code>T: Copy</code>. Emits <code>path(self.field)</code> directly, without the <code>EncodeAs</code> hop:<pre><code class="language-rust ignore">#[klv(key = 0x01, dec = decb::u8, enc = *encb::u8)]
+sequence: u8,</code></pre><p>This is the shortest path for primitive <code>Copy</code> types paired with value-taking encoders. Prefer <code>&</code> when in doubt - it works for non-<code>Copy</code> owned types too.<h2 id=the-encodeas-trait><a class=header href=#the-encodeas-trait>The <code>EncodeAs</code> trait</a></h2><pre><code class="language-rust ignore">pub trait EncodeAs {
+    type Borrowed&lt;'a> where Self: 'a;
+    fn encode_as(&self) -> Self::Borrowed&lt;'_>;
+}</code></pre><p>Built-in implementations:<div class=table-wrapper><table><thead><tr><th>Input type<th><code>Borrowed&lt;'a></code><th>Behaviour<tbody><tr><td><code>u8</code>..<code>u128</code>, <code>i8</code>..<code>i128</code>, <code>f32</code>, <code>f64</code>, <code>bool</code>, <code>char</code>, <code>usize</code>, <code>isize</code><td><code>&'a Self</code><td>pass through<tr><td><code>String</code><td><code>&'a str</code><td>borrow as <code>&str</code><tr><td><code>Vec&lt;T></code><td><code>&'a [T]</code><td>borrow as slice<tr><td><code>Cow&lt;'_, str></code><td><code>&'a str</code><td>to <code>&str</code><tr><td><code>Cow&lt;'_, [T]></code><td><code>&'a [T]</code><td>to slice<tr><td><code>Box&lt;T></code>, <code>Rc&lt;T></code>, <code>Arc&lt;T></code><td><code>&'a T</code><td>deref to inner</table></div><p>Every conversion is zero-cost: no clones, no allocations.<h2 id=when-to-implement-encodeas-yourself><a class=header href=#when-to-implement-encodeas-yourself>When to implement <code>EncodeAs</code> yourself</a></h2><p>You don’t need to - for custom structs, use the no-sigil form and point <code>enc</code> at a function taking <code>&YourType</code>. The derive-generated <code>YourType::encode_value</code> already has that signature.<p>Implement <code>EncodeAs</code> on your own type <strong>only</strong> when:<ul><li>You want your type to work with the <code>&</code> sigil form, AND<li>You want the encoder to receive a borrowed view distinct from <code>&Self</code> (e.g. a newtype over <code>String</code> that should coerce to <code>&str</code>).</ul><p>This is rare.<h2 id=summary><a class=header href=#summary>Summary</a></h2><ul><li><code>enc = path</code> - encoder takes <code>&T</code>, field is borrowed directly.<li><code>enc = &path</code> - encoder takes the <code>EncodeAs::Borrowed</code> view of <code>T</code>.<li><code>enc = *path</code> - encoder takes <code>T</code> by value (requires <code>T: Copy</code>).<li>Use the no-sigil form for custom types whose encoders take <code>&Self</code> (including all <code>#[derive(Klv)]</code>-generated <code>encode_value</code> methods).<li>Use the <code>&</code> form for the built-in primitive encoders in <code>tinyklv::codecs::binary::enc</code> and for owned containers like <code>String</code> / <code>Vec&lt;T></code>.<li>Use the <code>*</code> form as a shortcut when both sides are primitive <code>Copy</code> types.</ul><div style=break-before:page;page-break-before:always></div><h1 id=traits><a class=header href=#traits>Traits</a></h1><p><code>use tinyklv::prelude::*</code> brings every trait into scope so the method calls work. This page documents the traits a user interacts with directly.<h2 id=decode-traits><a class=header href=#decode-traits>Decode traits</a></h2><h3 id=decodevalues><a class=header href=#decodevalues><code>DecodeValue&lt;S></code></a></h3><pre><code class="language-rust ignore">pub trait DecodeValue&lt;S>: Sized
+where
+    S: winnow::stream::Stream,
+{
+    fn decode_value(input: &mut S) -> crate::Result&lt;Self>;
+}</code></pre><p>Parses a KLV triple stream until the container’s field set is satisfied (or the stream is exhausted, depending on <code>deny_unknown_keys</code>). Generated by <code>#[derive(Klv)]</code> unless <code>allow_unimplemented_decode</code> is set.<p>Types implementing <code>DecodeValue</code> also get <code>Vec&lt;T>::decode_value(&mut stream) -> Vec&lt;T></code> via a blanket impl for unframed repeated decode. For sentinel-framed streams, use <code>T::drain_frames(&mut stream)</code> instead (requires <code>DecodeFrame</code>). See <a href=#tutorial-13---repeated-extraction>Tutorial 13 - Repeated extraction</a>.<h3 id=decodepartials><a class=header href=#decodepartials><code>DecodePartial&lt;S></code></a></h3><pre><code class="language-rust ignore">pub enum Packet&lt;T, P>
+where
+    P: Partial&lt;Final = T>,
+{
+    Ready(T),
+    NeedMore(P),
+}
+
+pub trait DecodePartial&lt;S>: Sized
+where
+    S: winnow::stream::Stream,
+{
+    type Partial: Default + Partial&lt;Final = Self>;
+    fn decode_partial(
+        input: &mut S,
+    ) -> Result&lt;Packet&lt;Self, Self::Partial>, &'static str>;
+}</code></pre><p>Streaming-aware companion to <code>DecodeValue</code>. Returns a <code>Packet</code> enum wrapped in <code>Result</code>:<div class=table-wrapper><table><thead><tr><th>Variant<th>Meaning<tbody><tr><td><code>Ready(t)</code><td>Full value decoded; cursor advanced past consumed bytes.<tr><td><code>NeedMore(p)</code><td>Not enough bytes yet; partial <code>p</code> carries every field decoded so far. Cursor rewound to allow retry with more bytes.</table></div><p>The outer <code>Result</code> carries a <code>&'static str</code> label on <code>Err</code> - not a <code>ContextError</code>. <code>Err(label)</code> means unrecoverable parse failure; the <code>Decoder</code> wraps the label into a <code>ContextError</code> with position info.<p><code>DecodeValue</code> and <code>DecodePartial</code> are both generated by <code>#[derive(Klv)]</code>. <code>DecodeValue</code> is a thin wrapper that delegates to <code>DecodePartial</code> and maps <code>NeedMore</code> to a truncation <code>Err</code>, because the one-shot contract assumes the caller has already committed all bytes.<p>Typical direct use is rare - most callers reach for <code>Decoder</code> instead (see below). Direct use is valuable when you know the input is exactly one complete packet’s body and want to inspect the result explicitly. At end-of-input, <code>decode_partial</code> still returns <code>NeedMore(p)</code> unless a break condition ends the packet; if the caller knows the body is complete, it should call <code>p.finalize()</code>.<h3 id=partial><a class=header href=#partial><code>Partial</code></a></h3><pre><code class="language-rust ignore">pub trait Partial: Sized {
+    type Final;
+    fn finalize(self) -> Result&lt;Self::Final, &'static str>;
+}</code></pre><p>The in-flight parse state that can be finalised into a complete value. <code>#[derive(Klv)]</code> generates a mirror struct (e.g. <code>MyPacketPartialPacket</code>) where every KLV field becomes <code>Option&lt;T></code>. <code>finalize()</code> validates that all required fields are populated and yields the final struct.<p><code>TryFrom&lt;Partial> for T</code> is also generated, so <code>partial.try_into()</code> works without importing the <code>Partial</code> trait directly.<h3 id=resumepartials-internal><a class=header href=#resumepartials-internal><code>ResumePartial&lt;S></code> (internal)</a></h3><p>Re-entry point for resuming a paused decode from an existing partial. Not typically called directly - <code>Decoder</code> and <code>DecodePartial</code> use it internally. Advanced callers who manage their own partial lifecycle can call <code>T::resume_partial(&mut input, partial)</code> to continue decoding from a saved <code>NeedMore</code> state.<h3 id=decoderp-s><a class=header href=#decoderp-s><code>Decoder&lt;P, S></code></a></h3><pre><code class="language-rust ignore">pub struct Decoder&lt;P, S> { /* owned Vec&lt;u8> buffer + optional partial */ }
+
+impl&lt;P, S> Decoder&lt;P, S> {
+    pub fn new() -> Self;
+    pub fn with_capacity(cap: usize) -> Self;
+    pub fn feed(&mut self, bytes: &[u8]);
+    pub fn buffered(&self) -> &[u8];
+    pub fn partial(&self) -> Option&lt;&P>;
+    pub fn into_partial(self) -> Option&lt;P>;
+    pub fn clear(&mut self);
+    pub fn iter(&mut self) -> DecoderIter&lt;'_, P, S>;
+    pub fn next&lt;T>(&mut self) -> Option&lt;T>;
+}
+
+impl&lt;P, T> Decoder&lt;P, &[u8]>
+where
+    P: Partial&lt;Final = T> + Default,
+{
+    pub fn finish(self) -> Result&lt;T, DecodeIterError>;
+}</code></pre><p>User-facing buffered streaming API. Owns a byte buffer, accepts incremental feeds from a socket / file / ring buffer, and yields fully-decoded <code>T</code> values as enough bytes arrive.<p>Requires <code>T</code> to carry a <code>sentinel = ...</code> attribute - the decoder uses the sentinel + declared packet length to locate each packet’s boundaries inside the buffer. Without that, there is no way to tell one packet’s bytes from the next inside a continuous stream.<p>Internally it has two modes:<ul><li>fresh mode: seek sentinel, read frame length, call <code>decode_partial</code> on the body<li>resume mode: keep the in-flight partial and continue it with newly fed bytes</ul><p><code>next()</code> returns:<div class=table-wrapper><table><thead><tr><th>Return<th>Meaning<tbody><tr><td><code>Some(t)</code><td>Packet decoded; its framed bytes are drained from the internal buffer.<tr><td><code>None</code><td>Need more bytes, a malformed packet was skipped, or no sentinel found yet. Call <code>feed</code> and retry.</table></div><p><code>finish(self) -> Result&lt;T, DecodeIterError></code> consumes the decoder and force-finalises the in-flight partial. Use when the upstream signals “no more bytes.” <code>DecodeIterError</code> variants: <code>Eof</code>, <code>NeedMore</code>, <code>Malformed(ContextError)</code>.<p>Typical usage:<pre><code class="language-rust ignore">let mut dec = Decoder::&lt;MyPacketPartialPacket, &[u8]>::new();
+let mut scratch = [0u8; 2048];
+loop {
+    let n = socket.recv(&mut scratch)?;
+    dec.feed(&scratch[..n]);
+    for pkt in dec.iter() {
+        handle(pkt);
+    }
+}</code></pre><p>See <a href=#tutorial-15---streaming-partial-packets>Tutorial 15 - Streaming partial packets</a>.<h3 id=decodeframes><a class=header href=#decodeframes><code>DecodeFrame&lt;S></code></a></h3><pre><code class="language-rust ignore">pub trait DecodeFrame&lt;S>: Sized
+where
+    S: winnow::stream::Stream,
+{
+    fn decode_frame(input: &mut S) -> crate::Result&lt;Self>;
+}</code></pre><p>Seeks the sentinel, reads the frame length, subslices the stream to exactly that many bytes, and calls <code>decode_value</code> on the subslice.<p><code>DecodeFrame</code> is a blanket impl over <code>SeekSentinel + DecodeValue</code>. The derive does not generate it directly - it generates <code>SeekSentinel</code> (which scans <code>input</code> for the sentinel, consumes sentinel + length, and returns the body as a sub-slice), and the blanket impl provides <code>decode_frame</code> for free. Only available when <code>sentinel = ...</code> is declared.<h2 id=encode-traits><a class=header href=#encode-traits>Encode traits</a></h2><h3 id=encodevalueo><a class=header href=#encodevalueo><code>EncodeValue&lt;O></code></a></h3><pre><code class="language-rust ignore">pub trait EncodeValue&lt;O: EncodedOutput> {
+    fn encode_value(&self) -> O;
+}</code></pre><p>Emits the KLV triples for this value (no sentinel, no frame length). Generated by <code>#[derive(Klv)]</code> unless <code>allow_unimplemented_encode</code> is set. <code>O</code> is typically <code>Vec&lt;u8></code>.<h3 id=encodeframeo><a class=header href=#encodeframeo><code>EncodeFrame&lt;O></code></a></h3><pre><code class="language-rust ignore">pub trait EncodeFrame&lt;O: EncodedOutput> {
+    fn encode_frame(&self) -> O;
+}</code></pre><p>Emits a full packet: <code>sentinel + length + &lt;encode_value output></code>. Only generated when the container declares <code>sentinel = ...</code>.<h3 id=encodeas><a class=header href=#encodeas><code>EncodeAs</code></a></h3><p>Controls how the <code>&</code> sigil routes a field reference to an encoder. Documented in full at <a href=#sigil-coercion-and-encodeas>Sigil coercion & <code>EncodeAs</code></a>.<h2 id=control-traits><a class=header href=#control-traits>Control traits</a></h2><h3 id=breakconditions><a class=header href=#breakconditions><code>BreakCondition&lt;S></code></a></h3><pre><code class="language-rust ignore">pub trait BreakCondition&lt;S> {
+    fn break_condition&lt;K, L>(
+        decoded_key: K,
+        decoded_len: L,
+    ) -> BreakConditionType;
+}</code></pre><p>User-extensible stop predicate consulted inside the derive-generated <code>decode_value</code> loop for each decoded <code>(key, len)</code>. A blanket impl returning <code>Proceed</code> covers the common case. Override requires a manual <code>DecodeValue</code> impl - the blanket impl wins over a derived one. See <a href=#tutorial-14---break-conditions>Tutorial 14 - Break conditions</a>.<p><code>BreakConditionType</code> variants:<div class=table-wrapper><table><thead><tr><th>Variant<th>Meaning<tbody><tr><td><code>Proceed</code><td>Run the normal decode step for this key (default)<tr><td><code>Skip</code><td>Consume the value bytes, continue the loop<tr><td><code>Done</code><td>Stop looping, return accumulated fields<tr><td><code>Abort(ContextError)</code><td>Stop looping, return <code>Err</code></table></div><div style=break-before:page;page-break-before:always></div><h1 id=codecs><a class=header href=#codecs>Codecs</a></h1><p>Built-in codec paths shipped with <code>tinyklv</code>. Every path listed is a drop-in value for <code>dec = ...</code>, <code>enc = ...</code>, <code>key(dec = ..., enc = ...)</code>, or <code>len(dec = ..., enc = ...)</code>.<p>Tutorials import these modules as:<pre><code class="language-rust ignore">use tinyklv::dec::binary as decb;
+use tinyklv::enc::binary as encb;
+use tinyklv::dec::string as decs;
+use tinyklv::enc::string as encs;</code></pre><h2 id=binary-tinyklvdecbinary--tinyklvencbinary><a class=header href=#binary-tinyklvdecbinary--tinyklvencbinary>Binary (<code>tinyklv::dec::binary</code> / <code>tinyklv::enc::binary</code>)</a></h2><p>Fixed-width integer and float codecs in three endianness families: native (<code>u8</code>, <code>u16</code>, …), big-endian (<code>be_u16</code>, …), and little-endian (<code>le_u16</code>, …). For single-byte types (<code>u8</code>, <code>i8</code>) endianness is meaningless - use the plain name.<h3 id=unsigned><a class=header href=#unsigned>Unsigned</a></h3><div class=table-wrapper><table><thead><tr><th>Native<th>Big-endian<th>Little-endian<th>Rust type<tbody><tr><td><code>u8</code><td>-<td>-<td><code>u8</code><tr><td><code>u16</code><td><code>be_u16</code><td><code>le_u16</code><td><code>u16</code><tr><td><code>u32</code><td><code>be_u32</code><td><code>le_u32</code><td><code>u32</code><tr><td><code>u64</code><td><code>be_u64</code><td><code>le_u64</code><td><code>u64</code></table></div><h3 id=signed><a class=header href=#signed>Signed</a></h3><div class=table-wrapper><table><thead><tr><th>Native<th>Big-endian<th>Little-endian<th>Rust type<tbody><tr><td><code>i8</code><td>-<td>-<td><code>i8</code><tr><td><code>i16</code><td><code>be_i16</code><td><code>le_i16</code><td><code>i16</code><tr><td><code>i32</code><td><code>be_i32</code><td><code>le_i32</code><td><code>i32</code><tr><td><code>i64</code><td><code>be_i64</code><td><code>le_i64</code><td><code>i64</code></table></div><h3 id=floating-point><a class=header href=#floating-point>Floating-point</a></h3><div class=table-wrapper><table><thead><tr><th>Native<th>Big-endian<th>Little-endian<th>Rust type<tbody><tr><td><code>f32</code><td><code>be_f32</code><td><code>le_f32</code><td><code>f32</code><tr><td><code>f64</code><td><code>be_f64</code><td><code>le_f64</code><td><code>f64</code></table></div><h3 id=length-helpers><a class=header href=#length-helpers>Length helpers</a></h3><p>For the container <code>len(...)</code> attribute you need a decoder that produces <code>usize</code> and an encoder that accepts <code>usize</code>:<div class=table-wrapper><table><thead><tr><th>Decoder<th>Encoder<th>Purpose<tbody><tr><td><code>u8_as_usize</code><td><code>u8_from_usize</code><td>1-byte length<tr><td><code>be_u16_as_usize</code><td><code>be_u16_from_usize</code><td>2-byte BE length<tr><td><code>le_u16_as_usize</code><td><code>le_u16_from_usize</code><td>2-byte LE length<tr><td><code>be_u32_as_usize</code><td><code>be_u32_from_usize</code><td>4-byte BE length<tr><td><code>le_u32_as_usize</code><td><code>le_u32_from_usize</code><td>4-byte LE length<tr><td><code>be_u64_as_usize</code><td><code>be_u64_from_usize</code><td>8-byte BE length<tr><td><code>le_u64_as_usize</code><td><code>le_u64_from_usize</code><td>8-byte LE length</table></div><h3 id=variable-length-lengthed-decoders><a class=header href=#variable-length-lengthed-decoders>Variable-length (lengthed) decoders</a></h3><p>Each numeric type also has a <code>_lengthed</code> variant that reads a variable number of bytes (up to the type width) and zero-extends:<pre><code class="language-rust ignore">#[klv(key = 0x01, varlen = true, dec = decb::be_u32_lengthed)]
+value: u32,</code></pre><p>Available for all types and endiannesses, e.g. <code>be_u16_lengthed</code>, <code>le_u32_lengthed</code>, <code>be_u64_lengthed</code>, etc.<h2 id=ber-tinyklvdecber--tinyklvencber><a class=header href=#ber-tinyklvdecber--tinyklvencber>BER (<code>tinyklv::dec::ber</code> / <code>tinyklv::enc::ber</code>)</a></h2><p>Variable-width encodings from ITU-T X.690.<div class=table-wrapper><table><thead><tr><th>Decoder<th>Encoder<th>Purpose<tbody><tr><td><code>ber_length</code><td><code>ber_length</code><td>BER length (container <code>len(...)</code>)<tr><td><code>ber_oid</code><td><code>ber_oid</code><td>BER-OID (container <code>key(...)</code>)</table></div><p>Edge cases:<ul><li>Empty input -> decoder returns <code>Err</code>.<li>Single MSB-set byte with no terminator -> decoder returns <code>Err</code>.<li><code>[0x00]</code> decodes as <code>0</code>; <code>[0x81, 0x00]</code> decodes as <code>128</code>.</ul><h2 id=strings-tinyklvdecstring--tinyklvencstring><a class=header href=#strings-tinyklvdecstring--tinyklvencstring>Strings (<code>tinyklv::dec::string</code> / <code>tinyklv::enc::string</code>)</a></h2><p>Variable-length string codecs. Use with <code>varlen = true</code> on the field.<div class=table-wrapper><table><thead><tr><th>Decoder<th>Encoder<th>Produces<tbody><tr><td><code>to_string_utf8</code><td><code>from_string_utf8</code><td><code>String</code> (lossy)<tr><td><code>to_string_utf8_strict</code><td>-<td><code>String</code> (returns <code>Err</code> on invalid UTF-8)<tr><td><code>to_string_utf16_be</code><td><code>from_string_utf16_be</code><td><code>String</code><tr><td><code>to_string_utf16_le</code><td><code>from_string_utf16_le</code><td><code>String</code><tr><td><code>to_string_ascii</code> ⚑<td><code>from_string_ascii</code> ⚑<td><code>String</code></table></div><p>⚑ = gated behind the <code>ascii</code> crate feature (<code>features = ["ascii"]</code> or <code>features = ["full"]</code>).<p>The UTF-16 codecs assume the value body is a raw UTF-16 code-unit stream with no BOM. Choose <code>_be</code> or <code>_le</code> to match your data format.<h2 id=utility-macros><a class=header href=#utility-macros>Utility macros</a></h2><p><code>tinyklv</code> exports helper macros that expand to closures matching the decoder / encoder contract. They can be used <strong>inline</strong> in <code>dec = ...</code>, <code>enc = ...</code>, and <code>default(typ = T, dec = ..., enc = ...)</code> attributes - any macro that expands to a function or closure with the right signature works.<h3 id=decode-macros><a class=header href=#decode-macros>Decode macros</a></h3><div class=table-wrapper><table><thead><tr><th>Macro<th>Expands to<th>Purpose<tbody><tr><td><code>scale!(parser, precision, factor)</code><td><code>|input| -> Result&lt;precision></code><td>Parse via <code>parser</code>, cast to <code>precision</code>, multiply by <code>factor</code><tr><td><code>cast!(parser, precision)</code><td><code>|input| -> Result&lt;precision></code><td>Parse via <code>parser</code>, cast to <code>precision</code> via <code>as</code></table></div><h3 id=encode-macros><a class=header href=#encode-macros>Encode macros</a></h3><div class=table-wrapper><table><thead><tr><th>Macro<th>Expands to<th>Purpose<tbody><tr><td><code>scale_enc!(encoder, precision, data, factor)</code><td><code>|val: &precision| -> Vec&lt;u8></code><td>Divide by <code>factor</code>, cast to <code>data</code>, encode<tr><td><code>scale_offset_enc!(encoder, precision, data, factor, offset)</code><td><code>|val: &precision| -> Vec&lt;u8></code><td>Subtract <code>offset</code>, divide by <code>factor</code>, cast to <code>data</code>, encode<tr><td><code>cast_enc!(encoder, precision, data)</code><td><code>|val: &precision| -> Vec&lt;u8></code><td>Cast <code>precision</code> to <code>data</code> via <code>as</code>, encode</table></div><h3 id=inline-usage><a class=header href=#inline-usage>Inline usage</a></h3><pre><code class="language-rust ignore">const HEADING_SCALE: f64 = 360.0 / 65535.0;
+
+#[klv(
+    key = 0x02,
+    dec = tinyklv::scale!(decb::be_u16, f64, HEADING_SCALE),
+    enc = tinyklv::scale_enc!(
+        encb::be_u16, f64, u16, HEADING_SCALE,
+    ),
+)]
+heading_deg: f64,</code></pre><p>The <code>dec = ...</code> attribute accepts any expression that resolves to <code>fn(&mut S) -> tinyklv::Result&lt;T></code>. Built-in codecs, named functions, and macro invocations all satisfy this. Closures do <strong>not</strong> work inline (proc-macro attribute parsing limitation) - use a named function instead.<p>See the full example: <code>cargo run --example book_05b_macro_decoders</code><h3 id=feature-gated-chrono><a class=header href=#feature-gated-chrono>Feature-gated (<code>chrono</code>)</a></h3><div class=table-wrapper><table><thead><tr><th>Macro<th>Expands to<th>Purpose<tbody><tr><td><code>as_date!(str_parser, format, len)</code><td><code>|input| -> Result&lt;NaiveDate></code><td>Parse <code>len</code> bytes as string, then as date<tr><td><code>as_time!(str_parser, format, len)</code><td><code>|input| -> Result&lt;NaiveTime></code><td>Parse <code>len</code> bytes as string, then as time<tr><td><code>as_datetime!(str_parser, format, len)</code><td><code>|input| -> Result&lt;NaiveDateTime></code><td>Parse <code>len</code> bytes as string, then as datetime</table></div><div style=break-before:page;page-break-before:always></div><h1 id=contributing><a class=header href=#contributing>Contributing</a></h1><p>Issues and pull requests are welcome at <a href=https://github.com/arpadav/tinyklv>https://github.com/arpadav/tinyklv</a>.<h2 id=local-development><a class=header href=#local-development>Local development</a></h2><pre><code class=language-sh>git clone https://github.com/arpadav/tinyklv
+cd tinyklv
+
+# unit + integration + proptests + doctests
+cargo test --all
+
+# lint: zero warnings gate
+cargo clippy --all-targets -- -D warnings
+
+# examples build + run
+cargo build --examples
+bash examples/run-examples.sh
+
+# the book
+cd book
+mdbook build book
+mdbook test book
+</code></pre><h2 id=pull-request-checklist><a class=header href=#pull-request-checklist>Pull request checklist</a></h2><ul><li><input disabled type=checkbox> <code>cargo fmt --all</code> has been run.<li><input disabled type=checkbox> <code>cargo clippy --all-targets -- -D warnings</code> passes with zero warnings.<li><input disabled type=checkbox> <code>cargo test --all</code> passes.<li><input disabled type=checkbox> New public items carry doc comments (the crate runs with <code>#![deny(missing_docs)]</code>).<li><input disabled type=checkbox> Any new container attribute is documented in <a href=#container-attributes-1><code>reference/container-attributes.md</code></a> and any new field attribute in <a href=#field-attributes-1><code>reference/field-attributes.md</code></a>.<li><input disabled type=checkbox> Any new trait method is documented in <a href=#traits><code>reference/traits.md</code></a>.</ul><h2 id=code-style><a class=header href=#code-style>Code style</a></h2><ul><li>Format with rustfmt.<li>Parser errors use <code>winnow::error::ParserError::from_input(input)</code>; do not rebuild <code>ContextError</code> from scratch.<li>Idiomatic Rust</ul><h2 id=questions><a class=header href=#questions>Questions</a></h2><p>Open an issue with the <code>question</code> label if the documentation is unclear, or start a GitHub Discussion if the scope is broader than a single fix.</main><nav aria-label="Page navigation" class=nav-wrapper><div style=clear:both></div></nav></div></div><nav aria-label="Page navigation" class=nav-wide-wrapper></nav></div><template id=fa-eye><span class=fa-svg><svg viewbox="0 0 576 512" xmlns=http://www.w3.org/2000/svg><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template><template id=fa-eye-slash><span class=fa-svg><svg viewbox="0 0 640 512" xmlns=http://www.w3.org/2000/svg><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template><template id=fa-copy><span class=fa-svg><svg viewbox="0 0 512 512" xmlns=http://www.w3.org/2000/svg><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template><template id=fa-play><span class=fa-svg><svg viewbox="0 0 384 512" xmlns=http://www.w3.org/2000/svg><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template><template id=fa-clock-rotate-left><span class=fa-svg><svg viewbox="0 0 512 512" xmlns=http://www.w3.org/2000/svg><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template><script>window.playground_copyable=!0;</script><script src=elasticlunr-ef4e11c1.min.js></script><script src=mark-09e88c2c.min.js></script><script src=searcher-c2a407aa.js></script><script src=clipboard-1626706a.min.js></script><script src=highlight-abc7f01d.js></script><script src=book-a0b12cfe.js></script><script>window.addEventListener(`load`,function(){window.setTimeout(window.print,100)});</script></div>

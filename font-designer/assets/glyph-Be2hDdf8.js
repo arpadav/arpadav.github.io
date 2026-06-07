@@ -1,0 +1,1 @@
+let t=.6;function n(t){return`U+${t.toString(16).toUpperCase().padStart(4,"0")}`;}function r(t){return String.fromCodePoint(t);}function o(t){let n=t.codePointAt(0);if(!(void 0===n||n>=55296&&n<=57343))return n;}function e(t){let r=String.fromCodePoint(t);return/[\p{Cc}\p{Cf}\p{Zs}\p{Zl}\p{Zp}]/u.test(r)?n(t):r;}export{t as D,r as a,n as b,o as c,e as d};

@@ -1,0 +1,16 @@
+{
+  "name": "Font Designer",
+  "short_name": "Font Designer",
+  "description": "Design, preview, and export fonts in the browser",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
